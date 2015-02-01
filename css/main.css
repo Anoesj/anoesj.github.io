@@ -1,8 +1,10 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 body {
-    background: url('img/me.jpg') top left no-repeat;
-    background-size: cover;
+    background: url('../img/me.jpg') 50% 50% no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 html,
