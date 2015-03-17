@@ -1,15 +1,10 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 body {
-    /*background: url('../img/me.jpg') 50% 50% no-repeat;
-    background-size: contain;
+    background: white url('../img/buffering.gif') 50% 50% no-repeat;
+    background-size: 100px 100px;
     min-height: 100vh;
-    min-width: 100vw;*/
-}
-
-body:before {
-    content: "Yeaaah buddy";
-    display: inline;
+    min-width: 100vw;
 }
 
 html,
