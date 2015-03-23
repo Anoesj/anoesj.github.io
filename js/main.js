@@ -1,3 +1,3 @@
 setTimeout(function() {
-  alert('why are you still here?')
-}, 5000)
+  alert('why are you still here...?')
+}, 30000)
