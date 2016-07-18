@@ -1,5 +1,17 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
+.wip {
+    height: 100px;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translate(-210px, 6px);
+    -webkit-transform: translate(-50%, -50%) translate(-210px, 6px);
+    -moz-transform: translate(-50%, -50%) translate(-210px, 6px);
+    opacity: .75;
+}
+
 p.comingsoon {
     position: absolute;
     top: 50%;
@@ -7,7 +19,6 @@ p.comingsoon {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
-    text-align: center;
     margin: 0;
     font-weight: 600;
 }
