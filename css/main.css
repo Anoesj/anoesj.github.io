@@ -1,8 +1,16 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
+p.comingsoon {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    margin: 0;
+    font-weight: 600;
+}
+
 body {
-    background: white url('../img/buffering.gif') 50% 50% no-repeat;
-    background-size: 100px 100px;
+    background-color: #f6f6f6;
     min-height: 100vh;
     min-width: 100vw;
 }
@@ -69,7 +77,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 21px/32px "Iowan Old Style", "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
 }
 
 .wrapper {
