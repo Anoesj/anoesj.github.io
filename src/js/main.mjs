@@ -1,9 +1,20 @@
-import { projects } from './projects.mjs';
 import Vue from './lib/vue.js';
 
-console.log(projects);
+import { router } from './router.mjs';
+
+import { navigation } from './components/navigation.mjs';
+import { projectTeaser } from './components/project-teaser.mjs';
+
+Vue.component('navigation', navigation);
+Vue.component('project-teaser', projectTeaser);
 
 new Vue({
-  el: '#projects_wrapper',
-  template: '<h2> hoi </h2>'
+  el: '#app',
+  router: router,
+  template:  `<div id="app">
+                <navigation></navigation>
+                <router-view></router-view>
+              </div>`,
 });
+
+/* <navigation></navigation> */

@@ -1,12 +1,15 @@
 {
   "devDependencies": {
     "browser-sync": "^2.24.6",
+    "fs": "0.0.1-security",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
+    "path": "^0.12.7",
     "require-dir": "^1.0.0",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
   }
 }
