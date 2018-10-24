@@ -16,5 +16,3 @@ new Vue({
                 <router-view></router-view>
               </div>`,
 });
-
-/* <navigation></navigation> */
