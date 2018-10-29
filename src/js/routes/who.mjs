@@ -1,3 +1,5 @@
 export const who = {
-  template:  `<span>itsa me mario</span>`,
+  template:  `<section class="who">
+                <img src="/img/me.jpg" style="max-width:680px;">
+              </section>`,
 };

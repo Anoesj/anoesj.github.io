@@ -1,0 +1,5 @@
+.who {
+  img {
+    transform: rotate(#{-1 * $angle}deg);
+  }
+}

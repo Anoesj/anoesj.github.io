@@ -38,13 +38,27 @@ h1, h2, h3, h4 {
   justify-content: flex-end;
   width: 100%;
   height: auto;
+  position: relative;
   padding: 6rem 4rem 2rem; }
+  .navigation::after {
+    content: '';
+    background: #000;
+    width: 102vw;
+    height: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    -webkit-transform: rotate(-1.4deg);
+            transform: rotate(-1.4deg);
+    -webkit-transform-origin: right top;
+            transform-origin: right top; }
   .navigation ul {
     flex: 0 0 auto;
     display: flex;
     justify-content: flex-end;
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg); }
+    -webkit-transform: rotate(-1.4deg);
+            transform: rotate(-1.4deg); }
   .navigation a {
     color: var(--grey);
     font-size: 2rem;
@@ -59,6 +73,11 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.5rem;
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  margin-top: 5rem; }
   .projects .project {
     min-width: 400px; }
+
+.who img {
+  -webkit-transform: rotate(-1.4deg);
+          transform: rotate(-1.4deg); }

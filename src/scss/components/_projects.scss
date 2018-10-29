@@ -4,6 +4,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: $spacing;
   padding: $spacing;
+  margin-top: 5rem;
 
   .project {
     min-width: 400px;

@@ -1,11 +1,28 @@
-$angle: 2;
-
 .navigation {
   display: flex;
   justify-content: flex-end;
   width: 100%;
   height: auto;
+  position: relative;
   padding: 6rem 4rem 2rem;
+
+  &::after {
+    content: '';
+    background: #000;
+    // voor benaderen width:
+    // cos(angle) = (100vw / x)
+    // x = 100vw/cos(angle)
+    // bijv. x = 100/cos(2deg) = 100.06095443
+    // width: 100.06095443vw;
+    width: 102vw;
+    height: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform: rotate(#{-1 * $angle}deg);
+    transform-origin: right top;
+  }
 
   ul {
     flex: 0 0 auto;
