@@ -1,0 +1,11 @@
+.projects {
+  $spacing: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: $spacing;
+  padding: $spacing;
+
+  .project {
+    min-width: 400px;
+  }
+}

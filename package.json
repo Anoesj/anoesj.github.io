@@ -1,4 +1,9 @@
 {
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "not dead"
+  ],
   "devDependencies": {
     "browser-sync": "^2.24.6",
     "fs": "0.0.1-security",
