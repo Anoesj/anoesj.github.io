@@ -1,5 +1,5 @@
-import Vue from './lib/vue.js';
-import Router from './lib/vue-router.js';
+import Vue from './lib/vue.mjs';
+import Router from './lib/vue-router.mjs';
 
 import { who } from './routes/who.mjs';
 import { projectsOverview } from './routes/projects-overview.mjs';
@@ -12,17 +12,23 @@ export const router = new Router({
 	routes: [
 		{
 			path: '*',
-			redirect: '/who' // NOTE: redirecten naar /who
+			redirect: '/who'
 		},
 		{
 			path: '/who',
 			name: 'who',
 			component: who,
+			meta: {
+				bodyClass: 'about'
+			}
 		},
     {
 			path: '/projects',
 			name: 'project-overview',
-      component: projectsOverview
+      component: projectsOverview,
+			meta: {
+				bodyClass: 'projects'
+			}
 		},
     {
 			path: '/projects/:projectID',
@@ -30,25 +36,23 @@ export const router = new Router({
       component: projectsOverview,
       props: {
         showFeaturedProject: true
-      }
+      },
+			meta: {
+				bodyClass: 'projects'
+			}
 		},
     {
 			path: '/reach-me',
 			name: 'reach-me',
-			component: reachMe
+			component: reachMe,
+			meta: {
+				bodyClass: 'contact'
+			}
 		}
 	]
 });
 
-// router.beforeEach((to, from, next) => {
-//     const requiresAuth = to.matched.some(x => x.meta.requiresAuth)
-//     const currentUser = firebase.auth().currentUser
-
-//     if (requiresAuth && !currentUser) {
-//         next('/login')
-//     } else if (requiresAuth && currentUser) {
-//         next()
-//     } else {
-//         next()
-//     }
-// })
+router.beforeEach((to, from, next) => {
+	document.body.dataset.page = to.meta.bodyClass;
+	next();
+});

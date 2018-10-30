@@ -1,50 +1,56 @@
 .navigation {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding: 6rem 4rem 2rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 
-  &::after {
-    content: '';
-    background: #000;
-    // voor benaderen width:
-    // cos(angle) = (100vw / x)
-    // x = 100vw/cos(angle)
-    // bijv. x = 100/cos(2deg) = 100.06095443
-    // width: 100.06095443vw;
-    width: 102vw;
-    height: 1.5rem;
+  > span {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    transform: rotate(#{-1 * $angle}deg);
-    transform-origin: right top;
-  }
+    transform-origin: center center;
+    display: block;
+    height: $page-padding;
+    text-align: center;
+    transition: height 1s ease-out,
+                transform 1s ease-out;
 
-  ul {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: flex-end;
-    transform: rotate(#{-1 * $angle}deg);
-  }
+    &.left {
+      top: 50vh;
+      left: 0;
+      transform: translate(calc(-50% + #{$page-padding / 2}), -50%) rotate(90deg);
+      width: 100vh;
+    }
 
-  a {
-    color: $grey;
-    font-size: 2rem;
-    text-decoration: none;
-    transition: color 0.4s;
+    &.right {
+      top: 50vh;
+      right: 0;
+      transform: translate(calc(50% - #{$page-padding / 2}), -50%) rotate(-90deg);
+      width: 100vh;
+    }
 
-    &:hover,
-    &:focus,
-    &.active {
-      color: $grey-2;
+    &.bottom {
+      left: 50vw;
+      bottom: 0;
+      transform: translate(-50%, 0);
+      width: 100vw;
     }
   }
 
-  li:not(:last-child) a {
-    margin-right: 1.5em;
+  a {
+    display: block;
+    color: $grey-1;
+    font-size: 1.75rem;
+    text-decoration: none;
+    line-height: $page-padding;
+    transition: all 1s ease-out, color 0.4s;
+
+    &:hover,
+    &:focus,
+    &.router-link-active {
+      color: $grey-2;
+    }
   }
 }

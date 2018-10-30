@@ -1,4 +1,4 @@
-import Vue from './lib/vue.js';
+import Vue from './lib/vue.mjs';
 
 import { router } from './router.mjs';
 

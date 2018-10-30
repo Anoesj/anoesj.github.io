@@ -1,10 +1,12 @@
 :root {
-  --black: #151618;
+  --black-0: #0e0f0f;
+  --black-1: #151618;
   --black-2: #474747;
   --black-3: #7b7b7b;
-  --grey: #99a1a6;
+  --grey-1: #99a1a6;
   --grey-2: #dce3e7;
-  --purple: #9e017c; }
+  --purple: #9e017c;
+  --page-padding: 130px; }
 
 *,
 *::before,
@@ -16,12 +18,12 @@ html, body {
   padding: 0; }
 
 body {
-  font-family: Garamond;
+  font-family: Alcubierre;
   font-size: 1.5rem;
   letter-spacing: 0.1ch;
   line-height: 1.5;
-  background-color: var(--black);
-  color: var(--grey);
+  background-color: var(--black-1);
+  color: var(--grey-1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -33,51 +35,86 @@ ul, ol {
 h1, h2, h3, h4 {
   margin: 0; }
 
+h1 {
+  font-size: 4rem; }
+
 .navigation {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding: 6rem 4rem 2rem; }
-  .navigation::after {
-    content: '';
-    background: #000;
-    width: 102vw;
-    height: 1.5rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; }
+  .navigation > span {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    -webkit-transform: rotate(-1.4deg);
-            transform: rotate(-1.4deg);
-    -webkit-transform-origin: right top;
-            transform-origin: right top; }
-  .navigation ul {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: flex-end;
-    -webkit-transform: rotate(-1.4deg);
-            transform: rotate(-1.4deg); }
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    display: block;
+    height: var(--page-padding);
+    text-align: center;
+    transition: height 1s ease-out, -webkit-transform 1s ease-out;
+    transition: height 1s ease-out, transform 1s ease-out;
+    transition: height 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; }
+    .navigation > span.left {
+      top: 50vh;
+      left: 0;
+      -webkit-transform: translate(calc(-50% + var(--page-padding)/2), -50%) rotate(90deg);
+              transform: translate(calc(-50% + var(--page-padding)/2), -50%) rotate(90deg);
+      width: 100vh; }
+    .navigation > span.right {
+      top: 50vh;
+      right: 0;
+      -webkit-transform: translate(calc(50% - var(--page-padding)/2), -50%) rotate(-90deg);
+              transform: translate(calc(50% - var(--page-padding)/2), -50%) rotate(-90deg);
+      width: 100vh; }
+    .navigation > span.bottom {
+      left: 50vw;
+      bottom: 0;
+      -webkit-transform: translate(-50%, 0);
+              transform: translate(-50%, 0);
+      width: 100vw; }
   .navigation a {
-    color: var(--grey);
-    font-size: 2rem;
+    display: block;
+    color: var(--grey-1);
+    font-size: 1.75rem;
     text-decoration: none;
-    transition: color 0.4s; }
-    .navigation a:hover, .navigation a:focus, .navigation a.active {
+    line-height: var(--page-padding);
+    transition: all 1s ease-out, color 0.4s; }
+    .navigation a:hover, .navigation a:focus, .navigation a.router-link-active {
       color: var(--grey-2); }
-  .navigation li:not(:last-child) a {
-    margin-right: 1.5em; }
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
-  padding: 1.5rem;
-  margin-top: 5rem; }
-  .projects .project {
-    min-width: 400px; }
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  position: fixed;
+  top: var(--page-padding);
+  bottom: var(--page-padding);
+  left: var(--page-padding);
+  right: var(--page-padding);
+  transition: all 1s ease-out;
+  background-color: var(--black-0);
+  padding: 4rem;
+  overflow-y: scroll; }
 
-.who img {
-  -webkit-transform: rotate(-1.4deg);
-          transform: rotate(-1.4deg); }
+.who {
+  position: fixed;
+  top: var(--page-padding);
+  bottom: var(--page-padding);
+  left: var(--page-padding);
+  right: var(--page-padding);
+  transition: all 1s ease-out;
+  display: flex;
+  padding: 2rem; }
+  .who > * {
+    -webkit-transform: rotate(-2.4deg);
+            transform: rotate(-2.4deg);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .who img {
+    max-height: 100%; }
+  .who h1 {
+    margin-top: 5%;
+    margin-left: -20%; }

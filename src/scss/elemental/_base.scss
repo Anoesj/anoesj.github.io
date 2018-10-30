@@ -4,24 +4,28 @@
   box-sizing: border-box;
 }
 
-html {
-
-}
-
 html, body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: Garamond;
+  font-family: Alcubierre;
+  // font-family: 'Caviar Dreams';
+  // font-family: 'Daniel';
+  // font-family: 'DK Sirius B';
+  // font-family: Hashtag;
   font-size: 1.5rem;
   letter-spacing: 0.1ch;
   line-height: 1.5;
-  background-color: $black;
-  color: $grey;
+  background-color: $black-1;
+  color: $grey-1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // &[data-page="projects"] {
+  //   --page-padding: 100px;
+  // }
 }
 
 ul, ol {
@@ -32,4 +36,8 @@ ul, ol {
 
 h1, h2, h3, h4 {
   margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
 }
