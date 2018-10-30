@@ -10,7 +10,7 @@ export const projectsOverview = {
                   v-for="project in projects"
                   :key="project.id"
                   :projectData="project"
-                  v-on:show-full="showFullProject"
+                  @show-full="showFullProject"
                 />
                 <div class="modal" v-if="showFeaturedProject === true" style="position:fixed;top:0;right:0;bottom:0;left:0;background-color:white;">
                   OW SICK PROJECT MAN

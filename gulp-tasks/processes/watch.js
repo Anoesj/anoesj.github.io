@@ -30,5 +30,6 @@ gulp.task('watch', () => {
 
   const interval = { interval: 300 };
   gulp.watch(global.paths.html, interval).on('change', global.browserSync.reload);
+  gulp.watch(global.paths.js, interval).on('change', global.browserSync.reload);
   gulp.watch(global.paths.scss, interval, gulp.series('css'));
 });

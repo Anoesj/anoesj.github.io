@@ -9,6 +9,7 @@ global.paths = {
   index: './src/index.html',
   html: './src/**/*.html',
   scss: './src/scss/**/*.scss',
+  js: ['./src/js/**/*.mjs', '!./src/js/lib/*.mjs'],
   css: './src/css',
   dist: './dist',
 };

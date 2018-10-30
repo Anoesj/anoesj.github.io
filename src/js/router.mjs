@@ -51,8 +51,3 @@ export const router = new Router({
 		}
 	]
 });
-
-router.beforeEach((to, from, next) => {
-	document.body.dataset.page = to.meta.bodyClass;
-	next();
-});
