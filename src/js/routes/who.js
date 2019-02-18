@@ -1,24 +1,35 @@
 export const who = {
-  template:  `<section class="who" :class="stateClass">
-                <img src="/img/me.jpg" style="max-width:680px;">
-                <div class="right" ref="text">
-                  <h1>Hi, I'm Anoesj</h1>
-                </div>
-              </section>`,
+  template:  `<transition
+                @enter="animateIn"
+                @leave="animateOut"
+              >
+                <section class="who" :class="stateClass">
+                  <img src="/img/me.jpg" style="max-width:680px;">
+                  <div class="right" ref="text">
+                    <h1>Hi, I'm Anoesj</h1>
+                  </div>
+                </section>
+              </transition>`,
 
   methods: {
-    animateIn: function () {
-      return new Promise(resolve => {
+    animateIn: async function (el, done) {
+      console.log('animateIn');
+      await new Promise(resolve => {
         this.$refs.text.addEventListener('transitionend', resolve);
         this.stateClass = 'active';
       });
+
+      done();
     },
 
-    animateOut: function () {
-      return new Promise(resolve => {
+    animateOut: async function (el, done) {
+      console.log('animateOut');
+      await new Promise(resolve => {
         this.$refs.text.addEventListener('transitionend', resolve);
         this.stateClass = '';
       });
+
+      done();
     }
   },
 

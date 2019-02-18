@@ -5,13 +5,13 @@ const gulp          = require('gulp'),
 process.setMaxListeners(0);
 
 global.paths = {
-  src: './src',
-  index: './src/index.html',
-  html: './src/**/*.html',
-  scss: './src/scss/**/*.scss',
-  js: ['./src/js/**/*.mjs', '!./src/js/lib/*.mjs'],
-  css: './src/css',
-  dist: './dist',
+  src:    './src',
+  index:  './src/index.html',
+  html:   './src/**/*.html',
+  scss:   './src/scss/**/*.scss',
+  js:     './src/js/**/*.js',
+  css:    './src/css',
+  dist:   './dist',
 };
 
 global.browserSync = browserSync;

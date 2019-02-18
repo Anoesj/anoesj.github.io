@@ -10,37 +10,37 @@ Vue.component('project-teaser', projectTeaser);
 
 let currentlyNavigating = false;
 
-router.beforeEach(async (to, from, next) => {
-  if (currentlyNavigating === true) {
-    return;
-  }
+// router.beforeEach(async (to, from, next) => {
+//   if (currentlyNavigating === true) {
+//     return;
+//   }
 
-  else {
-    currentlyNavigating = true;
+//   else {
+//     currentlyNavigating = true;
 
-    document.body.dataset.page = to.meta.bodyClass;
+//     document.body.dataset.page = to.meta.bodyClass;
 
-    if (from.name) {
-      const fromComponent = app.$refs.route;
-      if ('animateOut' in fromComponent) {
-        await fromComponent.animateOut();
-      }
+//     if (from.name) {
+//       const fromComponent = app.$refs.route;
+//       if ('animateOut' in fromComponent) {
+//         await fromComponent.animateOut();
+//       }
 
-      next();
+//       next();
 
-      // const toComponent = app.$refs.route;
-      // if ('animateIn' in toComponent) {
-      //   await toComponent.animateIn();
-      // }
-    }
+//       // const toComponent = app.$refs.route;
+//       // if ('animateIn' in toComponent) {
+//       //   await toComponent.animateIn();
+//       // }
+//     }
 
-    else {
-      next();
-    }
+//     else {
+//       next();
+//     }
 
-    currentlyNavigating = false;
-  }
-});
+//     currentlyNavigating = false;
+//   }
+// });
 
 Vue.prototype.$wait = ms => {
   return new Promise(async resolve => {
