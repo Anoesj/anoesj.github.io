@@ -12,20 +12,29 @@ const srcFolder = path.resolve(__dirname, '../../src');
 
 gulp.task('watch', () => {
   global.browserSync.init({
-    server: [global.paths.src],
+    server: {
+      baseDir: global.paths.src,
+      routes: {
+        // route die benaderen van 'node_modules' map mogelijk maakt
+        // vanuit de 'src' map, als die map geserveerd wordt door browserSync.
+        '/node_modules': './node_modules'
+      },
+    },
     ghostMode: false,
-    middleware: function(req, res, next) {
-      // Let Vue router handle routing client-side
-      const parsedURL = url.parse(req.url),
-            fileName = parsedURL.href.slice(1).split(parsedURL.search).join(''),
-            fileExists = fs.existsSync(`${srcFolder}/${fileName}`);
+    middleware: [
+      function (req, res, next) {
+        // Let Vue router handle routing client-side
+        const parsedURL = url.parse(req.url),
+              fileName = parsedURL.href.slice(1).split(parsedURL.search).join(''),
+              fileExists = fs.existsSync(`${srcFolder}/${fileName}`);
 
-      if (!fileExists && !fileName.includes('browser-sync-client')) {
-        req.url = `/${defaultFile}`;
-      }
+        if (!fileExists && !fileName.includes('browser-sync-client') && !req.url.startsWith('/node_modules')) {
+          req.url = `/${defaultFile}`;
+        }
 
-      return next();
-    }
+        return next();
+      },
+    ],
   });
 
   const interval = { interval: 300 };

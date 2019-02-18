@@ -1,3 +1,3 @@
 const gulp = require('gulp');
 
-gulp.task('serve', gulp.parallel('copy-node-modules', gulp.series('css', 'watch')));
+gulp.task('serve', gulp.series('css', 'watch'));
