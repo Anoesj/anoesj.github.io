@@ -12,8 +12,11 @@
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
     "path": "^0.12.7",
-    "require-dir": "^1.0.0",
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
+    "require-dir": "^1.0.0"
+  },
+  "dependencies": {
+    "gsap": "^2.1.0",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.2"
   }
 }

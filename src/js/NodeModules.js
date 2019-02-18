@@ -1,5 +1,6 @@
 import Vue from '/node_modules/vue/dist/vue.esm.browser.js';
 import Router from '/node_modules/vue-router/dist/vue-router.esm.js';
+import * as GSAP from '/node_modules/gsap/index.js';
 
 /** --------------------------------------------------------------
   * Gebruik dit bestand om modules te importeren die eigenlijk in
@@ -16,4 +17,4 @@ import Router from '/node_modules/vue-router/dist/vue-router.esm.js';
   * en NodeModules.js de referenties naar dat bestand vervangen worden.
   ------------------------------------------------------------- **/
 
-export { Vue, Router };
+export { Vue, Router, GSAP };

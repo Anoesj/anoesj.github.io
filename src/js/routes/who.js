@@ -1,3 +1,5 @@
+import { GSAP } from '../NodeModules.js';
+
 export const who = {
   template:  `<transition
                 @enter="animateIn"
@@ -13,6 +15,9 @@ export const who = {
 
   methods: {
     animateIn: async function (el, done) {
+      // TODO: Alles met GSAP doen, wordt veel cooler man!
+      console.log(GSAP.TweenMax);
+
       console.log('animateIn');
       await new Promise(resolve => {
         this.$refs.text.addEventListener('transitionend', resolve);

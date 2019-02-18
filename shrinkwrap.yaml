@@ -1,3 +1,7 @@
+dependencies:
+  gsap: 2.1.0
+  vue: 2.6.6
+  vue-router: 3.0.2
 devDependencies:
   browser-sync: 2.26.3
   gulp: 4.0.0
@@ -7,8 +11,6 @@ devDependencies:
   gulp-sass-glob: 1.0.9
   path: 0.12.7
   require-dir: 1.2.0
-  vue: 2.6.6
-  vue-router: 3.0.2
 packages:
   /abbrev/1.1.1:
     dev: true
@@ -1641,6 +1643,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
+  /gsap/2.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-InFn9MNrXwJF6C8MQ4jMFPlkyZX04Y1eBeOvbuYYIjPCfkHKGzl8ZQkvWm4ShlpchQ8VIi4nN/nnjs50o4nklQ==
   /gulp-autoprefixer/6.0.0:
     dependencies:
       autoprefixer: 9.4.7
@@ -4476,11 +4482,11 @@ packages:
     resolution:
       integrity: sha512-MBH+yP0kC/GQ5GwBqrTPTzEfiiLjta7hTtvQtbxBgTeSXsmKQRQecjibMbxIXzVT3Y9KJK+drOz1/k+vsu8Nkg==
   /vue-router/3.0.2:
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-opKtsxjp9eOcFWdp6xLQPLmRGgfM932Tl56U9chYTnoWqKxQ8M20N7AkdEbM5beUh6wICoFGYugAX9vQjyJLFg==
   /vue/2.6.6:
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-Y2DdOZD8sxApS+iUlwv1v8U1qN41kq6Kw45lM6nVZKhygeWA49q7VCCXkjXqeDBXgurrKWkYQ9cJeEJwAq0b9Q==
   /which-module/1.0.0:
@@ -4636,6 +4642,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   browser-sync: ^2.24.6
+  gsap: ^2.1.0
   gulp: ^4.0.0
   gulp-autoprefixer: ^6.0.0
   gulp-gh-pages: ^0.5.4
@@ -4643,5 +4650,5 @@ specifiers:
   gulp-sass-glob: ^1.0.9
   path: ^0.12.7
   require-dir: ^1.0.0
-  vue: ^2.5.17
-  vue-router: ^3.0.1
+  vue: ^2.6.6
+  vue-router: ^3.0.2
