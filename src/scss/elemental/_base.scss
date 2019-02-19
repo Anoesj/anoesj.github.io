@@ -62,3 +62,30 @@ h4 {
 h5 {
   font-size: 0.75rem;
 }
+
+@keyframes zoom-in {
+  0% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  100% {
+    top: $page-padding;
+    left: $page-padding;
+    right: $page-padding;
+    bottom: $page-padding;
+  }
+}
+
+// TODO: Doe dit als element in /projects
+// #app {
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     background-color: #ffffff;
+//     opacity: 0.03;
+//     animation: zoom-in 1s $easing-cubic forwards;
+//   }
+// }

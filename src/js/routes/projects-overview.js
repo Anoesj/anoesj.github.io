@@ -1,5 +1,7 @@
 import { projects } from '../variables/data.js';
 
+// TODO: Animatie openen project: https://tympanus.net/Blueprints/ZoomSlider/
+
 export const projectsOverview = {
   props: [
     'showFeaturedProject'

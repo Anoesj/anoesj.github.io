@@ -9,14 +9,14 @@
   padding: 2rem;
 
   > * {
-    transform: rotate(#{-1 * $angle}deg);
+    // transform: rotate(#{-1 * $angle}deg);
     transform-origin: center center;
   }
 
   img {
     max-height: 100%;
-    transition: opacity 1s ease-in-out,
-                transform 1s ease-in-out;
+    // transition: opacity 1s ease-in-out,
+    //             transform 1s ease-in-out;
   }
 
   h1 {
@@ -26,19 +26,19 @@
   }
 
   .right {
-    transition: opacity 1.25s ease-in-out,
-                transform 1.25s ease-in-out;
+    // transition: opacity 1.25s ease-in-out,
+    //             transform 1.25s ease-in-out;
   }
 
-  &:not(.active) {
-    img {
-      opacity: 0;
-      transform: rotate(#{-5 * $angle}deg) scale(0.8);
-    }
+  // &:not(.active) {
+  //   img {
+  //     opacity: 0;
+  //     transform: rotate(#{-5 * $angle}deg) scale(0.8);
+  //   }
 
-    .right {
-      opacity: 0;
-      transform: rotate(#{-1 * $angle}deg) translateX(30px);
-    }
-  }
+  //   .right {
+  //     opacity: 0;
+  //     transform: rotate(#{-1 * $angle}deg) translateX(30px);
+  //   }
+  // }
 }

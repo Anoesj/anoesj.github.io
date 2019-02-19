@@ -4,6 +4,9 @@ import { router } from './router.js';
 
 import { navigation } from './components/navigation.js';
 import { projectTeaser } from './components/project-teaser.js';
+import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
+
+Vue.use(CustomVueExtensions);
 
 Vue.component('navigation', navigation);
 Vue.component('project-teaser', projectTeaser);
@@ -42,17 +45,22 @@ let currentlyNavigating = false;
 //   }
 // });
 
-Vue.prototype.$wait = ms => {
-  return new Promise(async resolve => {
-    await setTimeout(resolve, ms);
-  });
-};
-
 const app = new Vue({
+
   el: '#app',
   router: router,
   template:  `<div id="app">
                 <navigation></navigation>
                 <router-view ref="route"></router-view>
               </div>`,
+  data () {
+    return {
+      config: {
+        debug: true, // TODO: temp
+      },
+      transitionDuration: this.$convertCSSDurationToSeconds(this.$getCSSVariable('--transition-duration')),
+      angle: parseFloat(this.$getCSSVariable('--angle')),
+    };
+  },
+
 });
