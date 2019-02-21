@@ -26,8 +26,20 @@
   }
 
   .right {
-    // transition: opacity 1.25s ease-in-out,
-    //             transform 1.25s ease-in-out;
+    .whatever-i-am-wrapper {
+      margin-top: 5%;
+      margin-left: 10%;
+      position: relative;
+      // overflow: hidden;
+
+      h3 {
+        display: inline-block;
+        // position: absolute;
+        width: auto;
+        padding: 10px;
+        background-color: $black-0;
+      }
+    }
   }
 
   // &:not(.active) {

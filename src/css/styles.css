@@ -91,7 +91,7 @@ h5 {
   width: 100vw;
   height: 100vh;
   z-index: -1; }
-  .navigation > span {
+  .navigation > div {
     position: absolute;
     -webkit-transform-origin: center center;
             transform-origin: center center;
@@ -101,31 +101,40 @@ h5 {
     transition: height 1s ease-out, -webkit-transform 1s ease-out;
     transition: height 1s ease-out, transform 1s ease-out;
     transition: height 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; }
-    .navigation > span.left {
+    .navigation > div.left {
       top: 50vh;
       left: 0;
       -webkit-transform: translate(calc(-50% + var(--page-padding)/2), -50%) rotate(90deg);
               transform: translate(calc(-50% + var(--page-padding)/2), -50%) rotate(90deg);
       width: 100vh; }
-    .navigation > span.right {
+    .navigation > div.right {
       top: 50vh;
       right: 0;
       -webkit-transform: translate(calc(50% - var(--page-padding)/2), -50%) rotate(-90deg);
               transform: translate(calc(50% - var(--page-padding)/2), -50%) rotate(-90deg);
       width: 100vh; }
-    .navigation > span.bottom {
+    .navigation > div.bottom {
       left: 50vw;
       bottom: 0;
       -webkit-transform: translate(-50%, 0);
               transform: translate(-50%, 0);
       width: 100vw; }
   .navigation a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--grey-1);
     font-size: 1.75rem;
     text-decoration: none;
-    line-height: var(--page-padding);
-    transition: all 1s ease-out, color 0.4s; }
+    line-height: 1;
+    height: var(--page-padding); }
+    .navigation a span.highlight-wrapper {
+      flex: 0 0 auto;
+      display: block;
+      padding: 11px 20px 7px;
+      --marker-color: var(--black-2);
+      --marker-path: red;
+      background-image: paint(marker); }
     .navigation a:hover, .navigation a:focus, .navigation a.router-link-active {
       color: var(--grey-2); }
 
@@ -184,3 +193,12 @@ h5 {
     margin-top: 5%;
     margin-left: -20%;
     color: var(--grey-2); }
+  .who .right .whatever-i-am-wrapper {
+    margin-top: 5%;
+    margin-left: 10%;
+    position: relative; }
+    .who .right .whatever-i-am-wrapper h3 {
+      display: inline-block;
+      width: auto;
+      padding: 10px;
+      background-color: var(--black-0); }

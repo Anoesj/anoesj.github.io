@@ -8,7 +8,7 @@
   height: 100vh;
   z-index: -1;
 
-  > span {
+  > div {
     position: absolute;
     transform-origin: center center;
     display: block;
@@ -40,12 +40,48 @@
   }
 
   a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: $grey-1;
     font-size: 1.75rem;
     text-decoration: none;
-    line-height: $page-padding;
-    transition: all 1s ease-out, color 0.4s;
+    line-height: 1;
+    height: $page-padding;
+
+    // transition: all 1s ease-out,
+    //             color 0.4s;
+
+    span.highlight-wrapper {
+      flex: 0 0 auto;
+      display: block;
+      padding: 11px 20px 7px;
+      // position: relative;
+      --marker-color: #{$black-2};
+      --marker-path: red; // TODO: temp
+      background-image: paint(marker);
+
+      // &::before {
+      //   content: '';
+      //   display: block;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   z-index: -1;
+
+      //   // transform: scale(1, 1) rotate(-2deg) skew(-20deg);
+
+      //   // @supports (background: paint(marker)) {
+      //   //   background: paint(marker);
+      //   // }
+
+      //   // @supports not (background: paint(marker)) {
+      //   //   background: $black-2;
+      //   // }
+      // }
+    }
 
     &:hover,
     &:focus,
