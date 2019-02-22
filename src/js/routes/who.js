@@ -9,6 +9,7 @@ export const who = {
                 appear
                 @enter="animateIn"
                 @leave="animateOut"
+                mode="out-in"
               >
                 <section class="who">
                   <img src="/img/me.jpg" class="me" ref="me">
@@ -26,6 +27,56 @@ export const who = {
   methods: {
     async animateIn (el, done) {
       this.$log('animateIn');
+      await this.animation();
+
+      this.$emit('showNavigation', true);
+
+      this.$log('done with animateIn');
+      done();
+      this.startInterval();
+    },
+
+    async animateOut (el, done) {
+      this.$log('animateOut');
+      await this.animation(true);
+      // const duration = this.$root.transitionDuration/2,
+      //       tl = new GSAP.TimelineLite();
+
+      // tl.to(this.$refs.text, duration,
+      //   {
+      //     x: -50,
+      //     rotation: this.$root.angle,
+      //     ease: GSAP.Power4.easeInOut,
+      //   },
+      // );
+
+      // tl.to(this.$refs.text, duration * 0.75,
+      //   {
+      //     opacity: 0,
+      //     ease: GSAP.Power2.easeInOut,
+      //   },
+      // );
+
+      // tl.to(this.$refs.me, duration,
+      //   {
+      //     scale: 0,
+      //     opacity: 0,
+      //     ease: GSAP.Power4.easeInOut,
+      //     rotation: -520,
+      //   },
+      //   duration * 0.3
+      // );
+
+      // await new Promise((resolve) => {
+      //   tl.eventCallback('onComplete', resolve);
+      //   tl.play();
+      // });
+
+      this.$log('done with animateOut');
+      done();
+    },
+
+    async animation (reverse = false) {
       const duration = this.$root.transitionDuration/2,
             tl = new GSAP.TimelineLite();
 
@@ -69,51 +120,13 @@ export const who = {
 
       await new Promise((resolve) => {
         tl.eventCallback('onComplete', resolve);
-        tl.play();
+        if (reverse === true) {
+          tl.reverse(0);
+        }
+        else {
+          tl.play();
+        }
       });
-
-      this.$emit('showNavigation', true);
-
-      this.$log('done with animateIn');
-      done();
-      this.startInterval();
-    },
-
-    async animateOut (el, done) {
-      this.$log('animateOut');
-
-      await new Promise((resolve) => {
-        const duration = this.$root.transitionDuration/2;
-        // const timeline = GSAP.TimelineMax({});
-        // TODO: omzetten naar GSAP.TimelineLite ofzo
-        GSAP.TweenMax.to(this.$refs.text, duration,
-          {
-            x: -50,
-            rotation: this.$root.angle,
-            ease: GSAP.Power4.easeInOut,
-          },
-        );
-
-        GSAP.TweenMax.to(this.$refs.text, duration * 0.75,
-          {
-            opacity: 0,
-            ease: GSAP.Power2.easeInOut,
-          },
-        );
-
-        GSAP.TweenMax.to(this.$refs.me, duration,
-          {
-            scale: 0,
-            opacity: 0,
-            ease: GSAP.Power4.easeInOut,
-            onComplete: resolve,
-            rotation: -520,
-          },
-        ).delay(duration * 0.3);
-      });
-
-      this.$log('done with animateOut');
-      done();
     },
 
     startInterval () {
@@ -128,7 +141,7 @@ export const who = {
 
   data () {
     const whateverIAms = [
-      'test',
+      'I compose music for bands, artists',
       'je moeder',
       'je vader',
       'je dikke oma',
@@ -136,7 +149,7 @@ export const who = {
 
     return {
       currentWhateverIAmIndex: -1,
-      interval: 2000,
+      interval: 2500,
       setIntervalInstance: null,
       whateverIAms: whateverIAms,
       whateverIAmsAmount: whateverIAms.length,
@@ -144,7 +157,6 @@ export const who = {
   },
 
   // mounted () {
-    
   // },
 
   beforeDestroy () {
