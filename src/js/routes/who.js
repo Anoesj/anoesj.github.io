@@ -5,33 +5,24 @@ export const who = {
   debugTag: 'who',
   debugColor: 'green',
 
-  template:  `<transition
-                appear
-                @enter="animateIn"
-                @leave="animateOut"
-                mode="out-in"
-              >
-                <section class="who">
-                  <img src="/img/me.jpg" class="me" ref="me">
-                  <div class="right" ref="text">
-                    <h1>Hi, I'm Anoesj</h1>
-                    <div class="whatever-i-am-wrapper">
-                      <transition mode="out-in" name="slide">
-                        <h3 :key="currentWhateverIAmIndex">{{ whateverIAms[currentWhateverIAmIndex] }}</h3>
-                      </transition>
-                    </div>
+  template:  `<section class="who">
+                <img src="/img/me.jpg" class="me" ref="me">
+                <div class="right" ref="text">
+                  <h1>Hi, I'm Anoesj</h1>
+                  <div class="whatever-i-am-wrapper">
+                    <transition mode="out-in" name="slide">
+                      <h3 :key="currentWhateverIAmIndex">{{ whateverIAms[currentWhateverIAmIndex] }}</h3>
+                    </transition>
                   </div>
-                </section>
-              </transition>`,
+                </div>
+              </section>`,
 
   methods: {
-    async animateIn (el, done) {
-      this.$log('animateIn');
+    async animateIn (el, done, initial = false) {
       await this.animation();
 
-      this.$emit('showNavigation', true);
+      if (initial === true) this.$emit('showNavigation', true);
 
-      this.$log('done with animateIn');
       done();
       this.startInterval();
     },
@@ -72,7 +63,6 @@ export const who = {
       //   tl.play();
       // });
 
-      this.$log('done with animateOut');
       done();
     },
 
@@ -119,11 +109,12 @@ export const who = {
       );
 
       await new Promise((resolve) => {
-        tl.eventCallback('onComplete', resolve);
         if (reverse === true) {
-          tl.reverse(0);
+          tl.eventCallback('onReverseComplete', resolve);
+          tl.reverse(0, false);
         }
         else {
+          tl.eventCallback('onComplete', resolve);
           tl.play();
         }
       });

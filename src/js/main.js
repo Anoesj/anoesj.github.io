@@ -14,11 +14,22 @@ import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
 
   new Vue({
 
+    debugTag: 'main',
+    debugColor: 'darkorange',
+
     el: '#app',
     router: router,
     template:  `<div id="app">
                   <navigation :visible="navigationVisible"></navigation>
-                  <router-view ref="route" @showNavigation="showNavigation"></router-view>
+
+                  <transition
+                    appear
+                    @enter="animateIn"
+                    @leave="animateOut"
+                    :mode="transitionMode"
+                  >
+                    <router-view ref="route" @showNavigation="showNavigation"></router-view>
+                  </transition>
                 </div>`,
     data () {
       return {
@@ -28,12 +39,47 @@ import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
         transitionDuration: this.$convertCSSDurationToSeconds(this.$getCSSVariable('--transition-duration')),
         angle: parseFloat(this.$getCSSVariable('--angle')),
         navigationVisible: false,
+        transitionMode: 'out-in',
       };
     },
 
     methods: {
       showNavigation () {
         this.navigationVisible = true;
+      },
+
+      async animateIn (el, done) {
+        this.$log('animateIn');
+
+        const cb = () => {
+          this.$log('done with animateIn');
+          done();
+        };
+
+        if ('animateIn' in this.$refs.route) {
+          await this.$refs.route.animateIn(el, cb, !this.navigationVisible);
+        }
+
+        else {
+          cb();
+        }
+      },
+
+      async animateOut (el, done) {
+        this.$log('animateOut');
+
+        const cb = () => {
+          this.$log('done with animateOut');
+          done();
+        };
+
+        if ('animateOut' in this.$refs.route) {
+          await this.$refs.route.animateOut(el, cb);
+        }
+
+        else {
+          cb();
+        }
       },
     },
 
