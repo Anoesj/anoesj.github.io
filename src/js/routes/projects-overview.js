@@ -3,6 +3,10 @@ import { projects } from '../variables/data.js';
 // TODO: Animatie openen project: https://tympanus.net/Blueprints/ZoomSlider/
 
 export const projectsOverview = {
+
+  debugTag: 'projects',
+  debugColor: 'brown',
+
   props: [
     'showFeaturedProject'
   ],

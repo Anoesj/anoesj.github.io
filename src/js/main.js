@@ -49,15 +49,16 @@ import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
       },
 
       async animateIn (el, done) {
-        this.$log('animateIn');
+        const inAnimatingComponent = this.$refs.route;
+        inAnimatingComponent.$log('animateIn');
 
         const cb = () => {
-          this.$log('done with animateIn');
+          inAnimatingComponent.$log('done with animateIn');
           done();
         };
 
-        if ('animateIn' in this.$refs.route) {
-          await this.$refs.route.animateIn(el, cb, !this.navigationVisible);
+        if ('animateIn' in inAnimatingComponent) {
+          await inAnimatingComponent.animateIn(el, cb, !this.navigationVisible);
         }
 
         else {
@@ -66,15 +67,16 @@ import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
       },
 
       async animateOut (el, done) {
-        this.$log('animateOut');
+        const outAnimatingComponent = this.$refs.route;
+        outAnimatingComponent.$log('animateOut');
 
         const cb = () => {
-          this.$log('done with animateOut');
+          outAnimatingComponent.$log('done with animateOut');
           done();
         };
 
-        if ('animateOut' in this.$refs.route) {
-          await this.$refs.route.animateOut(el, cb);
+        if ('animateOut' in outAnimatingComponent) {
+          await outAnimatingComponent.animateOut(el, cb);
         }
 
         else {

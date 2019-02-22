@@ -28,41 +28,7 @@ export const who = {
     },
 
     async animateOut (el, done) {
-      this.$log('animateOut');
       await this.animation(true);
-      // const duration = this.$root.transitionDuration/2,
-      //       tl = new GSAP.TimelineLite();
-
-      // tl.to(this.$refs.text, duration,
-      //   {
-      //     x: -50,
-      //     rotation: this.$root.angle,
-      //     ease: GSAP.Power4.easeInOut,
-      //   },
-      // );
-
-      // tl.to(this.$refs.text, duration * 0.75,
-      //   {
-      //     opacity: 0,
-      //     ease: GSAP.Power2.easeInOut,
-      //   },
-      // );
-
-      // tl.to(this.$refs.me, duration,
-      //   {
-      //     scale: 0,
-      //     opacity: 0,
-      //     ease: GSAP.Power4.easeInOut,
-      //     rotation: -520,
-      //   },
-      //   duration * 0.3
-      // );
-
-      // await new Promise((resolve) => {
-      //   tl.eventCallback('onComplete', resolve);
-      //   tl.play();
-      // });
-
       done();
     },
 
