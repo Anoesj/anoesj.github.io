@@ -46,6 +46,10 @@ h1 {
   font-size: 4.5rem;
   line-height: 1.125; }
 
+h2 {
+  font-size: 3.5rem;
+  line-height: 1.125; }
+
 h3 {
   font-size: 1.75rem;
   font-weight: 700;
@@ -89,35 +93,29 @@ h5 {
   left: 0;
   right: 0;
   width: 100vw;
-  height: 100vh;
-  z-index: -1; }
+  height: 100vh; }
   .navigation > div {
     position: absolute;
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
+    transform-origin: center center;
     display: block;
     height: var(--page-padding);
     text-align: center;
-    transition: height 1s ease-out, -webkit-transform 1s ease-out;
-    transition: height 1s ease-out, transform 1s ease-out;
-    transition: height 1s ease-out, transform 1s ease-out, -webkit-transform 1s ease-out; }
+    z-index: 10;
+    transition: height 1s ease-out, transform 1s ease-out; }
     .navigation > div.left {
       top: 50vh;
       left: 0;
-      -webkit-transform: translate(calc(-50% + var(--page-padding)/2), -50%) rotate(90deg);
-              transform: translate(calc(-50% + var(--page-padding)/2), -50%) rotate(90deg);
+      transform: translate(calc(-50% + var(--page-padding)/2), -50%) rotate(90deg);
       width: 100vh; }
     .navigation > div.right {
       top: 50vh;
       right: 0;
-      -webkit-transform: translate(calc(50% - var(--page-padding)/2), -50%) rotate(-90deg);
-              transform: translate(calc(50% - var(--page-padding)/2), -50%) rotate(-90deg);
+      transform: translate(calc(50% - var(--page-padding)/2), -50%) rotate(-90deg);
       width: 100vh; }
     .navigation > div.bottom {
       left: 50vw;
       bottom: 0;
-      -webkit-transform: translate(-50%, 0);
-              transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
       width: 100vw; }
   .navigation a {
     display: flex;
@@ -135,29 +133,31 @@ h5 {
       --marker-color: var(--black-2);
       --marker-path: red;
       background-image: paint(marker); }
-    .navigation a:hover, .navigation a:focus, .navigation a.router-link-active {
+    .navigation a:hover, .navigation a:focus {
       color: var(--grey-2); }
+    .navigation a.router-link-active {
+      display: none; }
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 0;
-  position: fixed;
-  top: var(--page-padding);
-  bottom: var(--page-padding);
-  left: var(--page-padding);
-  right: var(--page-padding);
+  position: relative;
+  padding: var(--page-padding);
   transition: all 1s ease-out;
-  background-color: var(--black-0);
-  overflow-y: scroll; }
+  pointer-events: none; }
+  .projects .projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 50px; }
   .projects .project {
     position: relative;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    cursor: pointer; }
-    .projects .project img {
+    cursor: pointer;
+    pointer-events: auto; }
+    .projects .project:nth-child(2n - 1) {
+      top: 150px; }
+    .projects .project .background-wrapper {
       display: block;
       position: absolute;
       top: 0;
@@ -166,14 +166,54 @@ h5 {
       bottom: 0;
       width: 100%;
       height: 100%;
+      border: 0px solid var(--black-0);
       z-index: -1;
-      -o-object-fit: cover;
-         object-fit: cover; }
+      overflow: hidden;
+      transition: transform 2s cubic-bezier(0.3, 0.2, 0.07, 1), border-width 0.4s cubic-bezier(0.3, 0.2, 0.07, 1); }
+      .projects .project .background-wrapper img {
+        position: absolute;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: var(--x) var(--y);
+           object-position: var(--x) var(--y);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.4s cubic-bezier(0.3, 0.2, 0.07, 1);
+        transform: scale(1.3);
+        transform-origin: var(--x) var(--y); }
+    .projects .project .title {
+      display: inline-block;
+      color: var(--grey-2); }
+      .projects .project .title::after {
+        content: '';
+        display: block;
+        --marker-color: var(--grey-2);
+        background-image: paint(marker);
+        width: 100%;
+        height: 4px;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1); }
     .projects .project .body {
+      position: relative;
+      z-index: 2;
       flex: 0 0 auto;
-      padding: 10px 25px 15px; }
+      padding: 15px 50px;
+      transform: translateY(50%); }
     .projects .project .roles {
       display: none; }
+    .projects .project:hover .background-wrapper, .projects .project:focus .background-wrapper {
+      transform: scale(0.95);
+      border-width: 15px; }
+      .projects .project:hover .background-wrapper img, .projects .project:focus .background-wrapper img {
+        transform: scale(1); }
+    .projects .project:hover .title::after, .projects .project:focus .title::after {
+      transform: scaleX(1);
+      transition-delay: 0.3s; }
 
 .who {
   position: fixed;
@@ -185,8 +225,7 @@ h5 {
   display: flex;
   padding: 2rem; }
   .who > * {
-    -webkit-transform-origin: center center;
-            transform-origin: center center; }
+    transform-origin: center center; }
   .who img {
     max-height: 100%; }
   .who h1 {

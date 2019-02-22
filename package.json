@@ -1,7 +1,7 @@
 {
   "browserslist": [
-    "last 2 versions",
-    "> 0.5%",
+    "last 1 versions",
+    "> 1%",
     "not dead"
   ],
   "devDependencies": {

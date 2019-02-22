@@ -4,11 +4,20 @@ export const projectTeaser = {
   ],
 
   template:  `<div class="project" @click="$emit('show-full', projectData.id)">
-                <img v-if="projectData.preview" :src="projectData.preview" class="background">
-                <div class="body">
-                  <h4>{{ projectData.subtitle }}</h4>
-                  <h3>{{ projectData.title }}</h3>
+                <div class="background-wrapper">
+                  <img
+                    v-if="projectData.preview"
+                    :src="projectData.preview.uri"
+                    :style="focusPoint"
+                    class="background"
+                  >
                 </div>
+
+                <div class="body">
+                  <h2 class="title">{{ projectData.subtitle }}</h2>
+                  <!-- <h3>{{ projectData.title }}</h3> -->
+                </div>
+
                 <div class="roles" v-if="projectData.roles.length">
                   <h5>Roles</h5>
                   <ul>
@@ -18,5 +27,15 @@ export const projectTeaser = {
                   </ul>
                 </div>
               </div>`,
+
+  data () {
+    const { focusPoint } = this.projectData.preview;
+    return {
+      focusPoint: {
+        '--x': `${focusPoint.x}%`,
+        '--y': `${focusPoint.y}%`,
+      },
+    };
+  },
 
 };

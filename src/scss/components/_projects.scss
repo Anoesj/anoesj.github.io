@@ -1,16 +1,27 @@
 .projects {
   $spacing: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 0;
-  position: fixed;
-  top: $page-padding;
-  bottom: $page-padding;
-  left: $page-padding;
-  right: $page-padding;
+  position: relative;
+  padding: $page-padding;
   transition: all 1s ease-out;
-  background-color: $black-0;
-  overflow-y: scroll;
+  pointer-events: none;
+
+  .projects-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); // 16/9?
+    grid-gap: 50px;
+  }
+  // overflow-y: auto;
+
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: fixed;
+  //   top: 0;
+  //   height: $page-padding;
+  //   left: 0;
+  //   right: 0;
+  //   background: linear-gradient(to bottom, $black-1, transparent);
+  // }
 
   .project {
     position: relative;
@@ -19,8 +30,13 @@
     flex-direction: column;
     justify-content: flex-end;
     cursor: pointer;
+    pointer-events: auto;
 
-    img {
+    &:nth-child(2n - 1) {
+      top: 150px;
+    }
+
+    .background-wrapper {
       display: block;
       position: absolute;
       top: 0;
@@ -29,17 +45,74 @@
       bottom: 0;
       width: 100%;
       height: 100%;
+      border: 0px solid $black-0;
       z-index: -1;
-      object-fit: cover;
+      overflow: hidden;
+      transition: transform $speed-fast*5 cubic-bezier(0.3, 0.2, 0.07, 1),
+                  border-width $speed-fast cubic-bezier(0.3, 0.2, 0.07, 1); // TODO: omzetten naar iets wat geen repaints hoeft te doen
+
+      img {
+        position: absolute;
+        object-fit: cover;
+        object-position: var(--x) var(--y);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform $speed-fast cubic-bezier(0.3, 0.2, 0.07, 1);
+        transform: scale(1.3);
+        transform-origin: var(--x) var(--y);
+      }
+    }
+
+    .title {
+      display: inline-block;
+      color: $grey-2;
+
+      &::after {
+        content: '';
+        display: block;
+        --marker-color: #{$grey-2};
+        background-image: paint(marker);
+        width: 100%;
+        height: 4px;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform $speed-fast cubic-bezier(0.86, 0, 0.07, 1);
+      }
     }
 
     .body {
+      position: relative;
+      z-index: 2;
       flex: 0 0 auto;
-      padding: 10px 25px 15px;
+      padding: 15px 50px;
+      transform: translateY(50%);
     }
 
     .roles {
       display: none;
+    }
+
+    &:hover,
+    &:focus {
+      .background-wrapper {
+        transform: scale(0.95);
+        border-width: 15px; // TODO: omzetten naar iets wat geen repaints hoeft te doen
+
+        img {
+          transform: scale(1);
+        }
+      }
+
+      .title {
+        &::after {
+          transform: scaleX(1);
+          transition-delay: 0.3s;
+        }
+      }
     }
   }
 }

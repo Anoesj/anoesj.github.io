@@ -6,7 +6,7 @@
   right: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  // z-index: -1;
 
   > div {
     position: absolute;
@@ -14,6 +14,7 @@
     display: block;
     height: $page-padding;
     text-align: center;
+    z-index: 10;
     transition: height 1s ease-out,
                 transform 1s ease-out;
 
@@ -84,9 +85,12 @@
     }
 
     &:hover,
-    &:focus,
-    &.router-link-active {
+    &:focus {
       color: $grey-2;
+    }
+
+    &.router-link-active {
+      display: none; // TODO: animatie
     }
   }
 }

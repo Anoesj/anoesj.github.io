@@ -9,7 +9,7 @@ export const who = {
                 <img src="/img/me.jpg" class="me" ref="me">
                 <div class="right" ref="text">
                   <h1>Hi, I'm Anoesj</h1>
-                  <div class="whatever-i-am-wrapper">
+                  <div v-if="false" class="whatever-i-am-wrapper">
                     <transition mode="out-in" name="slide">
                       <h3 :key="currentWhateverIAmIndex">{{ whateverIAms[currentWhateverIAmIndex] }}</h3>
                     </transition>
@@ -19,7 +19,7 @@ export const who = {
 
   methods: {
     async animateIn (el, done, initial = false) {
-      await this.animation();
+      await this.animation(this.$root.transitionDuration/2);
 
       if (initial === true) this.$emit('showNavigation', true);
 
@@ -28,13 +28,12 @@ export const who = {
     },
 
     async animateOut (el, done) {
-      await this.animation(true);
+      await this.animation(this.$root.transitionDuration/3, true);
       done();
     },
 
-    async animation (reverse = false) {
-      const duration = this.$root.transitionDuration/2,
-            tl = new GSAP.TimelineLite();
+    async animation (duration, reverse = false) {
+      const tl = new GSAP.TimelineLite();
 
       tl.fromTo(this.$refs.me, duration,
         {
