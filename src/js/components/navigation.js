@@ -1,8 +1,8 @@
 import { GSAP } from '../NodeModules.js';
 
-if ('paintWorklet' in CSS) {
-  CSS.paintWorklet.addModule('/js/misc/marker.js');
-}
+// if ('paintWorklet' in CSS) {
+//   CSS.paintWorklet.addModule('/js/misc/marker.js');
+// }
 
 export const navigation = {
 

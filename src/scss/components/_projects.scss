@@ -11,6 +11,8 @@
     color: var(--black-0);
     letter-spacing: 0.2ch;
     font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
     // text-shadow: 2px 1px 1px rgba(black, 0.3),
     //              2px 1.2px 0px var(--black-2),
     //              0px 1px 1px rgba(white, 0.1);
@@ -18,8 +20,25 @@
 
   .projects-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 75px;
     --offset: 100px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+
+    .project.teaser {
+      max-width: 100%;
+
+      &:nth-child(2n - 1) {
+        top: var(--offset);
+
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+          margin-bottom: var(--offset);
+        }
+      }
+    }
   }
 }

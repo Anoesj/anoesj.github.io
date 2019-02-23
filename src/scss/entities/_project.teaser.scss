@@ -9,15 +9,6 @@ $border-or-outline: outline;
   justify-content: flex-end;
   cursor: pointer;
 
-  &:nth-child(2n - 1) {
-    top: var(--offset);
-
-    &:nth-last-child(1),
-    &:nth-last-child(2) {
-      margin-bottom: var(--offset);
-    }
-  }
-
   .background-wrapper {
     display: block;
     position: absolute;
@@ -83,6 +74,7 @@ $border-or-outline: outline;
       transform-origin: 100% 50%;
       transition: transform var(--speed-fast) cubic-bezier(0.86, 0, 0.07, 1);
       --marker-color: var(--grey-2);
+      background: var(--marker-color);
       // --marker-path: path('M46.83,230.9c24.41,-51.06 455.28,-6.72 465.09,-16.82');
       // --marker-opacity: 1;
       // --marker-smooth: 1;
@@ -94,7 +86,7 @@ $border-or-outline: outline;
       // }
 
       // @supports not (background: paint(marker)) {
-        background: var(--marker-color);
+        // background: var(--marker-color);
       // }
     }
   }

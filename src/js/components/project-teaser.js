@@ -26,15 +26,6 @@ export const projectTeaser = {
                   <h2 class="title">{{ projectData.subtitle }}</h2>
                   <!-- <h3>{{ projectData.title }}</h3> -->
                 </div>
-
-                <div class="roles" v-if="projectData.roles.length">
-                  <h5>Roles</h5>
-                  <ul>
-                    <li v-for="role in projectData.roles">
-                      {{ role }}
-                    </li>
-                  </ul>
-                </div>
               </div>`,
 
   data () {
