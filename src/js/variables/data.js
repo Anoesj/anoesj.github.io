@@ -20,10 +20,10 @@ export const projects = [
     roles: ['band member', 'producer', 'engineer'],
     tasks: ['recording', 'keys', 'editing', 'production', 'mixing', 'mastering'],
     preview: {
-      uri: '../img/projects/lilitheffie.png',
+      uri: '../img/projects/lilitheffie.jpg',
       focusPoint: {
-        x: 39,
-        y: 31,
+        x: 45,
+        y: 11,
       },
     },
   },
@@ -51,7 +51,7 @@ export const projects = [
       uri: '../img/projects/colinwaters.png',
       focusPoint: {
         x: 45,
-        y: 35,
+        y: 20,
       },
     },
   },

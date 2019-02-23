@@ -1,5 +1,6 @@
 import { Vue } from './NodeModules.js';
 
+import { config } from './config.js';
 import { router } from './router.js';
 
 import { navigation } from './components/navigation.js';
@@ -7,6 +8,10 @@ import { projectTeaser } from './components/project-teaser.js';
 import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
 
 (() => {
+  // console.log('%c Anoesj Sadraee portfolio', 'background: linear-gradient(to right, #da4453, #89216b); padding:5px; font-size: 10px; color: #ffffff'),
+  // console.log(`%c→ ${to.path}`, 'background-color: #dee5ec; color: LightSlateGrey; padding: 2px 6px; border-radius: 3px;');
+  // console.log('%c Anoesj Sadraee portfolio', 'background: linear-gradient(to right, #da4453, #89216b); padding:5px; font-size: 10px; color: #ffffff'),
+
   Vue.use(CustomVueExtensions);
 
   Vue.component('navigation', navigation);
@@ -33,10 +38,8 @@ import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
                 </div>`,
     data () {
       return {
-        config: {
-          debug: true, // TODO: temp
-        },
-        transitionDuration: this.$convertCSSDurationToSeconds(this.$getCSSVariable('--transition-duration')),
+        config: config,
+        transitionDuration: this.$convertCSSDurationToSeconds(this.$getCSSVariable('--speed-slow')),
         angle: parseFloat(this.$getCSSVariable('--angle')),
         navigationVisible: false,
         transitionMode: 'out-in',

@@ -1,10 +1,19 @@
 export const projectTeaser = {
+
   props: [
     'projectData',
   ],
 
-  template:  `<div class="project" @click="$emit('show-full', projectData.id)">
-                <div class="background-wrapper">
+  created () {
+    if (this.projectData.preview) {
+      const previewImage = new Image();
+      previewImage.onload = () => this.imageLoaded = true;
+      previewImage.src = this.projectData.preview.uri;
+    }
+  },
+
+  template:  `<div class="project teaser" @click="$emit('show-full', projectData.id)">
+                <div class="background-wrapper" :class="{ 'preview-loading': !imageLoaded }">
                   <img
                     v-if="projectData.preview"
                     :src="projectData.preview.uri"
@@ -31,6 +40,7 @@ export const projectTeaser = {
   data () {
     const { focusPoint } = this.projectData.preview;
     return {
+      imageLoaded: false,
       focusPoint: {
         '--x': `${focusPoint.x}%`,
         '--y': `${focusPoint.y}%`,

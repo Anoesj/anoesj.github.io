@@ -1,5 +1,7 @@
 import { Vue, Router } from './NodeModules.js';
 
+import { config } from './config.js';
+
 import { who } from './routes/who.js';
 import { projectsOverview } from './routes/projects-overview.js';
 import { reachMe } from './routes/reach-me.js';
@@ -49,4 +51,12 @@ export const router = new Router({
 			}
 		}
 	]
+});
+
+router.beforeEach((to, from, next) => {
+	if (config.debug === true) {
+		console.log(`%c→ ${to.path}`, 'background-color: #dee5ec; color: LightSlateGrey; padding: 2px 6px; border-radius: 3px;');
+	}
+
+	next();
 });

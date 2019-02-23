@@ -1,17 +1,12 @@
 .who {
   position: fixed;
-  top: $page-padding;
-  bottom: $page-padding;
-  left: $page-padding;
-  right: $page-padding;
+  top: var(--page-padding);
+  bottom: var(--page-padding);
+  left: var(--page-padding);
+  right: var(--page-padding);
   transition: all 1s ease-out;
   display: flex;
   padding: 2rem;
-
-  > * {
-    // transform: rotate(#{-1 * $angle}deg);
-    transform-origin: center center;
-  }
 
   img {
     max-height: 100%;
@@ -41,16 +36,4 @@
       }
     }
   }
-
-  // &:not(.active) {
-  //   img {
-  //     opacity: 0;
-  //     transform: rotate(#{-5 * $angle}deg) scale(0.8);
-  //   }
-
-  //   .right {
-  //     opacity: 0;
-  //     transform: rotate(#{-1 * $angle}deg) translateX(30px);
-  //   }
-  // }
 }

@@ -1,34 +1,29 @@
 .navigation {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  // z-index: -1;
+  width: 0;
+  height: 0;
 
   > div {
-    position: absolute;
+    position: fixed;
     transform-origin: center center;
     display: block;
-    height: $page-padding;
+    height: var(--page-padding);
     text-align: center;
     z-index: 10;
+    // pointer-events: auto;
     transition: height 1s ease-out,
                 transform 1s ease-out;
 
     &.left {
       top: 50vh;
       left: 0;
-      transform: translate(calc(-50% + #{$page-padding / 2}), -50%) rotate(90deg);
+      transform: translate(calc(-50% + var(--page-padding) / 2), -50%) rotate(90deg);
       width: 100vh;
     }
 
     &.right {
       top: 50vh;
       right: 0;
-      transform: translate(calc(50% - #{$page-padding / 2}), -50%) rotate(-90deg);
+      transform: translate(calc(50% - var(--page-padding) / 2), -50%) rotate(-90deg);
       width: 100vh;
     }
 
@@ -44,53 +39,60 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $grey-1;
+    color: var(--grey-1);
     font-size: 1.75rem;
     text-decoration: none;
     line-height: 1;
-    height: $page-padding;
-
-    // transition: all 1s ease-out,
-    //             color 0.4s;
+    height: var(--page-padding);
+    transition: all 0.4s ease-out;
 
     span.highlight-wrapper {
       flex: 0 0 auto;
       display: block;
-      padding: 11px 20px 7px;
-      // position: relative;
-      --marker-color: #{$black-2};
-      --marker-path: red; // TODO: temp
-      background-image: paint(marker);
+      position: relative;
+      padding: 16px 30px 13px;
+      // --marker-color: var(--black-2);
+      // --marker-path: red; // TODO: temp
+      // background-image: paint(marker);
 
-      // &::before {
-      //   content: '';
-      //   display: block;
-      //   position: absolute;
-      //   top: 0;
-      //   left: 0;
-      //   right: 0;
-      //   bottom: 0;
-      //   z-index: -1;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: var(--black-0);
+        transition: transform var(--speed-fast) $easing-cubic;
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+        // transform: scale(1, 1) rotate(-2deg) skew(-20deg);
 
-      //   // transform: scale(1, 1) rotate(-2deg) skew(-20deg);
+        // @supports (background: paint(marker)) {
+        //   background: paint(marker);
+        // }
 
-      //   // @supports (background: paint(marker)) {
-      //   //   background: paint(marker);
-      //   // }
+        // @supports not (background: paint(marker)) {
+        //   background-color: var(--black-2);
+        // }
+      }
 
-      //   // @supports not (background: paint(marker)) {
-      //   //   background: $black-2;
-      //   // }
-      // }
     }
 
     &:hover,
     &:focus {
-      color: $grey-2;
+      color: var(--grey-2);
     }
 
     &.router-link-active {
-      display: none; // TODO: animatie
+      .highlight-wrapper {
+        &::before {
+          transform: scaleX(1);
+          transform-origin: 0% 50%;
+        }
+      }
     }
   }
 }
