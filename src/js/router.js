@@ -54,6 +54,8 @@ export const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
+	document.body.dataset.page = to.meta.bodyClass;
+
 	if (config.debug === true) {
 		console.log(`%c→ ${to.path}`, 'background-color: #dee5ec; color: LightSlateGrey; padding: 2px 6px; border-radius: 3px;');
 	}

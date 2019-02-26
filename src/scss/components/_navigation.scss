@@ -5,26 +5,30 @@
   > div {
     position: fixed;
     transform-origin: center center;
-    display: block;
     height: var(--page-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     z-index: 10;
-    // pointer-events: auto;
+    pointer-events: none;
     transition: height 1s ease-out,
                 transform 1s ease-out;
 
-    &.left {
+    &.left,
+    &.right {
       top: 50vh;
-      left: 0;
-      transform: translate(calc(-50% + var(--page-padding) / 2), -50%) rotate(90deg);
       width: 100vh;
     }
 
+    &.left {
+      left: 0;
+      transform: translate(calc(-50% + var(--page-padding) / 2), -50%) rotate(90deg);
+    }
+
     &.right {
-      top: 50vh;
       right: 0;
       transform: translate(calc(50% - var(--page-padding) / 2), -50%) rotate(-90deg);
-      width: 100vh;
     }
 
     &.bottom {
@@ -43,8 +47,8 @@
     font-size: 1.75rem;
     text-decoration: none;
     line-height: 1;
-    height: var(--page-padding);
-    transition: all 0.4s ease-out;
+    transition: color 0.4s ease-out;
+    pointer-events: auto;
 
     span.highlight-wrapper {
       flex: 0 0 auto;

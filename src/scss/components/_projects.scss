@@ -1,10 +1,10 @@
 .projects {
-  $spacing: 2rem;
+  --project-overview-width: calc(100% - var(--page-padding) * 2);
   position: relative;
   padding: var(--page-padding) 0;
-  width: calc(100% - var(--page-padding) * 2);
+  width: var(--project-overview-width);
   left: var(--page-padding);
-  transition: all 1s ease-out;
+  // transition: all 1s ease-out; // NOTE: was voor transition bij veranderingen --page-padding. kan zonder 'all'.
 
   > h1 {
     position: absolute;
@@ -19,26 +19,71 @@
   }
 
   .projects-wrapper {
+    $debug: true;
+    $project-teaser-width: 400px;
+    $project-teaser-gap: 75px;
+    // Op de onderstaande breedte zou de minmax functie moeten switchen naar 1 item per rij.
+    // In die situatie willen we een paar dingen anders stylen.
+    $projects-overview-width-to-break-at: 2 * $project-teaser-width + $project-teaser-gap;
+    $projects-overview-grid-breakpoint: 2 * $page-padding + $projects-overview-width-to-break-at;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 75px;
+    grid-template-columns: 1fr;
+    direction: rtl; // FIXME: bij oneven aantal komt het laatste item op de verkeerde plek terecht
+    gap: $project-teaser-gap;
+    position: relative;
     --offset: 100px;
 
-    @media screen and (max-width: 800px) {
-      grid-template-columns: 1fr;
+    // NOTE: for testing purposes
+    @if $debug == true {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: $projects-overview-width-to-break-at;
+        height: 100%;
+        outline: 2px solid red;
+      }
     }
 
     .project.teaser {
       max-width: 100%;
+      // direction: ltr;
+      // FIXME: zet animation om naar GSAP
+      // animation: slide-in var(--speed-fast) $easing-cubic calc((var(--nth) - 1) * var(--speed-fast) / 2);
+      // transform-origin: 0% 50%;
+    }
 
-      &:nth-child(2n - 1) {
-        top: var(--offset);
+    @media screen and (min-width: $projects-overview-grid-breakpoint) {
+      grid-template-columns: repeat(auto-fit, minmax(#{$project-teaser-width}, 1fr));
 
-        &:nth-last-child(1),
-        &:nth-last-child(2) {
-          margin-bottom: var(--offset);
+      @if $debug == true {
+        &::before {
+          outline-color: blue;
+        }
+      }
+
+      .project.teaser {
+        &:nth-child(even) {
+          // TODO: bij nog bredere schermen heb je 3 items per rij.. hoe pakken we dit aan?
+          top: var(--offset);
+
+          &:nth-last-child(1),
+          &:nth-last-child(2) {
+            margin-bottom: var(--offset);
+          }
         }
       }
     }
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: none;
   }
 }

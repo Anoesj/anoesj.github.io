@@ -1,5 +1,19 @@
 export const projects = [
   {
+    id: 'they-made-me-kill-you',
+    title: 'They Made Me Kill You (ft. Stella Polaris)',
+    subtitle: 'Shiruwan',
+    roles: ['project owner', 'songwriter', 'producer', 'engineer'],
+    tasks: ['recording', 'keys', 'editing', 'production', 'mixing', 'mastering'],
+    preview: {
+      uri: '../img/projects/shiruwan.png',
+      focusPoint: {
+        x: 50,
+        y: 60,
+      },
+    },
+  },
+  {
     id: 'alleen',
     title: 'Alleen',
     subtitle: 'A Mili',
@@ -24,20 +38,6 @@ export const projects = [
       focusPoint: {
         x: 45,
         y: 11,
-      },
-    },
-  },
-  {
-    id: 'they-made-me-kill-you',
-    title: 'They Made Me Kill You (ft. Stella Polaris)',
-    subtitle: 'Shiruwan',
-    roles: ['project owner', 'songwriter', 'producer', 'engineer'],
-    tasks: ['recording', 'keys', 'editing', 'production', 'mixing', 'mastering'],
-    preview: {
-      uri: '../img/projects/shiruwan.png',
-      focusPoint: {
-        x: 50,
-        y: 60,
       },
     },
   },

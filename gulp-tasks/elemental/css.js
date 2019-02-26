@@ -6,7 +6,9 @@ const gulp = require('gulp'),
 gulp.task('css', function () {
   return gulp.src(global.paths.scss)
     .pipe(sassGlob())
-    .pipe(sass())
+    .pipe(sass({
+      outputStyle: 'expanded',
+    }))
     .on('error', function (err) {
       console.log(err.toString());
       this.emit('end');

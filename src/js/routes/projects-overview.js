@@ -16,9 +16,10 @@ export const projectsOverview = {
 
                 <div class="projects-wrapper">
                   <project-teaser
-                    v-for="project in projects"
+                    v-for="(project, i) in projects"
                     :key="project.id"
                     :projectData="project"
+                    :style="{ '--nth': i + 1 }"
                     @show-full="showFullProject"
                   />
                 </div>
