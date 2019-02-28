@@ -6,8 +6,7 @@
   left: var(--page-padding);
   // transition: all 1s ease-out; // NOTE: was voor transition bij veranderingen --page-padding. kan zonder 'all'.
 
-  > h1 {
-    position: absolute;
+  h1 {
     color: var(--black-0);
     letter-spacing: 0.2ch;
     font-weight: bold;
@@ -19,7 +18,7 @@
   }
 
   .projects-wrapper {
-    $debug: true;
+    $debug: false;
     $project-teaser-width: 400px;
     $project-teaser-gap: 75px;
     // Op de onderstaande breedte zou de minmax functie moeten switchen naar 1 item per rij.
@@ -28,14 +27,13 @@
     $projects-overview-grid-breakpoint: 2 * $page-padding + $projects-overview-width-to-break-at;
     display: grid;
     grid-template-columns: 1fr;
-    direction: rtl; // FIXME: bij oneven aantal komt het laatste item op de verkeerde plek terecht
     gap: $project-teaser-gap;
     position: relative;
-    --offset: 100px;
+    --offset: -200px;
 
     // NOTE: for testing purposes
     @if $debug == true {
-      &::before {
+      &::after {
         content: '';
         position: absolute;
         top: 0;
@@ -44,12 +42,12 @@
         width: $projects-overview-width-to-break-at;
         height: 100%;
         outline: 2px solid red;
+        pointer-events: none;
       }
     }
 
     .project.teaser {
       max-width: 100%;
-      // direction: ltr;
       // FIXME: zet animation om naar GSAP
       // animation: slide-in var(--speed-fast) $easing-cubic calc((var(--nth) - 1) * var(--speed-fast) / 2);
       // transform-origin: 0% 50%;
@@ -59,13 +57,13 @@
       grid-template-columns: repeat(auto-fit, minmax(#{$project-teaser-width}, 1fr));
 
       @if $debug == true {
-        &::before {
+        &::after {
           outline-color: blue;
         }
       }
 
       .project.teaser {
-        &:nth-child(even) {
+        &:nth-of-type(even) {
           // TODO: bij nog bredere schermen heb je 3 items per rij.. hoe pakken we dit aan?
           top: var(--offset);
 

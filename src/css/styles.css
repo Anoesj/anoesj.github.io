@@ -204,8 +204,7 @@ h5 {
   left: var(--page-padding);
 }
 
-.projects > h1 {
-  position: absolute;
+.projects h1 {
   color: var(--black-0);
   letter-spacing: 0.2ch;
   font-weight: bold;
@@ -216,21 +215,9 @@ h5 {
 .projects .projects-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  direction: rtl;
   gap: 75px;
   position: relative;
-  --offset: 100px;
-}
-
-.projects .projects-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 875px;
-  height: 100%;
-  outline: 2px solid red;
+  --offset: -200px;
 }
 
 .projects .projects-wrapper .project.teaser {
@@ -241,13 +228,10 @@ h5 {
   .projects .projects-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
-  .projects .projects-wrapper::before {
-    outline-color: blue;
-  }
-  .projects .projects-wrapper .project.teaser:nth-child(even) {
+  .projects .projects-wrapper .project.teaser:nth-of-type(even) {
     top: var(--offset);
   }
-  .projects .projects-wrapper .project.teaser:nth-child(even):nth-last-child(1), .projects .projects-wrapper .project.teaser:nth-child(even):nth-last-child(2) {
+  .projects .projects-wrapper .project.teaser:nth-of-type(even):nth-last-child(1), .projects .projects-wrapper .project.teaser:nth-of-type(even):nth-last-child(2) {
     margin-bottom: var(--offset);
   }
 }
@@ -307,8 +291,8 @@ h5 {
 }
 
 .project.teaser {
-  position: relative;
   height: 300px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

@@ -9,11 +9,11 @@ export const who = {
                 <img src="/img/me.jpg" class="me" ref="me">
                 <div class="right" ref="text">
                   <h1>Hi, I'm Anoesj</h1>
-                  <div v-if="false" class="whatever-i-am-wrapper">
+                  <!--<div class="whatever-i-am-wrapper">
                     <transition mode="out-in" name="slide">
                       <h3 :key="currentWhateverIAmIndex">{{ whateverIAms[currentWhateverIAmIndex] }}</h3>
                     </transition>
-                  </div>
+                  </div>-->
                 </div>
               </section>`,
 
@@ -24,10 +24,11 @@ export const who = {
       if (initial === true) this.$emit('showNavigation', true);
 
       done();
-      this.startInterval();
+      // this.startInterval();
     },
 
     async animateOut (el, done) {
+      // clearInterval(this.setInterval);
       await this.animation(this.$root.transitionDuration/3, true);
       done();
     },
@@ -110,13 +111,6 @@ export const who = {
       whateverIAms: whateverIAms,
       whateverIAmsAmount: whateverIAms.length,
     };
-  },
-
-  // mounted () {
-  // },
-
-  beforeDestroy () {
-    clearInterval(this.setInterval);
   },
 
 };
