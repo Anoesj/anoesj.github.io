@@ -1,9 +1,16 @@
 {
+  "name": "anoesjsadraee.com",
+  "version": "0.0.1",
+  "private": true,
   "browserslist": [
-    "last 1 versions",
+    "last 2 versions",
     "> 1%",
     "not dead"
   ],
+  "scripts": {
+    "build": "pnpx gulp compile",
+    "serve": "pnpx gulp serve"
+  },
   "devDependencies": {
     "browser-sync": "^2.24.6",
     "gulp": "^4.0.0",
