@@ -1,6 +1,9 @@
-import Vue from '/node_modules/vue/dist/vue.esm.browser.js';
-import Router from '/node_modules/vue-router/dist/vue-router.esm.js';
-import * as GSAP from '/node_modules/gsap/index.js';
+import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js';
+import Router from 'https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.esm.js';
+import * as GSAP from 'https://cdn.jsdelivr.net/npm/gsap@2.1.0/index.js';
+// import Vue from '/node_modules/vue/dist/vue.esm.browser.js';
+// import Router from '/node_modules/vue-router/dist/vue-router.esm.js';
+// import * as GSAP from '/node_modules/gsap/index.js';
 
 /** --------------------------------------------------------------
   * Gebruik dit bestand om modules te importeren die eigenlijk in
