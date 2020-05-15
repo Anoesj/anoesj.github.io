@@ -9,9 +9,11 @@ html, body {
   padding: 0;
 }
 
+@font-face {font-family: "Alcubierre"; src: url("//db.onlinewebfonts.com/t/d08a067b981040590322dd2495d05893.eot"); src: url("//db.onlinewebfonts.com/t/d08a067b981040590322dd2495d05893.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d08a067b981040590322dd2495d05893.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d08a067b981040590322dd2495d05893.woff") format("woff"), url("//db.onlinewebfonts.com/t/d08a067b981040590322dd2495d05893.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d08a067b981040590322dd2495d05893.svg#Alcubierre") format("svg"); }
+
 body {
   font-size: 1.8rem;
-  font-family: Alcubierre;
+  font-family: Alcubierre, Lato, Helvetica, Arial, sans-serif;
   letter-spacing: 0.075ch;
   // font-weight: 700;
   // font-family: 'DK Sirius B';
