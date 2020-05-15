@@ -48,7 +48,8 @@ import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
 
     methods: {
       showNavigation () {
-        this.navigationVisible = true;
+        // TODO: Temporarily turned this off
+        // this.navigationVisible = true;
       },
 
       async animateIn (el, done) {
