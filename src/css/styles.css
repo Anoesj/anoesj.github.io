@@ -26,11 +26,12 @@ html, body {
 
 body {
   font-size: 1.5rem;
-  font-family: Alcubierre;
-  letter-spacing: 0.1ch;
+  font-family: josefin-sans, sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.015ch;
   line-height: 1.5;
   background-color: var(--black-1);
-  color: var(--grey-1);
+  color: var(--grey-2);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
