@@ -7,7 +7,7 @@
   --grey-2:               #dce3e7;
   --purple:               #9e017c;
   --page-padding:         130px;
-  --angle:                -2.4deg;
+  --angle:                -1.8deg;
   --speed-slow:           2s;
   --speed-medium:         1s;
   --speed-fast:           0.4s;
@@ -25,7 +25,7 @@ html, body {
 }
 
 body {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-family: josefin-sans, sans-serif;
   font-weight: 300;
   letter-spacing: -0.015ch;
