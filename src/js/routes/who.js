@@ -8,11 +8,11 @@ export const who = {
   template:  `<section class="who">
                 <img src="/img/me.jpg" class="me" ref="me">
                 <div class="right" ref="text">
-                  <h1>Hey, I'm Anoesj</h1>
-                  <p>Web developer, electronic musician, digital explorer... Whatever you want to call it, it's usually something with sound, programming, or both!</p>
-                  <p>Traditionally, this is where I should write about the companies I've worked for – and I will – but first let me tell you why I think that's not super important.</p>
-                  <p>I believe in explorers, not in people with a smooth talk or big credits (a million dollar smile?). Who you've worked for doesn't define you, it's what you make (do?) and how you've got there that's interesting.<br/>
-                  I try to be that explorer as often as I can. I'm the type of person who likes a challenge, who wants to push limits and think big. Sometimes that means I have to scale down my ideas and look at the practical side. I will always try to think ahead, find creative new ways to solve a problem.</p>
+                  <h1>Hey, I’m Anoesj</h1>
+                  <p>Web developer, electronic musician, digital explorer... Whatever you want to call it, it’s usually something with sound, programming, or both!</p>
+                  <p>Traditionally, this is where I should write about the companies I’ve worked for – and I will – but first let me tell you why I think that’s not super important.</p>
+                  <p>I believe in explorers, not in people with a smooth talk or big credits (a million dollar smile?). Who you’ve worked for doesn’t define you, it’s what you make (do?) and how you’ve got there that’s interesting.<br/>
+                  I try to be that explorer as often as I can. I’m the type of person who likes a challenge, who wants to push limits and think big. Sometimes that means I have to scale down my ideas and look at the practical side. I will always try to think ahead, find creative new ways to solve a problem.</p>
 
                   <p>Working with passionate people energizes me. I believe in giving people the space to do what they do best, not restrain people.</p>
 
