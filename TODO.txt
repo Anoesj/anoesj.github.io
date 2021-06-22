@@ -1,3 +1,7 @@
+afmaken vite migratie
+
+
+
 Inspiratie:
 https://spektrummedia.com/en/portfolio
 https://patrickheng.com/

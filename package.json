@@ -1,29 +1,21 @@
 {
-  "name": "anoesjsadraee.com",
-  "version": "0.0.1",
-  "private": true,
-  "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "not dead"
-  ],
+  "version": "0.0.0",
   "scripts": {
-    "build": "pnpx gulp compile",
-    "serve": "pnpx gulp serve"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.24.6",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-sass": "^4.1.0",
-    "gulp-sass-glob": "^1.0.9",
-    "path": "^0.12.7",
-    "require-dir": "^1.0.0"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
-    "gsap": "^2.1.0",
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.6"
+    "gsap": "^3.7.0",
+    "sass": "^1.35.1",
+    "vue": "^3.1.1",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "^3.1.1",
+    "typescript": "^4.3.4",
+    "vite": "^2.3.8",
+    "vue-tsc": "^0.0.24"
   }
 }
