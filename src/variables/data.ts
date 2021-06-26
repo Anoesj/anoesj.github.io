@@ -1,4 +1,20 @@
-export const projects = [
+export type Project = {
+  id: string;
+  title: string;
+  subtitle: string;
+  roles: string[];
+  tasks: string[];
+  /** URI and focuspoint of a preview image for the project */
+  preview: {
+    uri: string;
+    focusPoint: {
+      x: number;
+      y: number;
+    };
+  };
+};
+
+export const projects : Project[] = [
   {
     id: 'they-made-me-kill-you',
     title: 'They Made Me Kill You (ft. Stella Polaris)',

@@ -1,16 +1,24 @@
-export const CustomVueExtensions = {
+import { Plugin } from 'vue';
 
-  install: function (Vue, options) {
+// declare module '@vue/runtime-core' {
+//   export interface ComponentCustomProperties {
+//     $log: string
+//   }
+// }
+
+export const CustomVueExtensions : Plugin = {
+
+  install (app) {
 
     // Installeer een global mixin 'log'
     // Elke component met static properties 'debugTag' (string) en 'debugColor' (CSS kleurcode/-naam) kan op
     // deze manier makkelijk debuggen. Logjes verschijnen alleen als $root.debug === true.
-    Vue.mixin({
+    app.mixin({
       methods: {
         // de vm.$log() functie kan overal gebruikt worden om alleen te loggen als debug modus aanstaat
         // en de logjes te taggen en een kleurtje te geven.
-        $log: function (...args) {
-          if (this.$root.config.debug === true && ('debugTag' in this.$options) && ('debugColor' in this.$options)) {
+        $log (...args: any[]) {
+          if (import.meta.env.DEV === true && ('debugTag' in this.$options) && ('debugColor' in this.$options)) {
             const messages = [`%c[${this.$options.debugTag}]`];
 
             for (const [delta, partOfLog] of args.entries()) {
@@ -37,21 +45,31 @@ export const CustomVueExtensions = {
       }
     });
 
-    Vue.prototype.$wait = ms => {
+    app.config.globalProperties.$wait = (ms: number) => {
       return new Promise(async resolve => {
-        await setTimeout(resolve, ms);
+        setTimeout(resolve, ms);
       });
     };
 
-    Vue.prototype.$cloneObject = object => {
+    app.config.globalProperties.$cloneObject = (object: any) => {
       if (object === undefined) return undefined;
       else if (object === null) return null;
       return JSON.parse(JSON.stringify(Object.assign({}, object)));
     };
 
-    Vue.prototype.$getCSSVariable = varName => window.getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+    const getCSSVariable = (varName: string) => {
+      return window.getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+    };
 
-    Vue.prototype.$convertCSSDurationToSeconds = duration => parseFloat(duration) / ((duration.includes('ms') ? 1000 : 1));
+    const convertCSSDurationToSeconds = (duration: string) => {
+      return parseFloat(duration) / ((duration.includes('ms') ? 1000 : 1));
+    };
+
+    app.config.globalProperties.$getCSSVariable = getCSSVariable;
+    app.config.globalProperties.$convertCSSDurationToSeconds = convertCSSDurationToSeconds;
+
+    app.config.globalProperties.$transitionDuration = convertCSSDurationToSeconds(getCSSVariable('--speed-slow')) as number;
+    app.config.globalProperties.$angle = parseFloat(getCSSVariable('--angle'));
 
   },
 

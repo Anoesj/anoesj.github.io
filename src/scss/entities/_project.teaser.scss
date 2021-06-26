@@ -8,6 +8,7 @@ $border-or-outline: outline;
   flex-direction: column;
   justify-content: flex-end;
   cursor: pointer;
+  // perspective: 4px;
 
   .background-wrapper {
     display: block;
@@ -106,7 +107,7 @@ $border-or-outline: outline;
   &:hover,
   &:focus {
     .background-wrapper {
-      transform: scale(0.95);
+      transform: scale(0.95); //  var(--follow-mouse-transform)
       #{$border-or-outline}-width: 15px;
 
       img {

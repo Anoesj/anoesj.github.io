@@ -48,6 +48,31 @@
 
     .project.teaser {
       max-width: 100%;
+
+      // &:hover,
+      // &:focus-within {
+      //   // scale, skew, ???, rotate or something
+      //   // transform: matrix3d(
+      //   //   1, 0, 0, calc(-0.0003 + var(--mouse-x) * 0.0006),
+      //   //   0.1, 1, 0, calc(-0.0003 + var(--mouse-y) * 0.0006),
+      //   //   0, 0, 1, 0,
+      //   //   0, 0, 0, 1
+      //   // );
+      //   // transform: rotateY(calc(-0.07deg + var(--mouse-x) * 0.14deg))
+      //   //            rotateX(calc(-0.07deg + var(--mouse-y) * 0.14deg));
+
+      //   // matrix3d(
+      //   //   1, 0, 0, 0,
+      //   //   0, 1, 0, 0,
+      //   //   0, 0, 1, 0,
+      //   //   0, 0, 0, 1
+      //   // )
+      // }
+
+      // &.delayed-hover {
+      //   transition-duration: var(--speed-fast);
+      // }
+
       // FIXME: zet animation om naar GSAP
       // animation: slide-in var(--speed-fast) $easing-cubic calc((var(--nth) - 1) * var(--speed-fast) / 2);
       // transform-origin: 0% 50%;

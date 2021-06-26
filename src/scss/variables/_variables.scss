@@ -5,8 +5,9 @@ $black-3: #7b7b7b;
 $grey-1: #99a1a6;
 $grey-2: #dce3e7;
 $purple: #9e017c;
+$blue: mix(#0081a8, #06417b, 60%);
 
-$page-padding: 130px;
+$page-padding: 100px;
 
 $angle: -1.8deg;
 
@@ -24,6 +25,7 @@ $easing-cubic: cubic-bezier(0.46, 0.02, 0.37, 1);
   --grey-1:               #{$grey-1};
   --grey-2:               #{$grey-2};
   --purple:               #{$purple};
+  --blue:                 #{$blue};
   --page-padding:         #{$page-padding};
   --angle:                #{$angle}; // wordt gebruikt in JS
   --speed-slow:           #{$speed-slow};
