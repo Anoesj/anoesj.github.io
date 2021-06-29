@@ -1,39 +1,111 @@
 .who {
   position: fixed;
-  top: var(--page-padding);
-  bottom: var(--page-padding);
-  left: var(--page-padding);
-  right: var(--page-padding);
-  // transition: all 1s ease-out; // NOTE: was voor transition bij veranderingen --page-padding. kan zonder 'all'.
-  display: flex;
-  padding: 2rem;
+  inset: 0;
+  padding: calc(var(--page-padding) + 2rem);
+  padding-top: var(--page-padding);
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow-y: auto;
+  // transition: padding 1s ease-out;
 
-  img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
+  &::after {
+    content: "";
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, $black-1, 70%, transparent);
+    user-select: none;
+    pointer-events: none;
   }
 
-  h1 {
-    margin-top: 5%;
-    margin-left: -20%;
-    color: $grey-2;
-  }
+  .who__row {
+    flex: 0 0 auto;
+    width: 100%;
 
-  .right {
-    .whatever-i-am-wrapper {
-      margin-top: 5%;
-      margin-left: 10%;
-      position: relative;
-      // overflow: hidden;
+    // + .who__row {
+    //   padding-top: 8vmin;
+    // }
 
-      h3 {
-        display: inline-block;
-        // position: absolute;
-        width: auto;
-        padding: 10px;
-        background-color: $black-0;
+    &--contains-intro {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+      height: 60vh;
+      max-height: calc(90vh - 2 * var(--page-padding));
+
+      .who__left {
+        flex: 0 0 auto;
+        height: 100%;
+        max-height: 340px;
+        aspect-ratio: 1 / 1;
+        // width: clamp(260px, calc(75vmin - 2 * var(--page-padding)), 453.3333333333px);
+        border-radius: 1.5%;
+        overflow: hidden;
+
+        img {
+          object-fit: cover;
+          object-position: 50% 0%;
+          width: 100%;
+          max-height: 100%;
+          filter: brightness(103%) contrast(92%) saturate(130%) hue-rotate(6deg);
+          // filter: brightness(95%) contrast(102%) sepia(6%) saturate(120%);
+          // filter: grayscale(2%) contrast(78%) brightness(115%) hue-rotate(24deg);
+          // filter: grayscale(100%) brightness(80%) contrast(70%) sepia(20%) brightness(50%) hue-rotate(20deg);
+        }
       }
+
+      .who__right {
+        flex: 1 1 auto;
+        width: auto;
+        position: relative;
+        margin-left: -6%;
+        text-shadow: 0.07em 0.07em 0px rgba($black-1, 0.75);
+
+        h1 {
+          color: $grey-2;
+          // margin-top: 5%;
+        }
+
+        .things-i-am-wrapper {
+          margin-top: 0.6%;
+          margin-left: 24%;
+          position: relative;
+          // overflow: hidden;
+
+          h3 {
+            display: inline-block;
+            // position: absolute;
+            width: auto;
+            font-weight: 400;
+            font-size: 2.5rem;
+            // padding: 10px;
+            // background-color: $black-0;
+          }
+        }
+      }
+    }
+
+    &--contains-text {
+      p {
+        max-width: 46ch;
+      }
+    }
+  }
+
+  // .who__left {
+  // }
+
+  .who__right {
+    p {
+      margin-block: 1.5em;
+      padding-left: 0.23ch;
     }
   }
 }

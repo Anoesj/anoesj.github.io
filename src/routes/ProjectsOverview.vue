@@ -42,6 +42,10 @@
       ProjectTeaser,
     },
 
+    inject: [
+      'transitionDuration',
+    ],
+
     data () {
       return {
         // TODO: use 'provide' for full/teaser views?
@@ -51,7 +55,7 @@
 
     methods: {
       async animateIn (el, done, initial = false) {
-        await this.animation(this.$transitionDuration/2);
+        await this.animation(this.transitionDuration/2);
 
         if (initial === true) this.$emit('showNavigation', true);
         done();

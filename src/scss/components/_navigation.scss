@@ -1,6 +1,8 @@
 .navigation {
   width: 0;
   height: 0;
+  position: relative;
+  z-index: 20;
 
   > div {
     position: fixed;
@@ -80,7 +82,7 @@
       }
 
       &::after {
-        background-color: var(--blue);
+        background-color: var(--black-0);
         transition: transform var(--speed-fast) $easing-cubic;
         transform-origin: 100% 50%;
         transform: scaleX(0);

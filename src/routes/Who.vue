@@ -1,8 +1,29 @@
 <template>
   <section class="who">
-    <img src="/img/me.jpg" class="me" ref="me"/>
-    <div class="right" ref="text">
-      <h1>Hey, I’m Anoesj</h1>
+    <div class="who__row who__row--contains-intro">
+      <div class="who__left" ref="me">
+        <img src="/img/me_2020.jpg" class="me"/>
+      </div>
+
+      <div class="who__right" ref="text">
+        <h1>Hey! I’m Anoesj</h1>
+        <div class="things-i-am-wrapper">
+          <h3>
+            <vue-typer
+              :text="thingsIAm"
+              :preTypeDelay="preTypeDelay"
+              :typeDelay="70"
+              :preEraseDelay="3000"
+              :eraseDelay="40"
+              eraseStyle="backspace"
+              caretAnimation="phase"
+            />
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="who__row who__row--contains-text">
       <p>Web developer, electronic musician, digital explorer... Whatever you want to call it, it’s usually something with sound, programming, or both!</p>
       <p>Traditionally, this is where I should write about the companies I’ve worked for – and I will – but first let me tell you why I think that’s not super important.</p>
       <p>I believe in explorers, not in people with a smooth talk or big credits (a million dollar smile?). Who you’ve worked for doesn’t define you, it’s what you make (do?) and how you’ve got there that’s interesting.<br/>
@@ -48,54 +69,62 @@
         <li>(Porsche)</li>
         <li>(McDonalds)</li>
       </ul>
-      <!--<div class="whatever-i-am-wrapper">
-        <transition mode="out-in" name="slide">
-          <h3 :key="currentWhateverIAmIndex">{{ whateverIAms[currentWhateverIAmIndex] }}</h3>
-        </transition>
-      </div>-->
     </div>
   </section>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref } from 'vue';
   import { gsap, Power2, Power3, Power4 } from 'gsap/all';
+  import { VueTyper } from '../plugins/vue-typer';
 
   export default defineComponent({
 
     debugTag: 'who',
     debugColor: 'green',
 
-    data () {
-      const whateverIAms = [
-        'I compose music for bands, artists',
-        'je moeder',
-        'je vader',
-        'je dikke oma',
+    components: {
+      VueTyper,
+    },
+
+    inject: [
+      'transitionDuration',
+      'angle',
+      'wait',
+    ],
+
+    setup () {
+      const thingsIAm = [
+        'Full-stack Web Developer.',
+        'Critical thinker.',
+        'Calm and professional.',
+        // 'An Electronic Music Producer',
       ];
 
+      let preTypeDelay = ref<number>(1200);
+
       return {
-        currentWhateverIAmIndex: -1,
-        interval: 2500,
-        setIntervalInstance: null,
-        whateverIAms: whateverIAms,
-        whateverIAmsAmount: whateverIAms.length,
+        thingsIAm,
+        preTypeDelay,
       };
     },
 
     methods: {
       async animateIn (el, done, initial = false) {
-        await this.animation(this.$transitionDuration/2);
+        await this.animation(this.transitionDuration/2);
 
-        if (initial === true) this.$emit('showNavigation', true);
+        if (initial === true) {
+          const prevPreTypeDelay = this.preTypeDelay;
+          this.preTypeDelay = 350;
+          await this.wait(prevPreTypeDelay - 200);
+          this.$emit('showNavigation', true);
+        }
 
         done();
-        // this.startInterval();
       },
 
       async animateOut (el, done) {
-        // clearInterval(this.setInterval);
-        await this.animation(this.$transitionDuration/3, true);
+        await this.animation(this.transitionDuration/3, true);
         done();
       },
 
@@ -107,7 +136,7 @@
           text: HTMLElement;
         } = this.$refs;
 
-        const angle = this.$angle as number;
+        const angle = this.angle as number;
 
         tl.fromTo(me,
           {
@@ -164,15 +193,6 @@
             tl.play();
           }
         });
-      },
-
-      startInterval () {
-        this.switchActiveWhateverIAm();
-        this.setIntervalInstance = setInterval(this.switchActiveWhateverIAm, this.interval);
-      },
-
-      switchActiveWhateverIAm () {
-        this.currentWhateverIAmIndex = (this.currentWhateverIAmIndex === this.whateverIAmsAmount - 1) ? 0 : this.currentWhateverIAmIndex + 1;
       },
     },
 

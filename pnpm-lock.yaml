@@ -1,9 +1,10 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@vitejs/plugin-vue': ^1.2.3
+  '@vitejs/plugin-vue': ^1.2.4
   '@vue/compiler-sfc': ^3.1.2
-  gsap: ^3.7.0
+  gsap: file:src/misc/gsap-member/npm-install-this/gsap-bonus.tgz
+  lodash.split: ^4.4.2
   sass: ^1.35.1
   typescript: ^4.3.4
   vite: ^2.3.8
@@ -12,13 +13,14 @@ specifiers:
   vue-tsc: ^0.2.0
 
 dependencies:
-  gsap: 3.7.0
+  gsap: file:src/misc/gsap-member/npm-install-this/gsap-bonus.tgz
+  lodash.split: 4.4.2
   sass: 1.35.1
   vue: 3.1.2
   vue-router: 4.0.10_vue@3.1.2
 
 devDependencies:
-  '@vitejs/plugin-vue': 1.2.3_@vue+compiler-sfc@3.1.2
+  '@vitejs/plugin-vue': 1.2.4_@vue+compiler-sfc@3.1.2
   '@vue/compiler-sfc': 3.1.2_vue@3.1.2
   typescript: 4.3.4
   vite: 2.3.8
@@ -184,8 +186,8 @@ packages:
     resolution: {integrity: sha512-LfZwXoGUDo0C3me81HXgkBg5CTQYb6xzEl+fNmbO4JdRiSKQ8A0GD1OBBvKAIsbCUgoyAty7m99GqqMQe784ew==}
     dev: true
 
-  /@types/node/15.12.4:
-    resolution: {integrity: sha512-zrNj1+yqYF4WskCMOHwN+w9iuD12+dGm0rQ35HLl9/Ouuq52cEtd0CH9qMgrdNmi5ejC1/V7vKEXYubB+65DkA==}
+  /@types/node/15.12.5:
+    resolution: {integrity: sha512-se3yX7UHv5Bscf8f1ERKvQOD6sTyycH3hdaoozvaLxgUiY5lIGEeH37AD0G0Qi9kPqihPn0HOfd2yaIEN9VwEg==}
     dev: true
 
   /@types/unist/2.0.3:
@@ -202,13 +204,13 @@ packages:
   /@types/vfile/3.0.2:
     resolution: {integrity: sha512-b3nLFGaGkJ9rzOcuXRfHkZMdjsawuDD0ENL9fzTophtBg8FJHSGbH7daXkEpcwy3v7Xol3pAvsmlYyFhR4pqJw==}
     dependencies:
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
       '@types/unist': 2.0.3
       '@types/vfile-message': 2.0.0
     dev: true
 
-  /@vitejs/plugin-vue/1.2.3_@vue+compiler-sfc@3.1.2:
-    resolution: {integrity: sha512-LlnLpObkGKZ+b7dcpL4T24l13nPSHLjo+6Oc7MbZiKz5PMAUzADfNJ3EKfYIQ0l0969nxf2jp/9vsfnuJ7h6fw==}
+  /@vitejs/plugin-vue/1.2.4_@vue+compiler-sfc@3.1.2:
+    resolution: {integrity: sha512-D/3H9plevPQGgQGwmV6eecvOnooLTecPR63HPffVVWPEhbfvmtYLWgznzs456NBb2DItiRTCIa1yWxvGqC+I8A==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
@@ -298,8 +300,8 @@ packages:
       '@vue/shared': 3.1.2
     dev: true
 
-  /@vue/devtools-api/6.0.0-beta.14:
-    resolution: {integrity: sha512-44fPrrN1cqcs6bFkT0C+yxTM6PZXLbR+ESh1U1j8UD22yO04gXvxH62HApMjLbS3WqJO/iCNC+CYT+evPQh2EQ==}
+  /@vue/devtools-api/6.0.0-beta.15:
+    resolution: {integrity: sha512-quBx4Jjpexo6KDiNUGFr/zF/2A4srKM9S9v2uHgMXSU//hjgq1eGzqkIFql8T9gfX5ZaVOUzYBP3jIdIR3PKIA==}
     dev: false
 
   /@vue/reactivity/3.1.2:
@@ -783,8 +785,8 @@ packages:
       es6-promise: 4.2.8
     dev: true
 
-  /esbuild/0.12.9:
-    resolution: {integrity: sha512-MWRhAbMOJ9RJygCrt778rz/qNYgA4ZVj6aXnNPxFjs7PmIpb0fuB9Gmg5uWrr6n++XKwwm/RmSz6RR5JL2Ocsw==}
+  /esbuild/0.12.12:
+    resolution: {integrity: sha512-fdB/8HRg9u95Zi4/qV+osrfzpvLzubFKUr8SkZf/kUKImLiX61Y7qBzV14FCKphFk7YoXWY85nbPGkI6pq+Zeg==}
     hasBin: true
     requiresBuild: true
     dev: true
@@ -942,10 +944,6 @@ packages:
   /graceful-fs/4.2.6:
     resolution: {integrity: sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==}
     dev: true
-
-  /gsap/3.7.0:
-    resolution: {integrity: sha512-8JI7pcFj0pgMzwqChARiHf7EIIZp1QrQBP74M2p2NpQLiAeIhQsrJWIRiwmA2JWkkNe0I2BiQF5ZhJvpyJVJDA==}
-    dev: false
 
   /has-flag/3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
@@ -1343,6 +1341,10 @@ packages:
   /lodash.iteratee/4.7.0:
     resolution: {integrity: sha1-vkF32yiajMw8CZDx2ya1si/BVUw=}
     dev: true
+
+  /lodash.split/4.4.2:
+    resolution: {integrity: sha1-p/e9nzeWi5MSQo4vOsP7MXPEw8Y=}
+    dev: false
 
   /loud-rejection/1.6.0:
     resolution: {integrity: sha1-W0b4AUft7leIcPCG0Eghz5mOVR8=}
@@ -1921,8 +1923,8 @@ packages:
       lowercase-keys: 1.0.1
     dev: true
 
-  /rollup/2.52.2:
-    resolution: {integrity: sha512-4RlFC3k2BIHlUsJ9mGd8OO+9Lm2eDF5P7+6DNQOp5sx+7N/1tFM01kELfbxlMX3MxT6owvLB1ln4S3QvvQlbUA==}
+  /rollup/2.52.3:
+    resolution: {integrity: sha512-QF3Sju8Kl2z0osI4unyOLyUudyhOMK6G0AeqJWgfiyigqLAlnNrfBcDWDx+f1cqn+JU2iIYVkDrgQ6/KtwEfrg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -2411,10 +2413,10 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
-      esbuild: 0.12.9
+      esbuild: 0.12.12
       postcss: 8.3.5
       resolve: 1.20.0
-      rollup: 2.52.2
+      rollup: 2.52.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -2424,8 +2426,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /vscode-css-languageservice/5.1.3:
-    resolution: {integrity: sha512-c8xiUhrDBNG6iS92FEE+K3IWOHAqVvzsqjjLSaXHyF5Qdn/6VhUweGNjtZ2CBSfs+Vkmz7pJzLQ7Io1x5deumA==}
+  /vscode-css-languageservice/5.1.4:
+    resolution: {integrity: sha512-fIJZJMXbaBsK0ifBb2RmSiLtzwn6NrZnKn7O+0ziIjwAY+rPvSK9St2qqQXFU3reZVRAt/I4GBp40dC/THcUDA==}
     dependencies:
       vscode-languageserver-textdocument: 1.0.1
       vscode-languageserver-types: 3.16.0
@@ -2444,8 +2446,8 @@ packages:
       vscode-uri: 2.1.2
     dev: true
 
-  /vscode-html-languageservice/4.0.5:
-    resolution: {integrity: sha512-9ZKp7nfR6ObUA+K65GfgDPdOmXaPH8MOWxE2RwWF3tVnVMq2w+COKjDNHMvv+uNxtmaRT7/skls7CD/HzrW99w==}
+  /vscode-html-languageservice/4.0.6:
+    resolution: {integrity: sha512-p1VK0+7JLzBFfbUrENm3QcBNbDzJUVhVnXOxHdC9XmgcubQBUINyzNeYio93srOafjRMQcJmzugB4vfmUnbCQg==}
     dependencies:
       vscode-languageserver-textdocument: 1.0.1
       vscode-languageserver-types: 3.16.0
@@ -2453,8 +2455,8 @@ packages:
       vscode-uri: 3.0.2
     dev: true
 
-  /vscode-json-languageservice/4.1.4:
-    resolution: {integrity: sha512-/UqaE58BVFdePM9l971L6xPRLlCLNk01aovf1Pp9hB/8pytmd2s9ZNEnS1JqYyQEJ1k5/fEBsWOdhQlNo4H7VA==}
+  /vscode-json-languageservice/4.1.5:
+    resolution: {integrity: sha512-oRVPj2UY6BQ8PQ1LIz/FigUEZQVqsB9msNCFlxRBHE9sSEIJkCbYG6aCB2n7WR17VIisYQdO3MDheuoyI48G2w==}
     engines: {npm: '>=7.0.0'}
     dependencies:
       jsonc-parser: 3.0.0
@@ -2552,10 +2554,10 @@ packages:
       prettier: 1.19.1
       request-light: 0.4.0
       upath: 2.0.1
-      vscode-css-languageservice: 5.1.3
+      vscode-css-languageservice: 5.1.4
       vscode-emmet-helper: 2.6.4
-      vscode-html-languageservice: 4.0.5
-      vscode-json-languageservice: 4.1.4
+      vscode-html-languageservice: 4.0.6
+      vscode-json-languageservice: 4.1.5
       vscode-languageserver: 7.1.0-next.5
       vscode-languageserver-textdocument: 1.0.1
       vscode-pug-languageservice: 0.25.22
@@ -2569,7 +2571,7 @@ packages:
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      '@vue/devtools-api': 6.0.0-beta.14
+      '@vue/devtools-api': 6.0.0-beta.15
       vue: 3.1.2
     dev: false
 
@@ -2660,3 +2662,9 @@ packages:
     dependencies:
       camelcase: 4.1.0
     dev: true
+
+  file:src/misc/gsap-member/npm-install-this/gsap-bonus.tgz:
+    resolution: {integrity: sha512-iPqG0KEkzZ/O2Xc9X+dg4+M/o+LpNGWmyRtAfBRH8GQguPpMJQ7qSMPiH6tNr/EZIw+I+dFfGZXQ15PaEG1tHA==, tarball: file:src/misc/gsap-member/npm-install-this/gsap-bonus.tgz}
+    name: gsap
+    version: 3.7.0
+    dev: false

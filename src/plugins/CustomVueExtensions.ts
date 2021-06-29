@@ -45,32 +45,6 @@ export const CustomVueExtensions : Plugin = {
       }
     });
 
-    app.config.globalProperties.$wait = (ms: number) => {
-      return new Promise(async resolve => {
-        setTimeout(resolve, ms);
-      });
-    };
-
-    app.config.globalProperties.$cloneObject = (object: any) => {
-      if (object === undefined) return undefined;
-      else if (object === null) return null;
-      return JSON.parse(JSON.stringify(Object.assign({}, object)));
-    };
-
-    const getCSSVariable = (varName: string) => {
-      return window.getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
-    };
-
-    const convertCSSDurationToSeconds = (duration: string) => {
-      return parseFloat(duration) / ((duration.includes('ms') ? 1000 : 1));
-    };
-
-    app.config.globalProperties.$getCSSVariable = getCSSVariable;
-    app.config.globalProperties.$convertCSSDurationToSeconds = convertCSSDurationToSeconds;
-
-    app.config.globalProperties.$transitionDuration = convertCSSDurationToSeconds(getCSSVariable('--speed-slow')) as number;
-    app.config.globalProperties.$angle = parseFloat(getCSSVariable('--angle'));
-
   },
 
 };
