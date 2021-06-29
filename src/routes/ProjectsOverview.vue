@@ -7,6 +7,7 @@
           :key="project.id"
           :ref="project.id"
           :projectData="project"
+          style="opacity: 0;"
           :style="{ '--nth': i + 1 }"
           @show-full="showFullProject"
         />
@@ -44,6 +45,7 @@
 
     inject: [
       'transitionDuration',
+      'wait',
     ],
 
     data () {
@@ -55,13 +57,14 @@
 
     methods: {
       async animateIn (el, done, initial = false) {
+        await this.wait(150);
         await this.animation(this.transitionDuration/2);
 
         if (initial === true) this.$emit('showNavigation', true);
         done();
       },
 
-      async animation (duration, reverse = false) {
+      async animation (duration: number, reverse = false) {
         const tl = gsap.timeline({
           paused: true, // TODO: timeline blijkt dus wel meteen te starten, dus zorg dat initial styles wel geapplied worden maar geen start
         });
@@ -72,17 +75,17 @@
 
           tl.fromTo(projectTeaser,
             {
-              scale: 0,
-              // opacity: 0,
+              scale: 0.65,
+              opacity: 0,
             },
             {
               duration,
               scale: 1,
-              // opacity: 1,
+              opacity: 1,
               // rotation: this.$root.angle,
-              ease: Power3.easeInOut,
+              ease: 'smooth',
             },
-            duration * i * 0.3,
+            duration * i * 0.15,
           );
           i++;
         }

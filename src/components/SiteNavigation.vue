@@ -17,9 +17,6 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import { gsap, Power3 } from 'gsap';
-  // import { CustomEase } from 'gsap/CustomEase';
-
-  // CustomEase.create('smooth', 'M0,0 C0,0 0.185,0.063 0.244,0.118 0.43,0.292 0.419,0.6 0.542,0.784 0.696,1.014 1,1 1,1');
 
   // if ('paintWorklet' in CSS) {
   //   CSS.paintWorklet.addModule('/js/misc/marker.js');

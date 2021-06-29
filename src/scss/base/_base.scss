@@ -82,6 +82,15 @@ h5 {
   }
 }
 
+@mixin lora {
+  font-family: 'lora';
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.03ch;
+  font-style: italic;
+  line-height: 1.75;
+}
+
 #app {
   position: relative;
 

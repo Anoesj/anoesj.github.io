@@ -7,7 +7,7 @@
       <char class="custom typed" v-for="l in numLeftChars" :val="currentTextArray[l-1]"/>
     </span>
 
-    <caret :class="caretClasses" :animation="caretAnimation"/>
+    <caret :class="caretClasses" :animation="['typing', 'erasing'].includes(state) ? 'solid' : caretAnimation"/>
 
     <span class="right">
       <char class="custom" v-for="r in numRightChars" :val="currentTextArray[numLeftChars + r-1]" :class="rightCharClasses"/>

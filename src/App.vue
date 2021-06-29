@@ -62,6 +62,9 @@
 
       // BaseTransitionProps['onEnter']
       async animateRouteComponentIn (Component, el, done) {
+        // FIXME: Somehow, the animation 'done' callback doesn't let Vue know that we're done
+        console.log(arguments);
+        console.log('animating in');
         const inAnimatingComponent = Component.ref.r.value as ComponentPublicInstance;
 
         if (inAnimatingComponent == null) {
@@ -86,6 +89,7 @@
 
       // BaseTransitionProps['onLeave']
       async animateRouteComponentOut (Component, el, done) {
+        console.log('animating out');
         const outAnimatingComponent = Component.ref.r.value as ComponentPublicInstance;
 
         if (outAnimatingComponent == null) {

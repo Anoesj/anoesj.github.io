@@ -12,7 +12,7 @@
             <vue-typer
               :text="thingsIAm"
               :preTypeDelay="preTypeDelay"
-              :typeDelay="70"
+              :typeDelay="60"
               :preEraseDelay="3000"
               :eraseDelay="40"
               eraseStyle="backspace"

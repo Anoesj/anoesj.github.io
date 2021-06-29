@@ -38,6 +38,7 @@ span.caret {
 span {
   display: inline-block;
   width: 1px;
+  margin: 0 0.12ch;
 }
 
 .idle {
