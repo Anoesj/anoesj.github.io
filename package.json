@@ -8,15 +8,15 @@
   "dependencies": {
     "gsap": "file:src/misc/gsap-member/npm-install-this/gsap-bonus.tgz",
     "lodash.split": "^4.4.2",
-    "sass": "^1.35.1",
-    "vue": "^3.1.2",
-    "vue-router": "^4.0.10"
+    "sass": "^1.44.0",
+    "vue": "^3.2.23",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.2.4",
-    "@vue/compiler-sfc": "^3.1.2",
-    "typescript": "^4.3.4",
-    "vite": "^2.3.8",
-    "vue-tsc": "^0.2.0"
+    "@vitejs/plugin-vue": "^1.10.1",
+    "@vue/compiler-sfc": "^3.2.23",
+    "typescript": "^4.5.2",
+    "vite": "^2.6.14",
+    "vue-tsc": "^0.29.8"
   }
 }
