@@ -53,9 +53,12 @@
     methods: {
       async animateIn (el, done, initial = false) {
         await this.wait(200);
-        await this.animation(this.transitionDuration/2);
+        await this.animation(this.transitionDuration / 2);
 
-        if (initial === true) this.$emit('showNavigation', true);
+        if (initial === true) {
+          this.$emit('showNavigation', true);
+        }
+
         done();
       },
 
