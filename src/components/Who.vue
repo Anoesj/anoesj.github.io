@@ -35,14 +35,17 @@
       <h5>Dev:</h5>
       <ul>
         <li>Fonkel</li>
-        <li>Haringvliet</li>
         <li>Gebr. Bodegraven</li>
         <li>Hilti</li>
         <li>fischer</li>
         <li>Spit</li>
+        <li>Haringvliet</li>
         <li>GroenLinks</li>
+        <li>Easylink?</li>
+        <li>SRA?</li>
+        <li>OPUS pods?</li>
         <li>Nederlandse Branchevereniging voor de Timmerindustrie</li>
-        <li>Accoya</li>
+        <li>Accoya (Accsys Technologies?)</li>
         <li>ByDANA</li>
       </ul>
       <h5>Music:</h5>
@@ -114,9 +117,9 @@
         await this.animation(this.transitionDuration/2);
 
         if (initial === true) {
-          const prevPreTypeDelay = this.preTypeDelay;
+          // const prevPreTypeDelay = this.preTypeDelay;
           this.preTypeDelay = 350;
-          await this.wait(prevPreTypeDelay - 200);
+          // await this.wait(prevPreTypeDelay / 2);
           this.$emit('showNavigation', true);
         }
 

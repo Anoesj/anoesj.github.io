@@ -72,3 +72,6 @@ export const projects : Project[] = [
     },
   },
 ];
+
+const featuredProjectIDs = ['alleen', 'cross-your-heart'];
+export const featuredProjects : Project[] = projects.filter(project => featuredProjectIDs.includes(project.id));

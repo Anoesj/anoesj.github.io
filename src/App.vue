@@ -1,11 +1,7 @@
 <template>
   <SiteNavigation :visible="navigationVisible"/>
 
-  <router-view
-    ref="routeView"
-    @showNavigation="showNavigation"
-    v-slot="{ Component, route }"
-  >
+  <router-view v-slot="{ Component, route }">
     <transition
       appear
       @enter="(...args) => { animateRouteComponentIn(Component, ...args); }"
@@ -16,37 +12,29 @@
       <component
         :is="Component"
         v-bind="route.params"
+        ref="routeView"
+        @showNavigation="showNavigation"
       />
     </transition>
   </router-view>
 </template>
 
+<script setup lang="ts">
+  import SiteNavigation from './components/SiteNavigation.vue';
+</script>
+
 <script lang="ts">
-  import {
-    defineComponent,
-    ref,
+  import { defineComponent } from 'vue';
+
+  import type {
     BaseTransitionProps,
     ComponentPublicInstance,
   } from 'vue';
-
-  import SiteNavigation from './components/SiteNavigation.vue';
 
   export default defineComponent({
 
     debugTag: 'main',
     debugColor: 'darkorange',
-
-    components: {
-      SiteNavigation,
-    },
-
-    setup () {
-      const routeView = ref<ComponentPublicInstance>();
-
-      return {
-        routeView,
-      };
-    },
 
     data () {
       return {

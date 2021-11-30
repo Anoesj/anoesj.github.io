@@ -1,6 +1,6 @@
 <template>
-  <section class="reach-me">
-    <a href="mailto:contact@anoesjsadraee.com">contact@anoesjsadraee.com</a>
+  <section class="reach-me" v-once>
+    <a :href="`mailto:${emailAddress}`">{{ emailAddress }}</a>
   </section>
 </template>
 
@@ -11,6 +11,12 @@
 
     debugTag: 'reach-me',
     debugColor: 'dodgerblue',
+
+    data () {
+      return {
+        emailAddress: 'contact@anoesjsadraee.com',
+      };
+    },
 
   });
 </script>
