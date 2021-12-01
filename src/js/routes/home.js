@@ -1,11 +1,11 @@
 import { GSAP } from '../NodeModules.js';
 
-export const about = {
+export const home = {
 
-  debugTag: 'who',
+  debugTag: 'home',
   debugColor: 'green',
 
-  template:  `<section class="who" v-once>
+  template:  `<section class="home" v-once>
                 <img
                   v-if="photoVisible === true"
                   src="/img/me_2020.jpg"

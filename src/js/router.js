@@ -2,7 +2,7 @@ import { Vue, Router } from './NodeModules.js';
 
 import { config } from './config.js';
 
-import { about } from './routes/about.js';
+import { home } from './routes/home.js';
 import { haringvliet } from './routes/projects/haringvliet.js';
 import { kozijnverbindingen } from './routes/projects/kozijnverbindingen.js';
 import { groenlinksMaak } from './routes/projects/groenlinks-maak.js';
@@ -14,10 +14,10 @@ export const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'about',
-      component: about,
+      name: 'home',
+      component: home,
       meta: {
-        bodyClass: 'about',
+        pageID: 'home',
       },
     },
     {
@@ -25,7 +25,7 @@ export const router = new Router({
     	name: 'project--haringvliet',
       component: haringvliet,
     	meta: {
-    		bodyClass: 'project',
+    		pageID: 'project',
     	},
     },
     {
@@ -33,7 +33,7 @@ export const router = new Router({
     	name: 'project--kozijnverbindingen',
       component: kozijnverbindingen,
     	meta: {
-    		bodyClass: 'project',
+    		pageID: 'project',
     	},
     },
     {
@@ -41,7 +41,7 @@ export const router = new Router({
     	name: 'project--groenlinks-maak',
       component: groenlinksMaak,
     	meta: {
-    		bodyClass: 'project',
+    		pageID: 'project',
     	},
     },
     {
@@ -52,7 +52,7 @@ export const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  document.body.dataset.page = to.meta.bodyClass;
+  document.body.dataset.page = to.meta.pageID;
 
   if (config.debug === true) {
     console.log(`%c→ ${to.path}`, 'background-color: #dee5ec; color: LightSlateGrey; padding: 2px 6px; border-radius: 3px;');

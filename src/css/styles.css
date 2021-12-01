@@ -157,7 +157,7 @@ h1 + p {
   color: #1da1f2;
 }
 
-.who {
+.home {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -165,15 +165,15 @@ h1 + p {
   position: relative;
   gap: 75px;
 }
-.who .text {
+.home .text {
   flex: 3 0 50%;
   max-inline-size: 34em;
   margin-left: max(0.13 * min(var(--max-container-width), 100vw), 60px);
 }
-.who .text h1 {
+.home .text h1 {
   color: #dce3e7;
 }
-.who .featured-projects {
+.home .featured-projects {
   flex: 2 0 25%;
   min-inline-size: 20em;
   max-inline-size: 28em;
@@ -184,7 +184,7 @@ h1 + p {
   margin-right: 75px;
   gap: 30px;
 }
-.who .featured-projects > * {
+.home .featured-projects > * {
   border: 1px solid var(--black-2);
   padding: 0.7em 1em;
   aspect-ratio: 5/3;
