@@ -1,28 +1,40 @@
 .who {
   width: 100%;
-  max-width: 1280px;
-  // padding-block-start: 0.75em;
-  // padding-block-end: 0.75em;
+  max-width: 1340px;
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
+  gap: 75px;
 
   // .me {
   //   position: absolute;
   // }
 
   .text {
+    flex: 3 0 50%;
     max-inline-size: 34em;
+  }
+
+  .featured-projects {
+    flex: 2 0 25%;
+    min-inline-size: 16em;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+
+    > * {
+      border: 1px solid var(--black-2);
+      padding: 0.7em 1em;
+      aspect-ratio: 5 / 3;
+    }
   }
 
   h1 {
     color: $grey-2;
   }
 
-  p {
-    margin-block-start: 1.75em;
-    margin-block-end: 1.75em;
-  }
-
-  .social-links {
-    margin-block-start: -0.75em;
-  }
+  // .social-links {
+  //   margin-block-start: -0.75em;
+  // }
 }
