@@ -1,6 +1,6 @@
 const gulp = require('gulp'),
       autoprefixer = require('gulp-autoprefixer'),
-      sass = require('gulp-sass'),
+      sass = require('gulp-sass')(require('sass')),
       sassGlob = require('gulp-sass-glob');
 
 gulp.task('css', function () {

@@ -1,21 +1,13 @@
 import { Vue } from './NodeModules.js';
-
-import { config } from './config.js';
 import { router } from './router.js';
-
-import { navigation } from './components/navigation.js';
-import { projectTeaser } from './components/project-teaser.js';
+import { config } from './config.js';
 import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
 
+import { backButton } from './components/back-button.js';
+
 (() => {
-  // console.log('%c Anoesj Sadraee portfolio', 'background: linear-gradient(to right, #da4453, #89216b); padding:5px; font-size: 10px; color: #ffffff'),
-  // console.log(`%c→ ${to.path}`, 'background-color: #dee5ec; color: LightSlateGrey; padding: 2px 6px; border-radius: 3px;');
-  // console.log('%c Anoesj Sadraee portfolio', 'background: linear-gradient(to right, #da4453, #89216b); padding:5px; font-size: 10px; color: #ffffff'),
-
   Vue.use(CustomVueExtensions);
-
-  Vue.component('navigation', navigation);
-  Vue.component('project-teaser', projectTeaser);
+  Vue.component('back-button', backButton);
 
   new Vue({
 
@@ -23,35 +15,28 @@ import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
     debugColor: 'darkorange',
 
     el: '#app',
-    router: router,
-    template:  `<div id="app">
-                  <navigation :visible="navigationVisible"></navigation>
+    router,
 
+    template:  `<div id="app">
                   <transition
                     appear
                     @enter="animateIn"
                     @leave="animateOut"
-                    :mode="transitionMode"
+                    mode="out-in"
                   >
-                    <router-view ref="route" @showNavigation="showNavigation"></router-view>
+                    <router-view ref="route"/>
                   </transition>
                 </div>`,
+
     data () {
       return {
-        config: config,
+        config,
         transitionDuration: this.$convertCSSDurationToSeconds(this.$getCSSVariable('--speed-slow')),
         angle: parseFloat(this.$getCSSVariable('--angle')),
-        navigationVisible: false,
-        transitionMode: 'out-in',
       };
     },
 
     methods: {
-      showNavigation () {
-        // TODO: Temporarily turned this off
-        // this.navigationVisible = true;
-      },
-
       async animateIn (el, done) {
         const inAnimatingComponent = this.$refs.route;
         inAnimatingComponent.$log('animateIn');

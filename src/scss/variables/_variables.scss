@@ -1,5 +1,5 @@
 $black-0: #0e0f0f;
-$black-1: #151618;
+$black-1: #101318;
 $black-2: #474747;
 $black-3: #7b7b7b;
 $grey-1: #99a1a6;
@@ -8,8 +8,7 @@ $purple: #9e017c;
 
 $page-padding: 130px;
 
-// $angle: -2.4deg;
-$angle: -1.8deg;
+$angle: 0deg;
 
 $speed-slow: 2s;
 $speed-medium: 1s;
@@ -18,16 +17,17 @@ $speed-fast: 0.4s;
 $easing-cubic: cubic-bezier(0.46, 0.02, 0.37, 1);
 
 :root {
-  --black-0:              #{$black-0};
-  --black-1:              #{$black-1};
-  --black-2:              #{$black-2};
-  --black-3:              #{$black-3};
-  --grey-1:               #{$grey-1};
-  --grey-2:               #{$grey-2};
-  --purple:               #{$purple};
-  --page-padding:         #{$page-padding};
+  // --black-0:              #{$black-0};
+  // --black-1:              #{$black-1};
+  // --black-2:              #{$black-2};
+  // --black-3:              #{$black-3};
+  // --grey-1:               #{$grey-1};
+  // --grey-2:               #{$grey-2};
+  // --purple:               #{$purple};
+  // --page-padding:         #{$page-padding};
   --angle:                #{$angle}; // wordt gebruikt in JS
   --speed-slow:           #{$speed-slow};
   --speed-medium:         #{$speed-medium};
   --speed-fast:           #{$speed-fast};
+  --easing-cubic:         #{$easing-cubic};
 }
