@@ -116,8 +116,8 @@ h1 {
   line-height: 1.125;
 }
 h1 + p {
-  -webkit-margin-before: 0.75em;
-          margin-block-start: 0.75em;
+  -webkit-margin-before: 1.25em;
+          margin-block-start: 1.25em;
 }
 
 .back-button {
