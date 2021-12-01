@@ -1,8 +1,8 @@
 .who {
   width: 100%;
-  max-width: 1340px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   position: relative;
   gap: 75px;
 
@@ -13,15 +13,24 @@
   .text {
     flex: 3 0 50%;
     max-inline-size: 34em;
+    margin-left: max(calc(0.13 * min(var(--max-container-width), 100vw)), 60px);
+
+    h1 {
+      // REVIEW:
+      color: $grey-2;
+    }
   }
 
   .featured-projects {
     flex: 2 0 25%;
-    min-inline-size: 16em;
+    min-inline-size: 20em;
+    max-inline-size: 28em;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
+    margin-right: 75px;
+    gap: 30px;
 
     > * {
       border: 1px solid var(--black-2);
@@ -29,12 +38,4 @@
       aspect-ratio: 5 / 3;
     }
   }
-
-  h1 {
-    color: $grey-2;
-  }
-
-  // .social-links {
-  //   margin-block-start: -0.75em;
-  // }
 }

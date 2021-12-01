@@ -19,9 +19,8 @@ html {
 body {
   flex: 0 0 100%;
   min-height: 100%;
-  padding: max(14vh, 74px) max(13vw, 60px);
-  font-size: 1.42rem;
-  font-size: clamp(1.2rem, calc(1.42 * (10px + 0.33vw)), 2rem);
+  font-size: 1.4rem;
+  font-size: clamp(1.2rem, calc(1.4 * (10px + 0.33vw)), 2rem);
   font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0.05ch;
@@ -36,11 +35,16 @@ body {
 }
 
 #app {
-  flex: 1 1 auto;
+  flex: 1 1 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  max-width: var(--max-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  // padding: max(14vh, 74px) max(13vw, 60px);
+  padding: max(14vh, 74px) 0;
 }
 
 a.link {

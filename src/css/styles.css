@@ -1,4 +1,5 @@
 :root {
+  --max-container-width: 2160px;
   --black-0: #0e0f0f;
   --black-1: #101318;
   --black-2: #474747;
@@ -28,9 +29,8 @@ html {
 body {
   flex: 0 0 100%;
   min-height: 100%;
-  padding: max(14vh, 74px) max(13vw, 60px);
-  font-size: 1.42rem;
-  font-size: clamp(1.2rem, 1.42 * (10px + 0.33vw), 2rem);
+  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 1.4 * (10px + 0.33vw), 2rem);
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0.05ch;
@@ -42,11 +42,15 @@ body {
 }
 
 #app {
-  flex: 1 1 auto;
+  flex: 1 1 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  max-width: var(--max-container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: max(14vh, 74px) 0;
 }
 
 a.link {
@@ -128,6 +132,7 @@ h1 + p {
   position: sticky;
   bottom: 0;
   width: 100%;
+  margin-top: 60px;
 }
 .social-links a {
   display: block;
@@ -154,29 +159,33 @@ h1 + p {
 
 .who {
   width: 100%;
-  max-width: 1340px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   position: relative;
   gap: 75px;
 }
 .who .text {
   flex: 3 0 50%;
   max-inline-size: 34em;
+  margin-left: max(0.13 * min(var(--max-container-width), 100vw), 60px);
+}
+.who .text h1 {
+  color: #dce3e7;
 }
 .who .featured-projects {
   flex: 2 0 25%;
-  min-inline-size: 16em;
+  min-inline-size: 20em;
+  max-inline-size: 28em;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
+  margin-right: 75px;
+  gap: 30px;
 }
 .who .featured-projects > * {
   border: 1px solid var(--black-2);
   padding: 0.7em 1em;
   aspect-ratio: 5/3;
-}
-.who h1 {
-  color: #dce3e7;
 }
