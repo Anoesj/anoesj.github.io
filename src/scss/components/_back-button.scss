@@ -1,4 +1,20 @@
+.back-button-wrapper {
+  display: block;
+}
+
 .back-button {
   display: inline-block;
   margin-bottom: 1em;
+
+  i {
+    transition: transform var(--speed-fast) var(--easing-cubic-steep);
+    transform: none;
+  }
+
+  &:hover,
+  &:focus {
+    i {
+      transform: translateX(-25%);
+    }
+  }
 }

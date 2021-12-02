@@ -3,39 +3,28 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
   position: relative;
+  padding-inline: 50px;
   gap: 75px;
-
-  // .me {
-  //   position: absolute;
-  // }
 
   .text {
     flex: 3 0 50%;
     max-inline-size: 34em;
-    margin-left: max(calc(0.13 * min(var(--max-container-width), 100vw)), 60px);
-
-    h1 {
-      // REVIEW:
-      color: $grey-2;
-    }
+    margin-block: max(14vh, 74px);
+    margin-inline-start: max(calc(0.07 * min(var(--max-container-width), 100vw)), 50px);
   }
 
   .featured-projects {
     flex: 2 0 25%;
     min-inline-size: 20em;
-    max-inline-size: 28em;
+    max-inline-size: 27em;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    margin-right: 75px;
+    margin-block: calc(max(14vh, 74px) * 0.66);
+    // margin-inline-end: 75px;
     gap: 30px;
-
-    > * {
-      border: 1px solid var(--black-2);
-      padding: 0.7em 1em;
-      aspect-ratio: 5 / 3;
-    }
   }
 }

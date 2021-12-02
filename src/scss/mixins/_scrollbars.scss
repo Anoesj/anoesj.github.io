@@ -1,0 +1,19 @@
+@mixin scrollbars ($fg, $bg) {
+  & {
+    scrollbar-width: auto;
+    scrollbar-color: $fg $bg;
+  }
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $bg;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $fg;
+    border: 3px solid $bg;
+    border-radius: 100px;
+  }
+}

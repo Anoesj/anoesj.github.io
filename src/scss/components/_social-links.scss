@@ -2,47 +2,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   width: 100%;
   margin-top: 60px;
 
+  > * {
+    flex: 0 0 auto;
+  }
+
+  span {
+    font-size: 75%;
+    margin-right: 0.7ch;
+    color: var(--grey-1);
+    line-height: 1;
+  }
+
   a {
     display: block;
-    padding: 0.5ch;
-    color: currentColor;
-    font-size: 200%;
+    padding: 0.6ch 0.4ch;
+    font-size: 160%;
     line-height: 1;
-    transition-property: transform, opacity, color, filter;
-    transition-duration: var(--speed-fast);
-    transition-timing-function: var(--easing-cubic);
-    opacity: 0.6;
-    transform: scale(0.85);
+
+    i {
+      color: var(--grey-0);
+      transform: scale(0.85);
+      transition-property: transform, color, filter;
+      transition-duration: var(--speed-fast);
+      transition-timing-function: var(--easing-cubic-steep);
+    }
 
     &:hover,
     &:focus {
-      opacity: 1;
-      transform: scale(1);
+      i {
+        transform: scale(1);
+      }
     }
 
     &[href*="linkedin"] {
       &:hover,
       &:focus {
-        color: #0a66c2;
+        i {
+          color: #0a66c2;
+        }
       }
     }
 
     &[href*="twitter"] {
       &:hover,
       &:focus {
-        color: #1da1f2;
+        i {
+          color: #1da1f2;
+        }
       }
     }
 
-    // &[href*="github"] {
-    //   &:hover,
-    //   &:focus {
-    //   }
-    // }
+    &[href*="github"] {
+      &:hover,
+      &:focus {
+        i {
+          color: #ffffff;
+        }
+      }
+    }
   }
 }
