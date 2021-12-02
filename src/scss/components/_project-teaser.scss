@@ -39,8 +39,20 @@
       left: 1.4em;
       padding: 0.25em 0.7em;
       border-radius: 4px;
-      background-color: var(--secondary);
-      box-shadow: 0px 2px 9px -5px rgba(darken($secondary, 7%), 1);
+      background-color: var(--project-color, var(--secondary));
+      // box-shadow: 0px 2px 9px -5px darken($secondary, 7%);
+      box-shadow: 0px 2px 9px -5px var(--project-color, var(--secondary));
+      color: var(--white-1);
     }
+  }
+
+  &[data-project-id="haringvliet"] {
+    --project-color: #d96aa0;
+  }
+  &[data-project-id="kozijnverbindingen"] {
+    --project-color: #0da0d8;
+  }
+  &[data-project-id="groenlinks-maak"] {
+    --project-color: #39a935;
   }
 }

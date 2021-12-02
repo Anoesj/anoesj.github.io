@@ -5,6 +5,8 @@ $black-3: #7b7b7b;
 $grey-0: #898f92;
 $grey-1: #99a1a6;
 $grey-2: #dce3e7;
+$white-0: #d7d8dd;
+$white-1: #e4e5ec;
 
 $primary: #02cfa3;
 $primary-dark: #00795e;
@@ -22,6 +24,8 @@ $secondary-dark: #682832;
   --grey-0:               #{$grey-0};
   --grey-1:               #{$grey-1};
   --grey-2:               #{$grey-2};
+  --white-0:              #{$white-0};
+  --white-1:              #{$white-1};
   --primary:              #{$primary};
   --primary-dark:         #{$primary-dark};
   --secondary:            #{$secondary};

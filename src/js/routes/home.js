@@ -13,8 +13,16 @@ export const home = {
                 >
                   <h1>Hi, I’m Anoesj,</h1>
                   <p>A web developer mainly focused on creating slick, usable web apps. I am experienced with JavaScript, CSS, Vue.js, writing APIs and more. More importantly however, I’ve learned to <strong>really</strong> understand the clients I work with. Finding out what problems they are facing, gathering domain knowledge and working towards a sustainable digital solution.</p>
+
                   <h3>Background</h3>
                   <p>I learned so much at <a href="https://fonkel.io" class="link">Fonkel</a>, a digital agency where I worked on Drupal, Vue.js and Laravel projects on and off in the past decade. In the meantime, I finished my Bachelor of Music in 2020 at ArtEZ Institute of the Arts in Enschede, The Netherlands. During my (audio related) internship at <a href="https://media.monks.com/" class="link">Media.Monks</a>, I realized my interest lies mainly in programming. Since then, I’ve started freelancing alongside working at Fonkel.</p>
+
+                  <template v-if="false">
+                    <h3>Clients</h3>
+                    <ul>
+                      <li v-for="client of clients">{{ client.name }}</li>
+                    </ul>
+                  </template>
                 </div>
 
                 <div
@@ -22,7 +30,7 @@ export const home = {
                   class="featured-projects"
                 >
                   <div
-                    v-for="(project, index) in featuredProjects"
+                    v-for="(project, index) of featuredProjects"
                     :key="project.routeName"
                     :ref="'project' + (index + 1)"
                     :data-project-id="project.routeName"
@@ -38,21 +46,89 @@ export const home = {
 
   data () {
     return {
+      // IDEA: Turn these static images into videos?
       featuredProjects: [
-        {
-          routeName: 'haringvliet',
-          // image: '/img/projects/haringvliet-1.png',
-          title: 'Haringvliet',
-        },
         {
           routeName: 'kozijnverbindingen',
           // image: '/img/projects/kozijnverbindingen-1.png',
           title: 'Kozijnverbindingen',
         },
         {
+          routeName: 'haringvliet',
+          // image: '/img/projects/haringvliet-1.png',
+          title: 'Haringvliet',
+        },
+        {
           routeName: 'groenlinks-maak',
           // image: '/img/projects/groenlinks-maak-1.png',
           title: 'GroenLinks Maak',
+        },
+      ],
+      /*
+        Development:
+        - Fonkel
+        - Gebr. Bodegraven
+        - Hilti
+        - fischer
+        - Spit
+        - Haringvliet
+        - GroenLinks
+        - Nederlandse Branchevereniging voor de Timmerindustrie
+        - Accoya (Accsys Technologies?)
+        - ByDANA?
+        - Easylink?
+        - SRA?
+        - OPUS pods?
+
+        Music:
+        - Media.Monks
+        - Google
+        - Spotify
+        - Knorr
+        - HP
+        - Pharmaton
+        - Blue Nile
+        - Kensington
+        - Universal Music Group
+        - OPI
+        - Oracle
+        - Sanofi
+        - A Mili
+        - Lilith Effie
+        - Colin Waters
+      */
+      clients: [
+        {
+          name: 'Gebr. Bodegraven',
+          logo: '/img/clients/gebr-bodegraven.png',
+        },
+        {
+          name: 'Hilti',
+          logo: '/img/clients/hilti.png',
+        },
+        // {
+        //   name: 'fischer',
+        //   logo: '/img/clients/fischer.png',
+        // },
+        {
+          name: 'Spit',
+          logo: '/img/clients/spit.png',
+        },
+        {
+          name: 'Haringvliet',
+          logo: '/img/clients/haringvliet.png',
+        },
+        {
+          name: 'GroenLinks',
+          logo: '/img/clients/groenlinks.png',
+        },
+        {
+          name: 'Nederlandse Branchevereniging voor de Timmerindustrie',
+          logo: '/img/clients/nbvt.png',
+        },
+        {
+          name: 'Accsys Technologies',
+          logo: '/img/clients/accoya.png',
         },
       ],
     };

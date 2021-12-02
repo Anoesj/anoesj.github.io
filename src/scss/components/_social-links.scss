@@ -6,9 +6,23 @@
   bottom: 0;
   width: 100%;
   margin-top: 60px;
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 150%;
+    background: linear-gradient(to top, rgba($black-0, 0.7) 0%, 40%, rgba($black-0, 0) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
 
   > * {
     flex: 0 0 auto;
+    pointer-events: auto;
   }
 
   span {

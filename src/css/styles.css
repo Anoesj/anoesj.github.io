@@ -7,6 +7,8 @@
   --grey-0: #898f92;
   --grey-1: #99a1a6;
   --grey-2: #dce3e7;
+  --white-0: #d7d8dd;
+  --white-1: #e4e5ec;
   --primary: #02cfa3;
   --primary-dark: #00795e;
   --secondary: #1F4287;
@@ -61,7 +63,7 @@ body {
   font-weight: 400;
   line-height: 1.685;
   background: #0e0f12;
-  color: #d7d8dd;
+  color: var(--white-0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -218,8 +220,18 @@ h1 + p {
   left: 1.4em;
   padding: 0.25em 0.7em;
   border-radius: 4px;
-  background-color: var(--secondary);
-  box-shadow: 0px 2px 9px -5px #18346a;
+  background-color: var(--project-color, var(--secondary));
+  box-shadow: 0px 2px 9px -5px var(--project-color, var(--secondary));
+  color: var(--white-1);
+}
+.project--teaser[data-project-id=haringvliet] {
+  --project-color: #d96aa0;
+}
+.project--teaser[data-project-id=kozijnverbindingen] {
+  --project-color: #0da0d8;
+}
+.project--teaser[data-project-id=groenlinks-maak] {
+  --project-color: #39a935;
 }
 
 .social-links {
@@ -230,9 +242,22 @@ h1 + p {
   bottom: 0;
   width: 100%;
   margin-top: 60px;
+  pointer-events: none;
+}
+.social-links::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 150%;
+  background: linear-gradient(to top, rgba(14, 15, 15, 0.7) 0%, 40%, rgba(14, 15, 15, 0) 100%);
+  z-index: -1;
+  pointer-events: none;
 }
 .social-links > * {
   flex: 0 0 auto;
+  pointer-events: auto;
 }
 .social-links span {
   font-size: 75%;

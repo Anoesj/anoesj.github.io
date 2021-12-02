@@ -22,7 +22,7 @@ export const projectRoute = {
             h1TransformStart = duration * 0,
             opacityDelay = duration * 0.3,
             h1OpacityStart = h1TransformStart + opacityDelay,
-            backButtonTransformStart = h1OpacityStart + opacityDuration / 4,
+            backButtonTransformStart = h1OpacityStart + opacityDuration / 20,
             backButtonOpacityStart = backButtonTransformStart + opacityDelay;
 
       tl.fromTo(this.$refs.h1, transformDuration,
