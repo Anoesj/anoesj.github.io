@@ -19,13 +19,13 @@ export const projectRoute = {
 
       const transformDuration = duration * 1.3,
             opacityDuration = duration * 1.2,
-            h1TransformStart = duration * 0,
+            headingsTransformStart = duration * 0,
             opacityDelay = duration * 0.3,
-            h1OpacityStart = h1TransformStart + opacityDelay,
-            backButtonTransformStart = h1OpacityStart + opacityDuration / 20,
+            headingOpacityStart = headingsTransformStart + opacityDelay,
+            backButtonTransformStart = headingOpacityStart + opacityDuration / 20,
             backButtonOpacityStart = backButtonTransformStart + opacityDelay;
 
-      tl.fromTo(this.$refs.h1, transformDuration,
+      tl.fromTo(this.$refs.headings, transformDuration,
         {
           x: -60,
           scale: 0.97,
@@ -40,10 +40,10 @@ export const projectRoute = {
           transformOrigin: 'center center',
           ease: GSAP.Power3.easeInOut,
         },
-        h1TransformStart,
+        headingsTransformStart,
       );
 
-      tl.fromTo(this.$refs.h1, opacityDuration,
+      tl.fromTo(this.$refs.headings, opacityDuration,
         {
           opacity: 0,
         },
@@ -51,7 +51,7 @@ export const projectRoute = {
           opacity: 1,
           ease: GSAP.Power2.easeInOut,
         },
-        h1OpacityStart,
+        headingOpacityStart,
       );
 
       tl.fromTo(this.$refs.backButton, transformDuration,

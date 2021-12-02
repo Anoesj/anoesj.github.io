@@ -8,7 +8,11 @@ export const kozijnverbindingen = {
 
   template:  `<div class="project">
                 <span ref="backButton" class="back-button-wrapper"><back-button/></span>
-                <h1 ref="h1">GB Kozijnverbindingen</h1>
+
+                <div ref="headings">
+                  <h1>Kozijnverbindingen calculator</h1>
+                  <h2>Gebr. Bodegraven, Fonkel, Graphius</h2>
+                </div>
               </div>`,
 
 };
