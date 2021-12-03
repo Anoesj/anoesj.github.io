@@ -12,13 +12,13 @@ export const home = {
                   class="text"
                 >
                   <h1>Hi, I’m Anoesj,</h1>
-                  <p>A web developer mainly focused on creating slick, usable web apps. I am experienced with JavaScript, CSS, Vue.js, writing APIs and more. More importantly however, I’ve learned to <strong>really</strong> understand the clients I work with. Finding out what problems they are facing, gathering domain knowledge and working towards a sustainable digital solution.</p>
+                  <p>A web developer mainly focused on creating slick, usable web apps. I am experienced with JavaScript, CSS, Vue.js, writing APIs and more. More important however, is that I always try to <strong>really</strong> understand the clients I work for. Finding out what problems they are facing, gathering domain knowledge and working towards a sustainable digital solution together.</p>
 
-                  <h3>Background</h3>
-                  <p>I learned so much at <a href="https://fonkel.io" class="link">Fonkel</a>, a digital agency where I worked on Drupal, Vue.js and Laravel projects on and off in the past decade. In the meantime, I finished my Bachelor of Music in 2020 at ArtEZ Institute of the Arts in Enschede, The Netherlands. During my (audio related) internship at <a href="https://media.monks.com/" class="link">Media.Monks</a>, I realized my interest lies mainly in programming. Since then, I’ve started freelancing alongside working at Fonkel.</p>
+                  <h2>Background</h2>
+                  <p>I’m located in Amersfoort, The Netherlands. Here, I work for <a href="https://fonkel.io" class="link">Fonkel</a>, a digital agency, where I’ve been working on Drupal, Vue.js and Laravel projects on and off in the past decade. In the middle of the pandemic, I finished my Bachelor of Music at ArtEZ Institute of the Arts in Enschede, The Netherlands. During my (audio related) internship at <a href="https://media.monks.com/" class="link">Media.Monks</a>, I realized my interest lies mainly in programming. Since then, I’ve started freelancing alongside working at Fonkel and taking on interesting projects.</p>
 
                   <template v-if="false">
-                    <h3>Clients</h3>
+                    <h2>Clients</h2>
                     <ul>
                       <li v-for="client of clients">{{ client.name }}</li>
                     </ul>
@@ -37,7 +37,10 @@ export const home = {
                     class="project--teaser"
                   >
                     <router-link :to="{ name: 'project--' + project.routeName }">
-                      <img :src="'/img/projects/' + project.routeName + '-1.png'"/>
+                      <span class="project__media-wrapper">
+                        <img :src="project.image"/> <!-- v-if="project.image"  -->
+                        <video v-if="project.video" :src="project.video" autoplay playsinline muted loop></video> <!-- v-else-if="project.video" -->
+                      </span>
                       <p><strong>{{ project.title }}</strong></p>
                     </router-link>
                   </div>
@@ -46,22 +49,29 @@ export const home = {
 
   data () {
     return {
-      // IDEA: Turn these static images into videos?
+      // IDEA: Turn these static images into videos? See: https://davidwalsh.name/convert-to-webm
       featuredProjects: [
         {
           routeName: 'kozijnverbindingen',
-          // image: '/img/projects/kozijnverbindingen-1.png',
+          image: '/img/projects/kozijnverbindingen-1.png',
+          video: '/img/projects/kozijnverbindingen-1.mov',
           title: 'Kozijnverbindingen',
         },
         {
           routeName: 'haringvliet',
-          // image: '/img/projects/haringvliet-1.png',
+          image: '/img/projects/haringvliet-1.png',
+          video: '/img/projects/haringvliet-1.mov',
           title: 'Haringvliet',
         },
         {
           routeName: 'groenlinks-maak',
-          // image: '/img/projects/groenlinks-maak-1.png',
+          image: '/img/projects/groenlinks-maak-1.png',
           title: 'GroenLinks Maak',
+        },
+        {
+          routeName: 'kozijnisolatie',
+          image: '/img/projects/kozijnisolatie-1.png',
+          title: 'Kozijnisolatie',
         },
       ],
       /*
@@ -151,22 +161,22 @@ export const home = {
 
       const transformDuration = duration * 1.3,
             opacityDuration = duration * 1.2,
-            projectDuration = duration * 1,
+            projectDuration = duration * 1.3,
+            opacityDelay = duration * 0.3,
             textTransformStart = duration * 0,
-            textOpacityStart = duration * 0.3,
-            projectStart = duration * 0.6;
+            textOpacityStart = textTransformStart + opacityDelay,
+            projectTransformStart = duration * 0.6,
+            projectOpacityStart = projectTransformStart;
 
       tl.fromTo(this.$refs.text, transformDuration,
         {
           x: -60,
           scale: 0.97,
-          rotation: this.$root.angle,
           skewX: 3,
         },
         {
           x: 0,
           scale: 1,
-          rotation: this.$root.angle,
           skewX: 0,
           transformOrigin: 'center center',
           ease: GSAP.Power3.easeInOut,
@@ -186,19 +196,30 @@ export const home = {
       );
 
       for (const index of this.featuredProjects.keys()) {
-        tl.fromTo(this.$refs[`project${index + 1}`], projectDuration,
+        const projectEl = this.$refs[`project${index + 1}`];
+
+        tl.fromTo(projectEl, projectDuration,
           {
             y: -60,
             scale: 0.92,
-            opacity: 0,
           },
           {
             y: 0,
             scale: 1,
+            ease: GSAP.Power3.easeOut,
+          },
+          projectTransformStart + (index + 1) * (duration * 0.2),
+        );
+
+        tl.fromTo(projectEl, projectDuration * 0.75,
+          {
+            opacity: 0,
+          },
+          {
             opacity: 1,
             ease: GSAP.Power2.easeInOut,
           },
-          projectStart + (index + 1) * (duration * 0.2),
+          projectOpacityStart + (index + 1) * (duration * 0.2),
         );
       }
 
