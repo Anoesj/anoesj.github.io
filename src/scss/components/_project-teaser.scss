@@ -9,30 +9,73 @@
     padding: 0.7em 1em;
     aspect-ratio: 7 / 4;
     overflow: hidden;
-    transition: box-shadow var(--speed-medium) var(--easing-cubic);
+    transform: none;
+    transition-property: transform, box-shadow;
+    transition-duration: calc(0.75 * var(--speed-medium)), var(--speed-medium);
+    transition-timing-function: var(--easing-cubic);
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: var(--project-color);
+    //   opacity: 0;
+    //   transition: opacity var(--speed-medium) var(--easing-cubic);
+    // }
 
     &:hover,
     &:focus {
-      // box-shadow: 0px 0px 50px var(--project-color);
+      transform: scale(1.02);
       box-shadow: 0px 0px 50px var(--black-3);
 
-      img {
-        transform: scale(1);
-        opacity: 0.9;
+      // &::before {
+      //   opacity: 0.2;
+      // }
+
+      .project__media-wrapper {
+        opacity: 1;
+        transform: none;
+        filter: none;
+
+        video {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      p {
+        color: #fff;
+        transform: scale(calc(1 / 1.02));
       }
     }
 
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0;
-      object-fit: cover;
-      opacity: 0.8;
-      z-index: -1;
+    .project__media-wrapper {
+      opacity: 0.65;
       transform: scale(1.08);
-      transition: all var(--speed-medium) var(--easing-cubic);
+      filter: blur(1.5px);
+
+      &, img, video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        transition-property: transform, opacity, visibility, filter;
+        transition-duration: var(--speed-medium);
+        transition-timing-function: var(--easing-cubic);
+      }
+
+      video {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    img, video {
+      object-fit: cover;
+      z-index: -1;
     }
 
     p {
@@ -45,16 +88,25 @@
       // box-shadow: 0px 2px 9px -5px darken($secondary, 7%);
       box-shadow: 0px 2px 9px -5px var(--project-color, var(--secondary));
       color: var(--white-1);
+      transform: none;
+      transition-property: color, transform;
+      transition-duration: var(--speed-medium);
+      transition-timing-function: var(--easing-cubic);
     }
   }
 
   &[data-project-id="haringvliet"] {
-    --project-color: #d96aa0;
+    // --project-color: #d96aa0;
+    --project-color: #157dc1;
   }
   &[data-project-id="kozijnverbindingen"] {
     --project-color: #0da0d8;
   }
   &[data-project-id="groenlinks-maak"] {
-    --project-color: #39a935;
+    // --project-color: #39a935;
+    --project-color: #db0030;
+  }
+  &[data-project-id="kozijnisolatie"] {
+    --project-color: #651a45;
   }
 }
