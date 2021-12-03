@@ -3,22 +3,35 @@ import { GSAP } from '../NodeModules.js';
 export const projectRoute = {
 
   template:  `<div class="project">
-                <span
-                  v-once
-                  ref="backButton"
-                  class="back-button-wrapper"
-                >
-                  <back-button/>
-                </span>
+                <template v-once>
+                  <span
+                    ref="backButton"
+                    class="back-button-wrapper"
+                  >
+                    <back-button/>
+                  </span>
 
-                <div
-                  v-once
-                  ref="headings"
-                  class="project__headings"
-                >
-                  <h1 v-html="heading1"></h1>
-                  <h2 v-html="heading2"></h2>
-                </div>
+                  <div
+                    ref="headings"
+                    class="project__headings"
+                  >
+                    <h1 v-html="heading1"></h1>
+                    <h2 v-html="heading2"></h2>
+                  </div>
+
+                  <div
+                    ref="clients"
+                    class="project__clients"
+                  >
+                    <div><strong>Opdrachtgevers</strong></div>
+                    <ul>
+                      <li
+                        v-for="client of clients"
+                        v-html="client"
+                      ></li>
+                    </ul>
+                  </div>
+                </template>
               </div>`,
 
   methods: {
