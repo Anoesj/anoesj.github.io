@@ -168,10 +168,11 @@ export const home = {
             opacityDelay = duration * 0.3,
             textTransformStart = duration * 0,
             textOpacityStart = textTransformStart + opacityDelay,
-            projectTransformStart = duration * 0.6,
+            projectTransformStart = duration * 0.9,
             projectOpacityStart = projectTransformStart;
 
-      tl.fromTo(this.$refs.text, transformDuration,
+      // TODO: Make staggered animation or join text divs back together. See: https://greensock.com/docs/v3/Staggers
+      tl.fromTo([this.$refs.text1, this.$refs.text2], transformDuration,
         {
           x: -60,
           scale: 0.97,
@@ -187,7 +188,7 @@ export const home = {
         textTransformStart,
       );
 
-      tl.fromTo(this.$refs.text, opacityDuration,
+      tl.fromTo([this.$refs.text1, this.$refs.text2], opacityDuration,
         {
           opacity: 0,
         },
@@ -198,8 +199,9 @@ export const home = {
         textOpacityStart,
       );
 
-      for (const index of this.featuredProjects.keys()) {
-        const projectEl = this.$refs[`project${index + 1}`];
+      // TODO: Try using 'stagger'. See: https://greensock.com/docs/v3/Staggers
+      for (const i of this.featuredProjects.keys()) {
+        const projectEl = this.$refs[`project${i + 1}`];
 
         tl.fromTo(projectEl, projectDuration,
           {
@@ -211,7 +213,7 @@ export const home = {
             scale: 1,
             ease: GSAP.Power3.easeOut,
           },
-          projectTransformStart + (index + 1) * (duration * 0.2),
+          projectTransformStart + (i * duration * 0.2),
         );
 
         tl.fromTo(projectEl, projectDuration * 0.75,
@@ -222,7 +224,7 @@ export const home = {
             opacity: 1,
             ease: GSAP.Power2.easeInOut,
           },
-          projectOpacityStart + (index + 1) * (duration * 0.2),
+          projectOpacityStart + (i * duration * 0.2),
         );
       }
 
