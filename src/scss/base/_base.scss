@@ -61,9 +61,7 @@ body {
   justify-content: center;
   align-items: center;
   max-width: var(--max-container-width);
-  margin-left: auto;
-  margin-right: auto;
-  // padding: max(14vh, 74px) max(13vw, 60px);
+  margin-inline: auto;
   padding: 0;
 }
 
@@ -74,47 +72,41 @@ a {
   &.link {
     display: inline-block;
     position: relative;
-    height: 0.16em;
+    height: 0.24em;
     border-radius: 1em;
     overflow: visible;
-    box-shadow: 0 1.55em 0 0.5px $primary-dark;
-    transition-property: box-shadow;
+    box-shadow: 0 1.6em 0 0.3px rgba($primary, 0.65);
+    transition-property: box-shadow, transform;
     transition-duration: var(--speed-fast);
     transition-timing-function: var(--easing-cubic-steep);
 
     &:hover,
     &:focus {
-      box-shadow: 0 1.52em 0 -0.5px $primary;
+      box-shadow: 0 1.54em 0 -0.7px $primary;
+      transform: translateY(-0.1em);
     }
-
-    // &::before {
-    //   content: "";
-    //   display: block;
-    //   position: absolute;
-    //   z-index: -1;
-    //   bottom: -0.2em;
-    //   left: 0;
-    //   right: 0;
-    //   height: 0.18em;
-    //   border-radius: 0.18em;
-    //   background-color: var(--primary);
-    //   transform: scaleX(1);
-    //   opacity: 0.5;
-    //   transition-property: transform, opacity;
-    //   transition-duration: var(--speed-fast);
-    //   transition-timing-function: var(--easing-cubic);
-    // }
-
-    // &:hover,
-    // &:focus {
-    //   &::before {
-    //     transform: scaleX(0.95);
-    //     opacity: 1;
-    //   }
-    // }
   }
 }
 
+// body.dim-text {
+//   .text *:not(.link) {
+//     color: #5a5a5a !important;
+//     transition: color 0.2s ease;
+
+//     @supports (background-clip: text) {
+//       background: none !important;
+//     }
+//   }
+
+//   .link {
+//     color: var(--white-0) !important;
+//   }
+
+//   .featured-projects {
+//     opacity: 0.5;
+//     transition: opacity 0.2s ease;
+//   }
+// }
 
 p {
   &:first-child {
@@ -171,7 +163,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.7em;
   line-height: 1.175;
 
   + p {

@@ -42,6 +42,17 @@ import { socialLinks } from './components/social-links.js';
       };
     },
 
+    // mounted () {
+    //   document.addEventListener('mousemove', (event) => {
+    //     if (event.target?.closest('.link')) {
+    //       document.body.classList.add('dim-text');
+    //     }
+    //     else {
+    //       document.body.classList.remove('dim-text');
+    //     }
+    //   });
+    // },
+
     methods: {
       async animateIn (el, done) {
         const inAnimatingComponent = this.$refs.route;
