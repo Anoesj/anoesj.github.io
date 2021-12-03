@@ -15,7 +15,7 @@
     inset-inline: 0;
     bottom: 0;
     height: 240%;
-    $color: mix($secondary, $black-0, 20%);
+    $color: mix($secondary-dark, $black-0, 20%);
     background: linear-gradient(to top, $color 0%, $color 10%, 60%, transparent 100%);
     z-index: -1;
     pointer-events: none;

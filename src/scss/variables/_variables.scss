@@ -9,9 +9,11 @@ $white-0: #d7d8dd;
 $white-1: #e4e5ec;
 
 $primary: #02cfa3;
+$primary-light: #4dfad4;
 $primary-dark: #00795e;
-$secondary: #1F4287;
-$secondary-dark: #682832;
+$secondary: #60b8ff;
+$secondary-light: #6ebeff;
+$secondary-dark: #1F4287;
 // $secondary: #1F4287;
 // $secondary-dark: #682832;
 
@@ -27,8 +29,10 @@ $secondary-dark: #682832;
   --white-0:              #{$white-0};
   --white-1:              #{$white-1};
   --primary:              #{$primary};
+  --primary-light:        #{$primary-light};
   --primary-dark:         #{$primary-dark};
   --secondary:            #{$secondary};
+  --secondary-light:      #{$secondary-light};
   --secondary-dark:       #{$secondary-dark};
   --angle:                0deg; // wordt gebruikt in JS
   --speed-slow:           1.6s;
