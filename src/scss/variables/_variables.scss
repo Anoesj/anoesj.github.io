@@ -31,8 +31,8 @@ $secondary-dark: #682832;
   --secondary:            #{$secondary};
   --secondary-dark:       #{$secondary-dark};
   --angle:                0deg; // wordt gebruikt in JS
-  --speed-slow:           2s;
-  --speed-medium:         0.75s;
+  --speed-slow:           1.6s;
+  --speed-medium:         0.7s;
   --speed-fast:           0.4s;
   --easing-cubic:         cubic-bezier(0.46, 0.02, 0.37, 1);
   --easing-cubic-steep:   cubic-bezier(0.26, 0, 0.16, 1);
