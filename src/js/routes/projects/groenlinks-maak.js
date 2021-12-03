@@ -1,19 +1,16 @@
 import { projectRoute } from '../../mixins/project-route.js';
 
-export const groenlinksMaak = {
+export default {
 
   mixins: [
     projectRoute,
   ],
 
-  template:  `<div class="project">
-                <!-- <img src="maak plaatje voor achtergrond"> -->
-                <span ref="backButton" class="back-button-wrapper"><back-button/></span>
-
-                <div ref="headings">
-                  <h1>Maak – Social media content generator</h1>
-                  <h2>GroenLinks</h2>
-                </div>
-              </div>`,
+  data () {
+    return {
+      heading1: 'Maak – So&shy;cial me&shy;dia con&shy;tent ge&shy;ne&shy;ra&shy;tor',
+      heading2: 'GroenLinks',
+    };
+  },
 
 };

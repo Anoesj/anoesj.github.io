@@ -2,6 +2,25 @@ import { GSAP } from '../NodeModules.js';
 
 export const projectRoute = {
 
+  template:  `<div class="project">
+                <span
+                  v-once
+                  ref="backButton"
+                  class="back-button-wrapper"
+                >
+                  <back-button/>
+                </span>
+
+                <div
+                  v-once
+                  ref="headings"
+                  class="project__headings"
+                >
+                  <h1 v-html="heading1"></h1>
+                  <h2 v-html="heading2"></h2>
+                </div>
+              </div>`,
+
   methods: {
     async animateIn (el, done, initial = false) {
       await this.animation(this.$root.transitionDuration / 2);

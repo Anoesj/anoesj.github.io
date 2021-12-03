@@ -3,9 +3,11 @@ import { Vue, Router } from './NodeModules.js';
 import { config } from './config.js';
 
 import { home } from './routes/home.js';
-import { haringvliet } from './routes/projects/haringvliet.js';
-import { kozijnverbindingen } from './routes/projects/kozijnverbindingen.js';
-import { groenlinksMaak } from './routes/projects/groenlinks-maak.js';
+
+import haringvliet from './routes/projects/haringvliet.js';
+import kozijnverbindingen from './routes/projects/kozijnverbindingen.js';
+import groenlinksMaak from './routes/projects/groenlinks-maak.js';
+import kozijnisolatie from './routes/projects/kozijnisolatie.js';
 
 Vue.use(Router);
 
@@ -40,6 +42,14 @@ export const router = new Router({
     	path: '/projects/groenlinks-maak',
     	name: 'project--groenlinks-maak',
       component: groenlinksMaak,
+    	meta: {
+    		pageID: 'project',
+    	},
+    },
+    {
+    	path: '/projects/kozijnisolatie',
+    	name: 'project--kozijnisolatie',
+      component: kozijnisolatie,
     	meta: {
     		pageID: 'project',
     	},
