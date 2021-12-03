@@ -66,6 +66,7 @@ import { socialLinks } from './components/social-links.js';
         outAnimatingComponent.$log('animateOut');
 
         const cb = () => {
+          document.documentElement.scrollTop = 0;
           outAnimatingComponent.$log('done with animateOut');
           done();
         };
