@@ -28,7 +28,7 @@
     &:hover,
     &:focus {
       transform: scale(1.02);
-      box-shadow: 0px 0px 50px var(--black-3);
+      box-shadow: 0px 0px 55px var(--project-teaser-hover-box-shadow-color, var(--black-3));
 
       // &::before {
       //   opacity: 0.2;
@@ -92,21 +92,26 @@
       transition-property: color, transform;
       transition-duration: var(--speed-medium);
       transition-timing-function: var(--easing-cubic);
+      text-shadow: 0 0.5px 1px rgba($black-3, 0.3);
     }
   }
 
+  &[data-project-id="kozijnverbindingen"] {
+    --project-color: #0da0d8;
+    --project-teaser-hover-box-shadow-color: #{rgba(mix($black-3, #0da0d8, 40%), 0.9)};
+  }
   &[data-project-id="haringvliet"] {
     // --project-color: #d96aa0;
     --project-color: #157dc1;
-  }
-  &[data-project-id="kozijnverbindingen"] {
-    --project-color: #0da0d8;
+    --project-teaser-hover-box-shadow-color: #{rgba(mix($grey-0, #157dc1, 30%), 0.8)};
   }
   &[data-project-id="groenlinks-maak"] {
     // --project-color: #39a935;
     --project-color: #db0030;
+    --project-teaser-hover-box-shadow-color: #{rgba(mix($black-3, #db0030, 55%), 0.65)};
   }
   &[data-project-id="kozijnisolatie"] {
     --project-color: #651a45;
+    --project-teaser-hover-box-shadow-color: #{mix($black-3, #651a45, 50%)};
   }
 }

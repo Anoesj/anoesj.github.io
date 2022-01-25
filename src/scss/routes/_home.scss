@@ -15,7 +15,7 @@
     margin-inline-start: max(calc(0.07 * min(var(--max-container-width), 100vw)), 50px);
 
     > div + div {
-      margin-block-start: 2em;
+      margin-block-start: 2.2em;
     }
 
     h1 {
@@ -28,9 +28,11 @@
         $c4: mix($secondary, $white-0, 75%);
         // background: linear-gradient(120deg, #{$c1}, 50%, #{$c4});
         // background: linear-gradient(120deg, #{$c1}, 20%, #{$c2}, 35%, #{$c3}, 80%, #{$c4});
-        background: linear-gradient(120deg, #{$c1}, 15%, #{$c2}, 45%, #{$c4});
+        // background: linear-gradient(120deg, #{$c1}, 15%, #{$c2}, 45%, #{$c4});
+        background: linear-gradient(180deg, #{$c1}, 15%, #{$c2}, 60%, #{$c4});
         background-clip: text;
         color: transparent;
+        filter: drop-shadow(0 0 26px rgba($primary, 0.14));
       }
     }
   }
@@ -44,6 +46,7 @@
     justify-content: stretch;
     align-items: stretch;
     margin-block: calc(max(14vh, 74px) * 0.66);
+    margin-block-end: calc(max(14vh, 74px) * 1.2);
     // margin-inline-end: 75px;
     gap: 45px;
   }

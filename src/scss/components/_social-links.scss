@@ -19,6 +19,7 @@
     background: linear-gradient(to top, $color 0%, $color 10%, 60%, transparent 100%);
     z-index: -1;
     pointer-events: none;
+    opacity: 0.9;
   }
 
   > * {
@@ -29,7 +30,7 @@
   span {
     font-size: 75%;
     margin-right: 0.7ch;
-    color: var(--grey-1);
+    color: var(--black-3);
     line-height: 1;
   }
 
