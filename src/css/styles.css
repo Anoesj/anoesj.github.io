@@ -87,6 +87,16 @@ body::before {
   background-position: 40% 40%;
   background-attachment: fixed;
 }
+body::after {
+  content: "";
+  background: radial-gradient(circle at 10% 40%, #09846623, rgba(255, 255, 255, 0) 25%), radial-gradient(circle at 53% 31%, #00354347, rgba(255, 255, 255, 0) 33%);
+  display: block;
+  position: fixed;
+  z-index: -10;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 
 #app {
   flex: 1 1 auto;
@@ -292,7 +302,7 @@ h2 {
   position: absolute;
   bottom: 1em;
   left: 1.4em;
-  padding: 0.25em 0.7em;
+  padding: 0.28em 0.8em;
   border-radius: 4px;
   background-color: var(--project-color, var(--secondary-dark));
   box-shadow: 0px 2px 9px -5px var(--project-color, var(--secondary-dark));
@@ -308,8 +318,8 @@ h2 {
   --project-teaser-hover-box-shadow-color: rgba(57, 145, 179, 0.9);
 }
 .project--teaser[data-project-id=haringvliet] {
-  --project-color: #157dc1;
-  --project-teaser-hover-box-shadow-color: rgba(56, 130, 179, 0.8);
+  --project-color: #0078c9;
+  --project-teaser-hover-box-shadow-color: rgba(41, 127, 185, 0.8);
 }
 .project--teaser[data-project-id=groenlinks-maak] {
   --project-color: #db0030;
@@ -406,7 +416,7 @@ h2 {
 }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .home .text h1 {
-    background: linear-gradient(180deg, #47ed9a, 15%, #44f6ba, 60%, #5fa3ee);
+    background: linear-gradient(180deg, #47ed9a, 15%, #44f6ba, 65%, #87b5e9);
     -webkit-background-clip: text;
             background-clip: text;
     color: transparent;
@@ -428,10 +438,11 @@ h2 {
 }
 
 .project {
+  width: 100%;
   margin-right: auto;
   margin-bottom: auto;
-  padding-inline: 50px;
-  padding-block: max(14vh, 74px);
+  padding-inline: clamp(40px, 9vw, 100px);
+  padding-block: clamp(50px, 14vh, 90px);
 }
 .project .back-button-wrapper {
   margin-bottom: 1.5em;
