@@ -13,12 +13,12 @@ export const home = {
                   <div ref="text1">
                     <h1>Hoi, ik ben Anoesj.</h1>
                     <p>Ik ben een front-end web developer die zich het liefst bezig houdt met het maken van gepolijste, gebruiksvriendelijke web apps.</p>
-                    <p>Waarom ik anders ben dan de rest? Naast mijn ruime technische ervaring, vind ik het goed luisteren en meedenken belangrijke waarden in dit vak. Ik kan wel noemen dat ik fantastisch ben met JavaScript, CSS, Vue.js en API’s schrijven, maar jou als klant <strong>écht</strong> doorgronden, dat is waar het om draait. Door uit te zoeken tegen welke problemen jij of je klanten aanlopen en de benodigde domeinkennis te verzamelen, kunnen we samen werken aan een duurzame digitale oplossing op maat.</p>
+                    <p>Naast technisch ervaren zijn, vind ik goed luisteren en meedenken met de klant belangrijke waarden in dit vak. Ik kan wel noemen dat ik goed ben met JavaScript, CSS, Vue.js en API’s schrijven, maar jou <strong>écht</strong> doorgronden, dat is waar het om draait. Door uit te zoeken tegen welke problemen jij of je klanten aanlopen en de benodigde domeinkennis te verzamelen, kunnen we samen werken aan een duurzame digitale oplossing op maat.</p>
                   </div>
 
                   <div ref="text2">
                     <h2>Achtergrond</h2>
-                    <p>Ik ben gevestigd in Amersfoort. Hier werk ik voor <a href="https://fonkel.io" class="link">Fonkel</a>, een digitale agency, waar ik werk aan Drupal, Vue.js en Laravel projecten in het afgelopen decennium, met name voor bedrijven in de bouw. Midden in de pandemie heb ik mijn Bachelor of Music behaald bij ArtEZ Institute of the Arts in Enschede. Toen ik ter afronding van de studie stage liep bij <a href="https://media.monks.com/" class="link">Media.Monks</a>, realiseerde ik mij steeds meer dat mijn interesse meer bij programmeren ligt dan bij muziek. Sindsdien ben ik ook als zelfstandige klussen aan gaan nemen, naast mijn werk bij Fonkel.</p>
+                    <p>Ik ben gevestigd in Amersfoort. Hier werk ik een deel van de week voor <a href="https://fonkel.io" class="link">Fonkel</a>, een digital agency, waar ik werk aan Vue.js, Laravel en Drupal projecten, met name voor bedrijven in de bouw en techniek. Midden in de pandemie heb ik mijn Bachelor of Music behaald bij ArtEZ Institute of the Arts in Enschede. Toen ik ter afronding van de studie stage liep bij <a href="https://media.monks.com/" class="link">Media.Monks</a>, realiseerde ik mij steeds meer dat mijn interesse meer bij programmeren ligt dan bij muziek. Sindsdien ben ik ook als zelfstandige klussen aan gaan nemen, naast mijn werk bij Fonkel.</p>
                     <p>Heb je een uitdaging of vraag voor mij, dan ga ik graag met je in gesprek!</p>
 
                     <!-- <h2>Clients</h2>
