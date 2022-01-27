@@ -223,7 +223,9 @@ h1 + p {
 
 h2 {
   font-size: 1.55em;
-  line-height: 1.52;
+  line-height: 1.22;
+  margin-bottom: 0.35em;
+  margin-top: 1.56em;
 }
 
 .back-button-wrapper {
@@ -264,7 +266,7 @@ h2 {
 .project--teaser a:hover .project__media-wrapper, .project--teaser a:focus .project__media-wrapper {
   opacity: 1;
   transform: none;
-  filter: none;
+  filter: var(--extra-filters);
 }
 .project--teaser a:hover .project__media-wrapper video, .project--teaser a:focus .project__media-wrapper video {
   visibility: visible;
@@ -275,9 +277,10 @@ h2 {
   transform: scale(0.9803921569);
 }
 .project--teaser a .project__media-wrapper {
+  --extra-filters: ;
   opacity: 0.65;
   transform: scale(1.08);
-  filter: blur(2.5px);
+  filter: blur(2.5px) var(--extra-filters);
 }
 .project--teaser a .project__media-wrapper, .project--teaser a .project__media-wrapper img, .project--teaser a .project__media-wrapper video {
   display: block;
@@ -320,6 +323,9 @@ h2 {
 .project--teaser[data-project-id=haringvliet] {
   --project-color: #0078c9;
   --project-teaser-hover-box-shadow-color: rgba(41, 127, 185, 0.8);
+}
+.project--teaser[data-project-id=haringvliet] .project__media-wrapper {
+  --extra-filters: brightness(0.92) saturate(1.25);
 }
 .project--teaser[data-project-id=groenlinks-maak] {
   --project-color: #db0030;
@@ -452,4 +458,7 @@ h2 {
 }
 .project__headings {
   max-inline-size: 1000px;
+}
+.project__clients {
+  margin-top: 1.6em;
 }

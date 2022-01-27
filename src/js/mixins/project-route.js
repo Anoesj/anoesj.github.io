@@ -51,10 +51,15 @@ export const projectRoute = {
 
       const transformDuration = duration * 1.3,
             opacityDuration = duration * 1.2,
-            headingsTransformStart = duration * 0,
+            startTime = duration * 0,
             opacityDelay = duration * 0.3,
-            headingOpacityStart = headingsTransformStart + opacityDelay,
-            backButtonTransformStart = headingOpacityStart + opacityDuration / 20,
+            timings = {
+              headingTransformStart: startTime,
+              headingOpacityStart: startTime + 1 * opacityDelay,
+              clientsOpacityStart: startTime + 2 * opacityDelay,
+            },
+            endTime = Math.max(...Object.values(timings)),
+            backButtonTransformStart = endTime - opacityDuration/5,
             backButtonOpacityStart = backButtonTransformStart + opacityDelay;
 
       tl.fromTo(this.$refs.headings, transformDuration,
@@ -72,7 +77,7 @@ export const projectRoute = {
           transformOrigin: 'center center',
           ease: GSAP.Power3.easeInOut,
         },
-        headingsTransformStart,
+        timings.headingTransformStart,
       );
 
       tl.fromTo(this.$refs.headings, opacityDuration,
@@ -83,12 +88,23 @@ export const projectRoute = {
           opacity: 1,
           ease: GSAP.Power2.easeInOut,
         },
-        headingOpacityStart,
+        timings.headingOpacityStart,
       );
 
-      tl.fromTo(this.$refs.backButton, transformDuration,
+      tl.fromTo(this.$refs.clients, opacityDuration,
         {
-          x: 30,
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          ease: GSAP.Power2.easeInOut,
+        },
+        timings.clientsOpacityStart,
+      );
+
+      tl.fromTo(this.$refs.backButton, transformDuration * 1.25,
+        {
+          x: 12,
           scale: 0.97,
           rotation: this.$root.angle,
           skewX: -3,
@@ -104,7 +120,7 @@ export const projectRoute = {
         backButtonTransformStart,
       );
 
-      tl.fromTo(this.$refs.backButton, opacityDuration,
+      tl.fromTo(this.$refs.backButton, opacityDuration * 1.25,
         {
           opacity: 0,
         },

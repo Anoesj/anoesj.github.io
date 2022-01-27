@@ -37,7 +37,7 @@
       .project__media-wrapper {
         opacity: 1;
         transform: none;
-        filter: none;
+        filter: var(--extra-filters);
 
         video {
           visibility: visible;
@@ -52,9 +52,10 @@
     }
 
     .project__media-wrapper {
+      --extra-filters: ;
       opacity: 0.65;
       transform: scale(1.08);
-      filter: blur(2.5px);
+      filter: blur(2.5px) var(--extra-filters);
 
       &, img, video {
         display: block;
@@ -104,6 +105,10 @@
     // --project-color: #d96aa0;
     --project-color: #0078c9;
     --project-teaser-hover-box-shadow-color: #{rgba(mix($grey-0, #0078c9, 30%), 0.8)};
+
+    .project__media-wrapper {
+      --extra-filters: brightness(0.92) saturate(1.25);
+    }
   }
   &[data-project-id="groenlinks-maak"] {
     // --project-color: #39a935;
