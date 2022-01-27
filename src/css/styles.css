@@ -11,7 +11,7 @@
   --white-1: #e4e5ec;
   --primary: #37ef92;
   --primary-light: #4dfad4;
-  --primary-dark: #00795e;
+  --primary-dark: #009b74;
   --secondary: #3791f4;
   --secondary-light: #6ebeff;
   --secondary-dark: #1F4287;
@@ -45,8 +45,8 @@ html {
   scrollbar-color: var(--primary-dark) var(--black-2);
 }
 html::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
 }
 html::-webkit-scrollbar-track {
   background: var(--black-2);
