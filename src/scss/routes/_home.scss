@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .home {
   width: 100%;
   display: flex;
@@ -10,13 +12,13 @@
 
   .text {
     flex: 3 0 50%;
-    max-inline-size: 34em;
+    max-width: 34em;
     margin-block: max(17vh, 74px);
     margin-inline-start: max(calc(0.05 * min(var(--max-container-width), 100vw)), 50px);
     padding-inline-end: max(0.05 * min(var(--max-container-width), 100vw), 50px);
 
     > div + div {
-      margin-block-start: 2.2em;
+      margin-top: 2.2em;
     }
 
     h1 {
@@ -40,15 +42,16 @@
 
   .featured-projects {
     flex: 2 0 25%;
-    min-inline-size: min(20em, 100%);
-    max-inline-size: 27em;
+    min-width: min(20em, 100%);
+    max-width: 27em;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    margin-block: calc(max(14vh, 74px) * 0.66);
-    margin-block-end: calc(max(14vh, 74px) * 1.2);
-    // margin-inline-end: 75px;
+    margin-top: calc(max(14vh, 74px) * 0.66);
+    margin-bottom: calc(max(14vh, 74px) * 1.2);
+    margin-right: math.div(75px, 2);
+    // margin-right: 75px;
     gap: 45px;
   }
 }
