@@ -274,13 +274,13 @@ h2 {
 }
 .project--teaser a:hover p, .project--teaser a:focus p {
   color: #fff;
-  transform: scale(0.9803921569);
+  transform: scale(1.05);
 }
 .project--teaser a .project__media-wrapper {
   --extra-filters: ;
   opacity: 0.65;
   transform: scale(1.08);
-  filter: blur(2.5px) var(--extra-filters);
+  filter: var(--extra-filters) blur(2.5px);
 }
 .project--teaser a .project__media-wrapper, .project--teaser a .project__media-wrapper img, .project--teaser a .project__media-wrapper video {
   display: block;
@@ -304,24 +304,65 @@ h2 {
 .project--teaser a p {
   position: absolute;
   bottom: 1em;
-  left: 1.4em;
-  padding: 0.28em 0.8em;
-  border-radius: 4px;
-  background-color: var(--project-color, var(--secondary-dark));
-  box-shadow: 0px 2px 9px -5px var(--project-color, var(--secondary-dark));
+  left: 0;
+  padding: 0.28em 1.35em 0.28em 1.15em;
+  filter: drop-shadow(0px 2px 7px hsla(var(--project-color-h), var(--project-color-s), var(--project-color-l), 0.35));
   color: var(--white-1);
   transform: none;
+  transform-origin: left center;
   transition-property: color, transform;
   transition-duration: var(--speed-medium);
   transition-timing-function: var(--easing-cubic);
   text-shadow: 0 0.5px 1px rgba(123, 123, 123, 0.3);
+  /*
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background-color: var(--project-color, var(--secondary-dark));
+    filter: brightness(1.2);
+    opacity: 0.4;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      calc(100% - 0.3em) 100%,
+      0% 100%
+    );
+  }
+  */
+}
+.project--teaser a p::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--project-color, var(--secondary-dark));
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, calc(100% - 0.3em) 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, calc(100% - 0.3em) 100%, 0% 100%);
+}
+.project--teaser a p strong {
+  position: relative;
+  z-index: 1;
 }
 .project--teaser[data-project-id=kozijnverbindingen] {
   --project-color: #0da0d8;
+  --project-color-h: 196.5517241379deg;
+  --project-color-s: 88.6462882096%;
+  --project-color-l: 44.9019607843%;
   --project-teaser-hover-box-shadow-color: rgba(57, 145, 179, 0.9);
 }
 .project--teaser[data-project-id=haringvliet] {
   --project-color: #0078c9;
+  --project-color-h: 204.1791044776deg;
+  --project-color-s: 100%;
+  --project-color-l: 39.4117647059%;
   --project-teaser-hover-box-shadow-color: rgba(41, 127, 185, 0.8);
 }
 .project--teaser[data-project-id=haringvliet] .project__media-wrapper {
@@ -329,10 +370,16 @@ h2 {
 }
 .project--teaser[data-project-id=groenlinks-maak] {
   --project-color: #db0030;
+  --project-color-h: 346.8493150685deg;
+  --project-color-s: 100%;
+  --project-color-l: 42.9411764706%;
   --project-teaser-hover-box-shadow-color: rgba(166, 68, 89, 0.65);
 }
 .project--teaser[data-project-id=kozijnisolatie] {
   --project-color: #651a45;
+  --project-color-h: 325.6deg;
+  --project-color-s: 59.0551181102%;
+  --project-color-l: 24.9019607843%;
   --project-teaser-hover-box-shadow-color: #704b60;
 }
 
@@ -364,9 +411,11 @@ h2 {
 }
 .social-links span {
   font-size: 75%;
-  margin-right: 0.7ch;
-  color: var(--black-3);
+  margin-right: 0.85ch;
+  color: var(--grey-0);
   line-height: 1;
+  font-weight: 600;
+  margin-top: -1px;
 }
 .social-links a {
   display: block;
@@ -407,7 +456,7 @@ h2 {
 .home .text {
   flex: 3 0 50%;
   max-inline-size: 34em;
-  margin-block: max(14vh, 74px);
+  margin-block: max(17vh, 74px);
   -webkit-margin-start: max(0.05 * min(var(--max-container-width), 100vw), 50px);
           margin-inline-start: max(0.05 * min(var(--max-container-width), 100vw), 50px);
   -webkit-padding-end: max(0.05 * min(var(--max-container-width), 100vw), 50px);

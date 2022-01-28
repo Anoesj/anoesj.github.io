@@ -1,0 +1,26 @@
+@use 'sass:color';
+
+// Creates CSS var and some additional CSS vars for the hue, saturation and lightness values of the given color.
+// Inspired by https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
+@mixin declare-color($css-var-name, $hex-color-value) {
+  #{$css-var-name}: #{$hex-color-value};
+  #{$css-var-name}-h: color.hue($hex-color-value);
+  #{$css-var-name}-s: color.saturation($hex-color-value);
+  #{$css-var-name}-l: color.lightness($hex-color-value);
+}
+
+// Use this when you used declare-color() to declare the color you want to reuse. This function
+// will copy the main CSS variable, but also the -h, -s and -l variants.
+@mixin reuse-color($target-css-var-name, $source-css-var-name) {
+  #{$target-css-var-name}: var(#{$source-css-var-name});
+  #{$target-css-var-name}-h: var(#{$source-css-var-name}-h);
+  #{$target-css-var-name}-s: var(#{$source-css-var-name}-s);
+  #{$target-css-var-name}-l: var(#{$source-css-var-name}-l);
+}
+
+@function hsla-css-var($css-var-name, $a) {
+  $h: var(#{$css-var-name}-h);
+  $s: var(#{$css-var-name}-s);
+  $l: var(#{$css-var-name}-l);
+  @return hsla(#{$h}, #{$s}, #{$l}, #{$a});
+}

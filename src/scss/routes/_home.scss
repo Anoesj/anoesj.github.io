@@ -11,7 +11,7 @@
   .text {
     flex: 3 0 50%;
     max-inline-size: 34em;
-    margin-block: max(14vh, 74px);
+    margin-block: max(17vh, 74px);
     margin-inline-start: max(calc(0.05 * min(var(--max-container-width), 100vw)), 50px);
     padding-inline-end: max(0.05 * min(var(--max-container-width), 100vw), 50px);
 
