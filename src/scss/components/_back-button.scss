@@ -5,16 +5,18 @@
 .back-button {
   display: inline-block;
   margin-bottom: 1em;
+  --underline-offset: 0.23em !important;
 
   i {
     transition: transform var(--speed-fast) var(--easing-cubic-steep);
     transform: none;
+    margin-right: 0.22ch;
   }
 
   &:hover,
   &:focus {
     i {
-      transform: translateX(-25%);
+      transform: translateX(-17%);
     }
   }
 }

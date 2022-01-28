@@ -115,18 +115,19 @@ a {
   text-decoration: none;
 }
 a.link {
+  --underline-offset: 0px;
   display: inline-block;
   position: relative;
   height: 0.24em;
   border-radius: 1em;
   overflow: visible;
-  box-shadow: 0 1.6em 0 -0.1px rgba(55, 239, 146, 0.45);
+  box-shadow: 0 calc(1.55em + var(--underline-offset)) 0 -1.4px rgba(55, 239, 146, 0.45);
   transition-property: box-shadow, transform;
   transition-duration: var(--speed-fast);
   transition-timing-function: var(--easing-cubic-steep);
 }
 a.link:hover, a.link:focus {
-  box-shadow: 0 1.54em 0 -0.7px #37ef92;
+  box-shadow: 0 calc(1.54em + var(--underline-offset)) 0 -0.7px #37ef92;
   transform: translateY(-0.1em);
 }
 
@@ -228,13 +229,15 @@ h2 {
 .back-button {
   display: inline-block;
   margin-bottom: 1em;
+  --underline-offset: 0.23em !important;
 }
 .back-button i {
   transition: transform var(--speed-fast) var(--easing-cubic-steep);
   transform: none;
+  margin-right: 0.22ch;
 }
 .back-button:hover i, .back-button:focus i {
-  transform: translateX(-25%);
+  transform: translateX(-17%);
 }
 
 .project--teaser a {
@@ -493,9 +496,6 @@ h2 {
 }
 .project .back-button-wrapper {
   margin-bottom: 3.5em;
-}
-.project .back-button i {
-  margin-right: 0.22ch;
 }
 .project h1 {
   font-size: 1.6em;

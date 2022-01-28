@@ -81,19 +81,20 @@ a {
   text-decoration: none;
 
   &.link {
+    --underline-offset: 0px;
     display: inline-block;
     position: relative;
     height: 0.24em;
     border-radius: 1em;
     overflow: visible;
-    box-shadow: 0 1.6em 0 -0.1px rgba($primary, 0.45);
+    box-shadow: 0 calc(1.55em + var(--underline-offset)) 0 -1.4px rgba($primary, 0.45);
     transition-property: box-shadow, transform;
     transition-duration: var(--speed-fast);
     transition-timing-function: var(--easing-cubic-steep);
 
     &:hover,
     &:focus {
-      box-shadow: 0 1.54em 0 -0.7px $primary;
+      box-shadow: 0 calc(1.54em + var(--underline-offset)) 0 -0.7px $primary;
       transform: translateY(-0.1em);
     }
   }
