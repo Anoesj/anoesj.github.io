@@ -145,4 +145,8 @@
     @include declare-color(--project-color, #651a45);
     --project-teaser-hover-box-shadow-color: #{mix($black-3, #651a45, 50%)};
   }
+  &[data-project-id="spotify-audio-features"] {
+    @include declare-color(--project-color, #1aa34a);
+    --project-teaser-hover-box-shadow-color: #{mix($black-3, #1aa34a, 50%)};
+  }
 }

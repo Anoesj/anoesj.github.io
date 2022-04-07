@@ -24,19 +24,19 @@
     h1 {
       display: inline-block;
 
-      @supports (background-clip: text) {
-        $c1: mix($primary, $white-0, 90%);
-        $c2: mix($primary-light, $primary, 60%);
-        $c3: mix($secondary-light, $white-0, 100%);
-        $c4: mix($secondary, $white-0, 50%);
-        // background: linear-gradient(120deg, #{$c1}, 50%, #{$c4});
-        // background: linear-gradient(120deg, #{$c1}, 20%, #{$c2}, 35%, #{$c3}, 80%, #{$c4});
-        // background: linear-gradient(120deg, #{$c1}, 15%, #{$c2}, 45%, #{$c4});
-        background: linear-gradient(180deg, #{$c1}, 15%, #{$c2}, 65%, #{$c4});
-        background-clip: text;
-        color: transparent;
-        filter: drop-shadow(0 0 26px rgba($primary, 0.14));
-      }
+      // @supports (background-clip: text) {
+      //   $c1: mix($primary, $white-0, 90%);
+      //   $c2: mix($primary-light, $primary, 60%);
+      //   $c3: mix($secondary-light, $white-0, 100%);
+      //   $c4: mix($secondary, $white-0, 50%);
+      //   // background: linear-gradient(120deg, #{$c1}, 50%, #{$c4});
+      //   // background: linear-gradient(120deg, #{$c1}, 20%, #{$c2}, 35%, #{$c3}, 80%, #{$c4});
+      //   // background: linear-gradient(120deg, #{$c1}, 15%, #{$c2}, 45%, #{$c4});
+      //   background: linear-gradient(180deg, #{$c1}, 15%, #{$c2}, 65%, #{$c4});
+      //   background-clip: text;
+      //   color: transparent;
+      //   filter: drop-shadow(0 0 26px rgba($primary, 0.14));
+      // }
     }
   }
 

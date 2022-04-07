@@ -230,16 +230,32 @@ h2 {
   display: inline-block;
   margin-bottom: 1em;
   --underline-offset: 0.23em !important;
+  position: relative;
+}
+.back-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 50px);
+  height: calc(100% + 25px);
+  box-shadow: 0 0 0 2px #009b74 !important;
+  border-radius: 9999px;
+  transition: transform var(--speed-fast) var(--easing-cubic-steep);
 }
 .back-button i {
+  display: inline-block;
   transition: transform var(--speed-fast) var(--easing-cubic-steep);
   transform: none;
-  margin-right: 0.22ch;
+  margin-right: 1ch;
+  font-size: 50%;
+  font-style: normal;
+  vertical-align: middle;
 }
-.back-button:hover i, .back-button:focus i {
-  transform: translateX(-17%);
+.back-button:hover::before, .back-button:focus::before {
+  transform: translate(-50%, -50%) scale(1.07);
 }
-
 .project--teaser a {
   display: block;
   position: relative;
@@ -378,6 +394,13 @@ h2 {
   --project-color-l: 24.9019607843%;
   --project-teaser-hover-box-shadow-color: #704b60;
 }
+.project--teaser[data-project-id=spotify-audio-features] {
+  --project-color: #1aa34a;
+  --project-color-h: 141.0218978102deg;
+  --project-color-s: 72.4867724868%;
+  --project-color-l: 37.0588235294%;
+  --project-teaser-hover-box-shadow-color: #4b8f63;
+}
 
 .social-links {
   display: flex;
@@ -463,15 +486,6 @@ h2 {
 }
 .home .text h1 {
   display: inline-block;
-}
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .home .text h1 {
-    background: linear-gradient(180deg, #47ed9a, 15%, #44f6ba, 65%, #87b5e9);
-    -webkit-background-clip: text;
-            background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 0 26px rgba(55, 239, 146, 0.14));
-  }
 }
 .home .featured-projects {
   flex: 2 0 25%;

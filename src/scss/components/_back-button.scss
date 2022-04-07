@@ -6,17 +6,39 @@
   display: inline-block;
   margin-bottom: 1em;
   --underline-offset: 0.23em !important;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 50px);
+    height: calc(100% + 25px);
+    box-shadow: 0 0 0 2px $primary-dark !important;
+    border-radius: 9999px;
+    transition: transform var(--speed-fast) var(--easing-cubic-steep);
+  }
 
   i {
+    display: inline-block;
     transition: transform var(--speed-fast) var(--easing-cubic-steep);
     transform: none;
-    margin-right: 0.22ch;
+    margin-right: 1ch;
+    font-size: 50%;
+    font-style: normal;
+    vertical-align: middle;
   }
 
   &:hover,
   &:focus {
+    &::before {
+      transform: translate(-50%, -50%) scale(1.07);
+    }
+
     i {
-      transform: translateX(-17%);
+      // transform: translateX(-17%);
     }
   }
 }

@@ -76,6 +76,11 @@ export const home = {
           image: '/img/projects/kozijnisolatie-1.png',
           title: 'Kozijnisolatie',
         },
+        {
+          routeName: 'spotify-audio-features',
+          image: '/img/projects/spotify-audio-features-1.png',
+          title: 'Spotify Audio Features',
+        },
       ],
       /*
         Development:

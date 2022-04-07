@@ -8,6 +8,7 @@ import haringvliet from './routes/projects/haringvliet.js';
 import kozijnverbindingen from './routes/projects/kozijnverbindingen.js';
 import groenlinksMaak from './routes/projects/groenlinks-maak.js';
 import kozijnisolatie from './routes/projects/kozijnisolatie.js';
+import spotifyAudioFeatures from './routes/projects/spotify-audio-features.js';
 
 Vue.use(Router);
 
@@ -50,6 +51,14 @@ export const router = new Router({
     	path: '/projects/kozijnisolatie',
     	name: 'project--kozijnisolatie',
       component: kozijnisolatie,
+    	meta: {
+    		pageID: 'project',
+    	},
+    },
+    {
+    	path: '/projects/spotify-audio-features',
+    	name: 'project--spotify-audio-features',
+      component: spotifyAudioFeatures,
     	meta: {
     		pageID: 'project',
     	},
