@@ -11,7 +11,11 @@ export default {
     projectRoute,
   ],
 
-  template:  `<Project ref="project" :clients="clients">
+  template:  `<Project
+                ref="project"
+                headerImg="/img/projects/groenlinks-maak-1.png"
+                :clients="clients"
+              >
                 <template #heading1>Maak</template>
                 <template #heading2>Web app voor het maken van social media content in de huis&shy;stijl van GroenLinks</template>
                 <template #content>
@@ -23,6 +27,9 @@ export default {
 
                   <h3>Rol</h3>
                   <p>Begonnen als vrijwilliger en in samenwerking met GroenLinks, een andere developer en een UX’er de basis uitgedacht en opgezet. Later als enige developer op freelance basis verder gewerkt aan nieuwe iteraties.</p>
+
+                  <h3>Bekijk in actie</h3>
+                  <p><i class="fas fa-arrow-right-long"></i><a class="link" href="https://maak.groenlinks.nl/">maak.groenlinks.nl</a></p>
                 </template>
               </Project>`,
 

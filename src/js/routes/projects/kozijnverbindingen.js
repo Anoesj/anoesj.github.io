@@ -11,7 +11,11 @@ export default {
     projectRoute,
   ],
 
-  template:  `<Project ref="project" :clients="clients">
+  template:  `<Project
+                ref="project"
+                headerImg="/img/project-headers/kozijnverbindingen-1.png"
+                :clients="clients"
+              >
                 <template #heading1>Kozijn&shy;ver&shy;bin&shy;dingen</template>
                 <template #heading2>Self-<wbr>service ad&shy;vi&shy;se&shy;ring tool voor de hoek&shy;ankers van Gebr. Bode&shy;gra&shy;ven</template>
                 <template #content>
@@ -23,6 +27,9 @@ export default {
 
                   <h3>Rol</h3>
                   <p>Lead developer, full-stack. Zelfstandig communiceren met de klant, andere aangesloten partijen en designer, meedenken over de beste aanpak voor de integratie van nieuwe productlijnen. Inschatten en -plannen van sprints. Ongeveer 60% van de back-end gebouwd, 80% van de front-end en 100% van de natuurkundige berekeningen (in samenwerking met de klant).</p>
+
+                  <h3>Bekijk in actie</h3>
+                  <p><i class="fas fa-arrow-right-long"></i><a class="link" href="https://kozijnverbindingen.gb.nl/">kozijnverbindingen.gb.nl</a> (registratie vereist)</p>
                 </template>
               </Project>`,
 

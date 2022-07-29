@@ -3,6 +3,10 @@ import { GSAP } from '../NodeModules.js';
 export const Project = {
 
   props: {
+    headerImg: {
+      type: String,
+      required: true,
+    },
     clients: {
       type: Array,
       required: false,
@@ -11,11 +15,17 @@ export const Project = {
   },
 
   template:  `<div class="project" v-once>
+                <img
+                  ref="headerImage"
+                  class="project__header-img"
+                  :src="headerImg"
+                />
+
                 <span
                   ref="backButton"
                   class="back-button-wrapper"
                 >
-                  <back-button/>
+                  <BackButton/>
                 </span>
 
                 <div
@@ -50,6 +60,10 @@ export const Project = {
                     name="content"
                   ></slot>
                 </div>
+
+                <hr ref="preContactBlockHr"/>
+
+                <ContactBlock ref="contact"/>
               </div>`,
 
   computed: {
@@ -72,17 +86,37 @@ export const Project = {
     async animation (duration, reverse = false) {
       const tl = new GSAP.TimelineLite();
 
+      let i = 0;
+
       const transformDuration = duration * 1.3,
             opacityDuration = duration * 1.2,
             startTime = duration * 0,
             opacityDelay = duration * 0.3,
-            timings = {
-              headingTransformStart: startTime + 0 * opacityDelay,
-              headingOpacityStart: startTime + 1 * opacityDelay,
-              ...(this.$refs.clients) ? { clientsOpacityStart: startTime + 2 * opacityDelay } : {},
-              ...(this.$refs.content) ? { contentOpacityStart: startTime + (this.hasClients ? 3 : 2) * opacityDelay } : {},
-            },
-            endTime = Math.max(...Object.values(timings)),
+            timings = {};
+
+      timings.headingTransformStart = startTime + i * opacityDelay;
+      i++;
+
+      timings.headingOpacityStart = startTime + i * opacityDelay;
+      i++;
+
+      if (this.$refs.clients) {
+        timings.clientsOpacityStart = startTime + i * opacityDelay;
+        i++;
+      }
+
+      if (this.$refs.content) {
+        timings.contentOpacityStart = startTime + i * opacityDelay;
+        i++;
+      }
+
+      timings.preContactBlockHrOpacityStart = startTime + i * opacityDelay;
+      i++;
+
+      timings.contactOpacityStart = startTime + i * opacityDelay;
+      i++;
+
+      const endTime = Math.max(...Object.values(timings)),
             backButtonTransformStart = endTime - opacityDuration/5,
             backButtonOpacityStart = backButtonTransformStart + opacityDelay;
 
@@ -115,7 +149,18 @@ export const Project = {
         timings.headingOpacityStart,
       );
 
-      if (this.hasClients) {
+      tl.fromTo(this.$refs.headerImage, transformDuration,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 0.12,
+          ease: GSAP.Power3.easeInOut,
+        },
+        timings.headingTransformStart,
+      );
+
+      if (this.$refs.clients) {
         tl.fromTo(this.$refs.clients, opacityDuration,
           {
             opacity: 0,
@@ -140,6 +185,28 @@ export const Project = {
           timings.contentOpacityStart,
         );
       }
+
+      tl.fromTo(this.$refs.preContactBlockHr, opacityDuration,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          ease: GSAP.Power2.easeInOut,
+        },
+        timings.preContactBlockHrOpacityStart,
+      );
+
+      tl.fromTo(this.$refs.contact.$el, opacityDuration,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          ease: GSAP.Power2.easeInOut,
+        },
+        timings.contactOpacityStart,
+      );
 
       tl.fromTo(this.$refs.backButton, transformDuration * 1.25,
         {

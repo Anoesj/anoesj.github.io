@@ -11,12 +11,18 @@ export default {
     projectRoute,
   ],
 
-  template:  `<Project ref="project" :clients="clients">
+  template:  `<Project
+                ref="project"
+                :clients="clients"
+              >
                 <template #heading1>Haring&shy;vliet</template>
                 <template #heading2>Ontdek het natuurgebied met de interactieve kaart</template>
                 <template #content>
                   <h3>Concept</h3>
                   <p>Een kleurrijke, interactieve kaart om het Haringvliet natuurgebied te ontdekken. Gebruikers kunnen drie routes volgen door het gebied of zelf door de kaart navigeren. De kaart is volledig responsive, op mobiel werkt deze ook prettig voor de eindgebruiker. Het concept is ontwikkeld in samenwerking met Graphius, het design door Graphius en ik verzorgde de technische implementatie.</p>
+
+                  <h3>Bekijk in actie</h3>
+                  <p>Deze website is helaas offline sinds 2022, een live demonstratie is echter wel mogelijk tijdens een kennismakingsgesprek.</p>
                 </template>
               </Project>`,
 

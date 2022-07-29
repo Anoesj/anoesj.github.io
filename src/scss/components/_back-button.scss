@@ -1,5 +1,9 @@
 .back-button-wrapper {
   display: block;
+  position: sticky;
+  top: min(80px, 8vh);
+  z-index: 10;
+  pointer-events: none;
 }
 
 .back-button {
@@ -7,6 +11,7 @@
   margin-bottom: 1em;
   --underline-offset: 0.23em !important;
   position: relative;
+  pointer-events: all;
 
   &::before {
     content: '';
@@ -17,8 +22,10 @@
     width: calc(100% + 50px);
     height: calc(100% + 25px);
     box-shadow: 0 0 0 2px $primary-dark !important;
+    background-color: rgba(#0e0f12, 0.65);
     border-radius: 9999px;
     transition: transform var(--speed-fast) var(--easing-cubic-steep);
+    z-index: -1;
   }
 
   i {
@@ -38,7 +45,7 @@
     }
 
     i {
-      // transform: translateX(-17%);
+      transform: translateX(-18%) scale(1.07);
     }
   }
 }

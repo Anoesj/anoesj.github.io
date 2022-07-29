@@ -1,4 +1,4 @@
-export const socialLinks = {
+export const SocialLinks = {
 
   template:  `<footer class="social-links">
                 <span>Vind me op</span>

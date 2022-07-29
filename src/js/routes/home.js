@@ -24,7 +24,7 @@ export const home = {
 
                   <div ref="text3">
                     <h3>Technische kennis</h3>
-                    <p>Tien jaar geleden ben ik begonnen als front-end webdeveloper. In de afgelopen jaren heb ik mij met name gespecialiseerd in JavaScript-gedreven applicaties. Denk hierbij aan een stack van Vue.js, CSS (SCSS), HTML en headless back-ends (API’s). Ook heb ik veel back-end ervaring opgedaan met Laravel, Node.js en Drupal.</p>
+                    <p>Tien jaar geleden ben ik begonnen als front-end webdeveloper. In de afgelopen jaren heb ik mij met name gespecialiseerd in JavaScript-gedreven applicaties. Denk hierbij aan een stack van Vue.js, CSS (SCSS), HTML en headless back-ends (API’s). Ook heb ik door de jaren heen veel back-end ervaring opgedaan met Laravel, Node.js en Drupal.</p>
                   </div>
 
                   <div ref="text4">
@@ -36,9 +36,7 @@ export const home = {
 
                   <div ref="text5">
                     <hr/>
-
-                    <h3>Contact</h3>
-                    <p>Heb je een uitdaging of vraag voor mij, dan ga ik graag met je in gesprek!</p>
+                    <ContactBlock/>
                   </div>
                 </div>
 

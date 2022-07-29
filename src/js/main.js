@@ -3,13 +3,15 @@ import { router } from './router.js';
 import { config } from './config.js';
 import { CustomVueExtensions } from './plugins/CustomVueExtensions.js';
 
-import { backButton } from './components/back-button.js';
-import { socialLinks } from './components/social-links.js';
+import { BackButton } from './components/back-button.js';
+import { SocialLinks } from './components/social-links.js';
+import { ContactBlock } from './components/contact-block.js';
 
 (() => {
   Vue.use(CustomVueExtensions);
-  Vue.component('back-button', backButton);
-  Vue.component('social-links', socialLinks);
+  Vue.component('BackButton', BackButton);
+  Vue.component('SocialLinks', SocialLinks);
+  Vue.component('ContactBlock', ContactBlock);
 
   new Vue({
 
@@ -31,7 +33,7 @@ import { socialLinks } from './components/social-links.js';
                     <router-view ref="route"/>
                   </transition>
 
-                  <social-links/>
+                  <SocialLinks/>
                 </div>`,
 
     data () {

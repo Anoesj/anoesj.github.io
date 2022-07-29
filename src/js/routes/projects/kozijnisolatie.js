@@ -11,12 +11,19 @@ export default {
     projectRoute,
   ],
 
-  template:  `<Project ref="project" :clients="clients">
+  template:  `<Project
+                ref="project"
+                headerImg="/img/project-headers/kozijnisolatie-2.png"
+                :clients="clients"
+              >
                 <template #heading1>Kozijn&shy;iso&shy;latie re&shy;ken&shy;tool</template>
                 <template #heading2>Tool voor het be&shy;re&shy;ke&shy;nen van de isolatie&shy;waarden van ko&shy;zij&shy;nen</template>
                 <template #content>
                   <h3>Concept</h3>
                   <p>Interactieve rekentool voor het berekenen van de isolatiewaarden van kozijnen en alle onderdelen. Alle interactieve tekeningen in de tool zijn in feite een grote dynamische SVG, waar onder de motorkap onderdelen in de SVG gekoppeld worden aan rekenlogica voor de isolatiewaardeberekening. In opdracht van de Nederlandse Branchevereniging voor de Timmerindustrie. Design door Graphius, technische implementatie en UX door mij, met wat hulp van twee collega’s bij Fonkel.</p>
+
+                  <h3>Bekijk in actie</h3>
+                  <p>Deze website is niet publiekelijk toegankelijk, een live demonstratie is echter wel mogelijk tijdens een kennismakingsgesprek.</p>
                 </template>
               </Project>`,
 
