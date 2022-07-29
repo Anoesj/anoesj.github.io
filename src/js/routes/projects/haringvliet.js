@@ -13,6 +13,7 @@ export default {
 
   template:  `<Project
                 ref="project"
+                headerImg="/img/project-headers/haringvliet-1.png"
                 :clients="clients"
               >
                 <template #heading1>Haring&shy;vliet</template>

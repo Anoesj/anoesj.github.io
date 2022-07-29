@@ -17,7 +17,7 @@ export default {
                 :clients="clients"
               >
                 <template #heading1>Kozijn&shy;ver&shy;bin&shy;dingen</template>
-                <template #heading2>Self-<wbr>service ad&shy;vi&shy;se&shy;ring tool voor de hoek&shy;ankers van Gebr. Bode&shy;gra&shy;ven</template>
+                <template #heading2>Self-<wbr>service ad&shy;vi&shy;se&shy;ring tool voor de hoek-ankers van Gebr. Bode&shy;gra&shy;ven</template>
                 <template #content>
                   <h3>Concept</h3>
                   <p>Om hun marktpositie te verstevigen en klanten een self-service tool aan te bieden, wilde GB een web app, waarin men voor veelvoorkomende situaties kan berekenen welke materialen nodig zijn om een kozijn, schuifpui of houtskeletbouw-element veilig te bevestigen. Inmiddels loopt de samenwerking al meerdere jaren en wordt er nog altijd doorontwikkeld. Niet alleen producten van GB worden meegenomen in het advies, maar ook producten van bevestigingsmiddelenleveranciers, zoals fischer, Hilti, Spit en Würth. Hierdoor biedt de tool een enorme meerwaarde voor veel bedrijven in de bouw. Doordat er ook een PDF kan worden uitgedraaid met onderbouwing van het advies en voorbeelden voor de toepassing van de producten, is GB goed voorbereid op de Wkb (Wet Kwaliteitsborging).</p>

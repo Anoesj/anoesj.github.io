@@ -32,16 +32,17 @@
 
       p {
         color: #fff;
-        // transform: scale(calc(1 / 1.02));
         transform: scale(calc(1 * 1.05));
       }
     }
 
     .project__media-wrapper {
-      --extra-filters: ;
-      opacity: 0.65;
-      transform: scale(1.08);
-      filter: var(--extra-filters) blur(2.5px);
+      --extra-filters: brightness(1);
+      opacity: 0.75;
+      // transform: scale(1.08) blur(2.5px);
+      transform: scale(1.08) translateZ(0);
+
+      filter: var(--extra-filters);
 
       &, img, video {
         display: block;
@@ -56,7 +57,7 @@
 
       video {
         visibility: hidden;
-        opacity: 0;
+        opacity: 0.01;
       }
     }
 

@@ -45,6 +45,10 @@
     ul {
       list-style: revert;
       list-style-position: inside;
+
+      li::marker {
+        color: $primary;
+      }
     }
   }
 

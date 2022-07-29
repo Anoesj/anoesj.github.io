@@ -126,7 +126,7 @@ p {
   }
 
   &:not(:first-child) {
-    margin-top: 2.2em;
+    margin-top: calc(var(--spacing) * 0.75);
   }
 
   &:last-child {
@@ -134,7 +134,7 @@ p {
   }
 
   &:not(:last-child) {
-    margin-bottom: 2.2em;
+    margin-bottom: calc(var(--spacing) * 0.75);
   }
 }
 
@@ -150,7 +150,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montagu Slab', serif;
+  font-family: 'Arvo', serif;
   letter-spacing: 0.05ch;
   margin: 0;
 

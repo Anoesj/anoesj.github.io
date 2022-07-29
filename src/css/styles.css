@@ -1,6 +1,7 @@
 :root {
   --max-container-width: 1860px;
   --vw: min(var(--max-container-width), 100vw);
+  --spacing: 2.5em;
   --black-0: #0e0f0f;
   --black-1: #101318;
   --black-2: #38393b;
@@ -110,13 +111,13 @@ p:first-child {
   margin-top: 0;
 }
 p:not(:first-child) {
-  margin-top: 2.2em;
+  margin-top: calc(var(--spacing) * 0.75);
 }
 p:last-child {
   margin-bottom: 0;
 }
 p:not(:last-child) {
-  margin-bottom: 2.2em;
+  margin-bottom: calc(var(--spacing) * 0.75);
 }
 
 ul, ol {
@@ -131,7 +132,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montagu Slab", serif;
+  font-family: "Arvo", serif;
   letter-spacing: 0.05ch;
   margin: 0;
 }
@@ -301,10 +302,10 @@ hr:after {
   transform: scale(1.05);
 }
 .project--teaser a .project__media-wrapper {
-  --extra-filters: ;
-  opacity: 0.65;
-  transform: scale(1.08);
-  filter: var(--extra-filters) blur(2.5px);
+  --extra-filters: brightness(1);
+  opacity: 0.75;
+  transform: scale(1.08) translateZ(0);
+  filter: var(--extra-filters);
 }
 .project--teaser a .project__media-wrapper, .project--teaser a .project__media-wrapper img, .project--teaser a .project__media-wrapper video {
   display: block;
@@ -318,7 +319,7 @@ hr:after {
 }
 .project--teaser a .project__media-wrapper video {
   visibility: hidden;
-  opacity: 0;
+  opacity: 0.01;
 }
 .project--teaser a img, .project--teaser a video {
   -o-object-fit: cover;
@@ -487,6 +488,9 @@ hr:after {
   height: 100vh;
   overflow-x: hidden;
 }
+.home .ugly-kerning-fix {
+  letter-spacing: -0.1ch;
+}
 .home .text {
   flex: 3 0 50%;
   max-width: 34em;
@@ -499,7 +503,7 @@ hr:after {
           padding-inline-end: var(--inset);
 }
 .home .text > div + div {
-  margin-top: 2.2em;
+  margin-top: var(--spacing);
 }
 .home .text h1 {
   display: inline-block;
@@ -573,6 +577,9 @@ hr:after {
 .project__clients ul {
   list-style: revert;
   list-style-position: inside;
+}
+.project__clients ul li::marker {
+  color: #37ef92;
 }
 .project__content,
 .project .contact-block {

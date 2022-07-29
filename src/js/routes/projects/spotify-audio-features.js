@@ -13,6 +13,7 @@ export default {
 
   template:  `<Project
                 ref="project"
+                headerImg="/img/project-headers/spotify-audio-features-1.png"
               >
                 <template #heading1>Spotify Audio Features</template>
                 <template #heading2>Bekijk en zoek op eigenschap&shy;analyses van je favoriete muziek op Spotify</template>

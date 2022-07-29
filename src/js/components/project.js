@@ -116,9 +116,39 @@ export const Project = {
       timings.contactOpacityStart = startTime + i * opacityDelay;
       i++;
 
-      const endTime = Math.max(...Object.values(timings)),
-            backButtonTransformStart = endTime - opacityDuration/5,
+      // const endTime = Math.max(...Object.values(timings));
+
+      const backButtonTransformStart = startTime,
             backButtonOpacityStart = backButtonTransformStart + opacityDelay;
+
+      tl.fromTo(this.$refs.backButton, transformDuration * 1.25,
+        {
+          x: 12,
+          scale: 0.97,
+          rotation: this.$root.angle,
+          skewX: -3,
+        },
+        {
+          x: 0,
+          scale: 1,
+          rotation: this.$root.angle,
+          skewX: 0,
+          transformOrigin: 'center center',
+          ease: GSAP.Power3.easeInOut,
+        },
+        backButtonTransformStart,
+      );
+
+      tl.fromTo(this.$refs.backButton, opacityDuration * 1.25,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          ease: GSAP.Power2.easeInOut,
+        },
+        backButtonOpacityStart,
+      );
 
       tl.fromTo(this.$refs.headings, transformDuration,
         {
@@ -206,35 +236,6 @@ export const Project = {
           ease: GSAP.Power2.easeInOut,
         },
         timings.contactOpacityStart,
-      );
-
-      tl.fromTo(this.$refs.backButton, transformDuration * 1.25,
-        {
-          x: 12,
-          scale: 0.97,
-          rotation: this.$root.angle,
-          skewX: -3,
-        },
-        {
-          x: 0,
-          scale: 1,
-          rotation: this.$root.angle,
-          skewX: 0,
-          transformOrigin: 'center center',
-          ease: GSAP.Power3.easeInOut,
-        },
-        backButtonTransformStart,
-      );
-
-      tl.fromTo(this.$refs.backButton, opacityDuration * 1.25,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: GSAP.Power2.easeInOut,
-        },
-        backButtonOpacityStart,
       );
 
       await new Promise((resolve) => {

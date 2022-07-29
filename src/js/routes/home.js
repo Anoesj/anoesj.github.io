@@ -11,7 +11,7 @@ export const home = {
                   class="text"
                 >
                   <div ref="text1">
-                    <h1>Anoesj Sadraee</h1>
+                    <h1>Anoesj S<span style="letter-spacing: -0.08ch;">a</span>d<span style="letter-spacing: -0.03ch;">r</span><span style="letter-spacing: -0.05ch;">a</span>ee</h1>
                     <h2>Full-stack web&shy;developer</h2>
 
                     <p>Gepolijste, gebruiksvriendelijke web apps, daar sta ik voor. Samen&shy;gevat ben ik een senior front-end developer, met kennis van back-end.</p>
@@ -200,11 +200,13 @@ export const home = {
       tl.fromTo(refs, transformDuration,
         {
           x: -60,
+          z: 0,
           scale: 0.97,
           skewX: 3,
         },
         {
           x: 0,
+          z: 0,
           scale: 1,
           skewX: 0,
           transformOrigin: 'center center',
