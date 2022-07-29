@@ -1,3 +1,7 @@
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:string';
+
 @import 'abstracts/**/*';
 @import 'variables/**/*';
 @import 'mixins/**/*';

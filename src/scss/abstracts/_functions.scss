@@ -1,5 +1,3 @@
-@use 'sass:color';
-
 // Creates CSS var and some additional CSS vars for the hue, saturation and lightness values of the given color.
 // Inspired by https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
 @mixin declare-color($css-var-name, $hex-color-value) {

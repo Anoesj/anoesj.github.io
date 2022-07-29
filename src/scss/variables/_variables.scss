@@ -21,6 +21,7 @@ $secondary-dark: #1F4287;
 
 :root {
   --max-container-width:  1860px;
+  --vw:                   min(var(--max-container-width), 100vw);
   --black-0:              #{$black-0};
   --black-1:              #{$black-1};
   --black-2:              #{$black-2};

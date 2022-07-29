@@ -28,5 +28,18 @@
 
   &__clients {
     margin-top: 1.6em;
+
+    ul {
+      list-style: revert;
+      list-style-position: inside;
+    }
+  }
+
+  &__content {
+    // text-align: justify;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 55ch;
+    font-size: 0.9em;
   }
 }

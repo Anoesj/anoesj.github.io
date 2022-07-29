@@ -24,7 +24,7 @@ export const router = new Router({
       },
     },
     {
-    	path: '/projects/haringvliet',
+    	path: '/project/haringvliet',
     	name: 'project--haringvliet',
       component: haringvliet,
     	meta: {
@@ -32,7 +32,7 @@ export const router = new Router({
     	},
     },
     {
-    	path: '/projects/kozijnverbindingen',
+    	path: '/project/kozijnverbindingen',
     	name: 'project--kozijnverbindingen',
       component: kozijnverbindingen,
     	meta: {
@@ -40,7 +40,7 @@ export const router = new Router({
     	},
     },
     {
-    	path: '/projects/groenlinks-maak',
+    	path: '/project/groenlinks-maak',
     	name: 'project--groenlinks-maak',
       component: groenlinksMaak,
     	meta: {
@@ -48,7 +48,7 @@ export const router = new Router({
     	},
     },
     {
-    	path: '/projects/kozijnisolatie',
+    	path: '/project/kozijnisolatie',
     	name: 'project--kozijnisolatie',
       component: kozijnisolatie,
     	meta: {
@@ -56,7 +56,7 @@ export const router = new Router({
     	},
     },
     {
-    	path: '/projects/spotify-audio-features',
+    	path: '/project/spotify-audio-features',
     	name: 'project--spotify-audio-features',
       component: spotifyAudioFeatures,
     	meta: {

@@ -1,5 +1,6 @@
 :root {
   --max-container-width: 1860px;
+  --vw: min(var(--max-container-width), 100vw);
   --black-0: #0e0f0f;
   --black-1: #101318;
   --black-2: #38393b;
@@ -220,6 +221,32 @@ h2 {
   line-height: 1.22;
   margin-bottom: 0.35em;
   margin-top: 1.56em;
+}
+
+hr {
+  margin: 2.5em auto;
+  position: relative;
+  height: 9px;
+  width: 9px;
+  border: transparent;
+  overflow: visible;
+  background-image: url('data:image/svg+xml;utf8,<svg width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"><rect x="0.75" y="0.5" width="8" height="8" rx="4" fill="%2337ef92" /></svg>');
+}
+hr:before {
+  position: absolute;
+  height: 9px;
+  width: 10px;
+  content: "";
+  background-image: url('data:image/svg+xml;utf8,<svg width="10" height="9" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg"><path d="M3.91043 1.29752C4.30449 0.688518 5.19551 0.688519 5.58957 1.29752L9.25143 6.95675C9.68196 7.62211 9.20436 8.5 8.41186 8.5H1.08814C0.29564 8.5 -0.181954 7.62211 0.248574 6.95675L3.91043 1.29752Z" fill="%23ffc342" /></svg>');
+  left: -18px;
+}
+hr:after {
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  content: "";
+  background-image: url('data:image/svg+xml;utf8,<svg width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"><rect x="0.75" y="0.5" width="8" height="8" rx="1" fill="%23ef4056" /></svg>');
+  right: -18px;
 }
 
 .back-button-wrapper {
@@ -469,23 +496,36 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  padding-inline: 50px;
+  padding-inline: min(50px, 5vw);
   gap: 65px;
 }
 .home .text {
   flex: 3 0 50%;
   max-width: 34em;
-  margin-block: max(17vh, 74px);
-  -webkit-margin-start: max(0.05 * min(var(--max-container-width), 100vw), 50px);
-          margin-inline-start: max(0.05 * min(var(--max-container-width), 100vw), 50px);
-  -webkit-padding-end: max(0.05 * min(var(--max-container-width), 100vw), 50px);
-          padding-inline-end: max(0.05 * min(var(--max-container-width), 100vw), 50px);
+  margin-block: 7em;
+  margin-block: min(7em, 20vmin);
+  --inset: max(0.05 * var(--vw), 20px);
+  -webkit-margin-start: var(--inset);
+          margin-inline-start: var(--inset);
+  -webkit-padding-end: var(--inset);
+          padding-inline-end: var(--inset);
 }
 .home .text > div + div {
   margin-top: 2.2em;
 }
 .home .text h1 {
   display: inline-block;
+}
+.home .text h2 {
+  font-size: 1.6em;
+  line-height: 1.175;
+  font-weight: 500;
+  font-family: revert;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.home .text p {
+  font-size: 0.9em;
 }
 .home .featured-projects {
   flex: 2 0 25%;
@@ -527,4 +567,14 @@ h2 {
 }
 .project__clients {
   margin-top: 1.6em;
+}
+.project__clients ul {
+  list-style: revert;
+  list-style-position: inside;
+}
+.project__content {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 55ch;
+  font-size: 0.9em;
 }
