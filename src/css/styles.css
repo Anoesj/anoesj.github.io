@@ -339,26 +339,6 @@ hr:after {
   transition-duration: var(--speed-medium);
   transition-timing-function: var(--easing-cubic);
   text-shadow: 0 0.5px 1px rgba(123, 123, 123, 0.3);
-  /*
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    display: block;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    background-color: var(--project-color, var(--secondary-dark));
-    filter: brightness(1.2);
-    opacity: 0.4;
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      calc(100% - 0.3em) 100%,
-      0% 100%
-    );
-  }
-  */
 }
 .project--teaser a p::after {
   content: "";
@@ -384,11 +364,11 @@ hr:after {
   --project-teaser-hover-box-shadow-color: rgba(57, 145, 179, 0.9);
 }
 .project--teaser[data-project-id=haringvliet] {
-  --project-color: #0078c9;
-  --project-color-h: 204.1791044776deg;
-  --project-color-s: 100%;
-  --project-color-l: 39.4117647059%;
-  --project-teaser-hover-box-shadow-color: rgba(41, 127, 185, 0.8);
+  --project-color: #57a691;
+  --project-color-h: 164.0506329114deg;
+  --project-color-s: 31.2252964427%;
+  --project-color-l: 49.6078431373%;
+  --project-teaser-hover-box-shadow-color: rgba(92, 164, 145, 0.9);
 }
 .project--teaser[data-project-id=haringvliet] .project__media-wrapper {
   --extra-filters: brightness(0.92) saturate(1.25);
@@ -487,9 +467,6 @@ hr:after {
   perspective: 1px;
   height: 100vh;
   overflow-x: hidden;
-}
-.home .ugly-kerning-fix {
-  letter-spacing: -0.1ch;
 }
 .home .text {
   flex: 3 0 50%;

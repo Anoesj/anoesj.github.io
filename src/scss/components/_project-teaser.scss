@@ -1,4 +1,7 @@
 .project--teaser {
+  // backface-visibility: hidden;
+  // transform: translateZ(0);
+
   a {
     display: block;
     position: relative;
@@ -39,9 +42,7 @@
     .project__media-wrapper {
       --extra-filters: brightness(1);
       opacity: 0.75;
-      // transform: scale(1.08) blur(2.5px);
       transform: scale(1.08) translateZ(0);
-
       filter: var(--extra-filters);
 
       &, img, video {
@@ -80,27 +81,6 @@
       transition-timing-function: var(--easing-cubic);
       text-shadow: 0 0.5px 1px rgba($black-3, 0.3);
 
-      /*
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        display: block;
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        background-color: var(--project-color, var(--secondary-dark));
-        filter: brightness(1.2);
-        opacity: 0.4;
-        clip-path: polygon(
-          0% 0%,
-          100% 0%,
-          calc(100% - 0.3em) 100%,
-          0% 100%
-        );
-      }
-      */
-
       &::after {
         content: "";
         position: absolute;
@@ -130,9 +110,12 @@
     --project-teaser-hover-box-shadow-color: #{rgba(mix($black-3, #0da0d8, 40%), 0.9)};
   }
   &[data-project-id="haringvliet"] {
+    // @include declare-color(--project-color, #0078c9);
+    // --project-teaser-hover-box-shadow-color: #{rgba(mix($grey-0, #0078c9, 30%), 0.8)};
     // @include declare-color(--project-color, #d96aa0);
-    @include declare-color(--project-color, #0078c9);
-    --project-teaser-hover-box-shadow-color: #{rgba(mix($grey-0, #0078c9, 30%), 0.8)};
+    // --project-teaser-hover-box-shadow-color: #{rgba(mix($grey-0, #d96aa0, 30%), 0.8)};
+    @include declare-color(--project-color, #57a691);
+    --project-teaser-hover-box-shadow-color: #{rgba(mix($grey-0, #57a691, 10%), 0.9)};
 
     .project__media-wrapper {
       --extra-filters: brightness(0.92) saturate(1.25);

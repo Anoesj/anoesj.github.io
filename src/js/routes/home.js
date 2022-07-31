@@ -200,12 +200,14 @@ export const home = {
       tl.fromTo(refs, transformDuration,
         {
           x: -60,
+          y: 0,
           z: 0,
           scale: 0.97,
           skewX: 3,
         },
         {
           x: 0,
+          y: 0,
           z: 0,
           scale: 1,
           skewX: 0,
