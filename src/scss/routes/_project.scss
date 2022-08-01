@@ -39,7 +39,9 @@
       align-items: center;
       justify-content: center;
       pointer-events: all;
-      transition: opacity var(--speed-fast) var(--easing-cubic-steep);
+      transition-property: opacity, transform;
+      transition-duration: var(--speed-fast);
+      transition-timing-function: var(--easing-cubic-steep);
       opacity: 0.3;
       padding: 15px;
       font-size: 135%;
@@ -47,6 +49,7 @@
       &:hover,
       &:focus {
         opacity: 1;
+        transform: scale(1.15);
       }
     }
   }

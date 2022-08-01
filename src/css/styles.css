@@ -553,13 +553,16 @@ hr:after {
   align-items: center;
   justify-content: center;
   pointer-events: all;
-  transition: opacity var(--speed-fast) var(--easing-cubic-steep);
+  transition-property: opacity, transform;
+  transition-duration: var(--speed-fast);
+  transition-timing-function: var(--easing-cubic-steep);
   opacity: 0.3;
   padding: 15px;
   font-size: 135%;
 }
 .project .navigation-wrapper a:hover, .project .navigation-wrapper a:focus {
   opacity: 1;
+  transform: scale(1.15);
 }
 .project h1 {
   font-size: 1.6em;
