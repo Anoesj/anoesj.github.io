@@ -1,3 +1,4 @@
+import { featuredProjects } from '../data.js';
 import { GSAP } from '../NodeModules.js';
 
 export const Project = {
@@ -32,10 +33,10 @@ export const Project = {
                   ref="navigation"
                   class="navigation-wrapper"
                 >
-                  <router-link to="/" class="navigation__previous-project">
+                  <router-link :to="{ name: previousProjectRoute }" class="navigation__previous-project">
                     <i class="fas fa-caret-left"></i>
                   </router-link>
-                  <router-link to="/" class="navigation__next-project">
+                  <router-link :to="{ name: nextProjectRoute }" class="navigation__next-project">
                     <i class="fas fa-caret-right"></i>
                   </router-link>
                 </nav>
@@ -82,6 +83,18 @@ export const Project = {
     hasClients () {
       return this.clients && this.clients.length > 0;
     },
+
+    previousProjectRoute () {
+      const index = featuredProjects.findIndex(project => project.routeName === this.$route.name.replace('project--', ''));
+      const previous = featuredProjects[index - 1] ?? featuredProjects[featuredProjects.length - 1];
+      return 'project--' + previous.routeName;
+    },
+
+    nextProjectRoute () {
+      const index = featuredProjects.findIndex(project => project.routeName === this.$route.name.replace('project--', ''));
+      const next = featuredProjects[index + 1] ?? featuredProjects[0];
+      return 'project--' + next.routeName;
+    },
   },
 
   methods: {
@@ -96,8 +109,6 @@ export const Project = {
     },
 
     async animation (duration, reverse = false) {
-      const tl = new GSAP.TimelineLite();
-
       const {
         clients,
         content,
@@ -108,6 +119,8 @@ export const Project = {
         preContactBlockHr,
         contact,
       } = this.$refs;
+
+      const tl = new GSAP.TimelineLite();
 
       let i = 0;
 
