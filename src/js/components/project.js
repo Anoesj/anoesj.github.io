@@ -28,6 +28,18 @@ export const Project = {
                   <BackButton/>
                 </span>
 
+                <nav
+                  ref="navigation"
+                  class="navigation-wrapper"
+                >
+                  <router-link to="/" class="navigation__previous-project">
+                    <i class="fas fa-caret-left"></i>
+                  </router-link>
+                  <router-link to="/" class="navigation__next-project">
+                    <i class="fas fa-caret-right"></i>
+                  </router-link>
+                </nav>
+
                 <div
                   ref="headings"
                   class="project__headings"
@@ -86,6 +98,17 @@ export const Project = {
     async animation (duration, reverse = false) {
       const tl = new GSAP.TimelineLite();
 
+      const {
+        clients,
+        content,
+        backButton,
+        navigation,
+        headings,
+        headerImage,
+        preContactBlockHr,
+        contact,
+      } = this.$refs;
+
       let i = 0;
 
       const transformDuration = duration * 1.3,
@@ -100,12 +123,12 @@ export const Project = {
       timings.headingOpacityStart = startTime + i * opacityDelay;
       i++;
 
-      if (this.$refs.clients) {
+      if (clients) {
         timings.clientsOpacityStart = startTime + i * opacityDelay;
         i++;
       }
 
-      if (this.$refs.content) {
+      if (content) {
         timings.contentOpacityStart = startTime + i * opacityDelay;
         i++;
       }
@@ -121,7 +144,7 @@ export const Project = {
       const backButtonTransformStart = startTime,
             backButtonOpacityStart = backButtonTransformStart + opacityDelay;
 
-      tl.fromTo(this.$refs.backButton, transformDuration * 1.25,
+      tl.fromTo(backButton, transformDuration * 1.25,
         {
           x: 12,
           scale: 0.97,
@@ -139,7 +162,7 @@ export const Project = {
         backButtonTransformStart,
       );
 
-      tl.fromTo(this.$refs.backButton, opacityDuration * 1.25,
+      tl.fromTo(backButton, opacityDuration * 1.25,
         {
           opacity: 0,
         },
@@ -150,7 +173,7 @@ export const Project = {
         backButtonOpacityStart,
       );
 
-      tl.fromTo(this.$refs.headings, transformDuration,
+      tl.fromTo(headings, transformDuration,
         {
           x: -60,
           scale: 0.97,
@@ -168,7 +191,7 @@ export const Project = {
         timings.headingTransformStart,
       );
 
-      tl.fromTo(this.$refs.headings, opacityDuration,
+      tl.fromTo(headings, opacityDuration,
         {
           opacity: 0,
         },
@@ -179,19 +202,19 @@ export const Project = {
         timings.headingOpacityStart,
       );
 
-      tl.fromTo(this.$refs.headerImage, transformDuration,
+      tl.fromTo(headerImage, transformDuration,
         {
           opacity: 0,
         },
         {
-          opacity: 0.12,
+          opacity: 0.15,
           ease: GSAP.Power3.easeInOut,
         },
         timings.headingTransformStart,
       );
 
-      if (this.$refs.clients) {
-        tl.fromTo(this.$refs.clients, opacityDuration,
+      if (clients) {
+        tl.fromTo(clients, opacityDuration,
           {
             opacity: 0,
           },
@@ -203,8 +226,8 @@ export const Project = {
         );
       }
 
-      if (this.$refs.content) {
-        tl.fromTo(this.$refs.content, opacityDuration,
+      if (content) {
+        tl.fromTo(content, opacityDuration,
           {
             opacity: 0,
           },
@@ -216,7 +239,7 @@ export const Project = {
         );
       }
 
-      tl.fromTo(this.$refs.preContactBlockHr, opacityDuration,
+      tl.fromTo(preContactBlockHr, opacityDuration,
         {
           opacity: 0,
         },
@@ -227,7 +250,18 @@ export const Project = {
         timings.preContactBlockHrOpacityStart,
       );
 
-      tl.fromTo(this.$refs.contact.$el, opacityDuration,
+      tl.fromTo(contact.$el, opacityDuration,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          ease: GSAP.Power2.easeInOut,
+        },
+        timings.contactOpacityStart,
+      );
+
+      tl.fromTo(navigation, opacityDuration,
         {
           opacity: 0,
         },

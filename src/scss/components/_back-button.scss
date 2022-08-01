@@ -12,6 +12,7 @@
   --underline-offset: 0.23em !important;
   position: relative;
   pointer-events: all;
+  transition: transform var(--speed-fast) var(--easing-cubic-steep);
 
   &::before {
     content: '';
@@ -24,28 +25,31 @@
     box-shadow: 0 0 0 2px $primary-dark !important;
     background-color: rgba(#0e0f12, 0.65);
     border-radius: 9999px;
-    transition: transform var(--speed-fast) var(--easing-cubic-steep);
+    transition: inherit;
     z-index: -1;
   }
 
   i {
     display: inline-block;
-    transition: transform var(--speed-fast) var(--easing-cubic-steep);
-    transform: none;
-    margin-right: 1ch;
-    font-size: 50%;
+    transition: inherit;
+    transform: translateY(-6%);
+    margin-right: 0.5ch;
+    font-size: 90%;
     font-style: normal;
     vertical-align: middle;
+    color: $primary-dark;
   }
 
   &:hover,
   &:focus {
+    transform: scale(1.07);
+
     &::before {
-      transform: translate(-50%, -50%) scale(1.07);
+      transform: translate(-50%, -50%) scale(1.05);
     }
 
-    i {
-      transform: translateX(-18%) scale(1.07);
-    }
+    // i {
+    //   transform: translateY(-5%) translateX(-18%) scale(1.07);
+    // }
   }
 }
