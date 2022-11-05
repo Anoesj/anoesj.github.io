@@ -15,12 +15,12 @@ export const home = {
                     <h1>Anoesj S<span style="letter-spacing: -0.08ch;">a</span>d<span style="letter-spacing: -0.03ch;">r</span><span style="letter-spacing: -0.05ch;">a</span>ee</h1>
                     <h2>Freelance full-stack web&shy;developer</h2>
 
-                    <p>Gepolijste, gebruiksvriendelijke web apps, daar sta ik voor. Samen&shy;gevat ben ik een senior front-end developer, met kennis van back-end.</p>
+                    <p>Gepolijste, gebruiksvriendelijke en duurzame web apps, daar sta ik voor. Samen&shy;gevat ben ik een senior front-end developer, met ruime kennis en ervaring in back-end development.</p>
                   </div>
 
                   <div ref="text2">
                     <h3>Samenwerken</h3>
-                    <p>Naast technische ervaring, is goed luisteren en meedenken met klanten een van mijn kernwaarden in dit vak. Jou <strong>écht</strong> doorgronden en concrete waarde toevoegen, dat is waar het om draait. Door uit te zoeken tegen welke problemen jij of je klanten aanlopen en de benodigde domeinkennis te verzamelen, kunnen we samen werken aan een duurzame digitale oplossing op maat.</p>
+                    <p>Naast techniek, is goed luisteren en meedenken met klanten ontzettend belangrijk in dit vakgebied. Jou <strong>écht</strong> doorgronden en concrete waarde toevoegen, dat is waar het om draait. Door uit te zoeken tegen welke problemen jij of je klanten aanlopen en de benodigde domeinkennis te verzamelen, kunnen we samen werken aan een duurzame digitale oplossing op maat.</p>
                   </div>
 
                   <div ref="text3">
