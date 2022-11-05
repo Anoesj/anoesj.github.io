@@ -1,3 +1,8 @@
+Ideëen:
+- Op homepage cases langzamer laten scrollen op desktop formaat zodat de tekst en cases beide tegelijkertijd beneden gescrolld zijn.
+- Homepage meer links-rechts afwisselen, of laat door iemand ontwerpen.
+
+
 Inspiratie:
 https://spektrummedia.com/en/portfolio
 https://patrickheng.com/
