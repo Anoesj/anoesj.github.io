@@ -13,7 +13,7 @@ export const home = {
                 >
                   <div ref="text1">
                     <h1>Anoesj S<span style="letter-spacing: -0.08ch;">a</span>d<span style="letter-spacing: -0.03ch;">r</span><span style="letter-spacing: -0.05ch;">a</span>ee</h1>
-                    <h2>Full-stack web&shy;developer</h2>
+                    <h2>Freelance full-stack web&shy;developer</h2>
 
                     <p>Gepolijste, gebruiksvriendelijke web apps, daar sta ik voor. Samen&shy;gevat ben ik een senior front-end developer, met kennis van back-end.</p>
                   </div>
@@ -25,14 +25,14 @@ export const home = {
 
                   <div ref="text3">
                     <h3>Technische kennis</h3>
-                    <p>Tien jaar geleden ben ik begonnen als front-end webdeveloper. In de afgelopen jaren heb ik mij met name gespecialiseerd in JavaScript-gedreven applicaties. Denk hierbij aan een stack van Vue.js, CSS (SCSS), HTML en headless back-ends (API’s). Ook heb ik door de jaren heen veel back-end ervaring opgedaan met Laravel, Node.js en Drupal.</p>
+                    <p>Tien jaar geleden ben ik begonnen als front-end webdeveloper. In de afgelopen jaren heb ik mij met name gespecialiseerd in JavaScript-gedreven applicaties. Denk hierbij aan een stack van Vue.js of Nuxt.js met CSS (SCSS), HTML en headless back-ends (API’s). Ook heb ik door de jaren heen veel back-end ervaring opgedaan met Laravel, Node.js, Directus en Drupal.</p>
                   </div>
 
                   <div ref="text4">
                     <h3>Achtergrond</h3>
-                    <p>Ik ben gevestigd in Eindhoven. Hier werk ik momenteel een vast aantal dagen op freelancebasis voor <a href="https://fonkel.io" class="link">Fonkel</a>, een digital agency in Amersfoort, waar ik werk aan Vue.js, Node.js, Laravel en Drupal projecten. Haar klanten betreft met name bedrijven in de bouw, techniek en maakindustrie. Met deze ervaring en een afgeronde gymnasiumopleiding met profiel natuur, techniek en gezondheid, ben ik in staat om complexe, bèta-georiënteerde projecten te doorgronden en realiseren.</p>
+                    <p>Ik ben gevestigd in Eindhoven en werk vanuit daar als freelance full-stack web developer voor diverse klanten en bureaus. Hiervoor werkte ik bijna een decennium voor <a href="https://fonkel.io" class="link">Fonkel</a>, een digital agency in Amersfoort, waar ik werk aan Vue.js, Node.js, Laravel en Drupal projecten. Haar klanten betreft met name bedrijven in de bouw, techniek en maakindustrie. Met deze ervaring en een afgeronde gymnasiumopleiding met profiel natuur, techniek en gezondheid, ben ik in staat om complexe, bèta-georiënteerde projecten te doorgronden en realiseren.</p>
 
-                    <p>Te midden van de pandemie heb ik mijn Bachelor of Music (HBO) behaald bij ArtEZ Institute of the Arts in Enschede. Toen ik ter afronding van de studie stage liep bij <a href="https://media.monks.com/" class="link">Media.Monks</a>, realiseerde ik mij steeds meer dat mijn professionele interesse meer bij programmeren ligt dan bij muziek. Na bijna een decennium in vaste dienst bij Fonkel gewerkt te hebben, ben ik nu als freelancer aan de slag gegaan.</p>
+                    <p>Te midden van de pandemie heb ik mijn Bachelor of Music (HBO) behaald bij ArtEZ Institute of the Arts in Enschede. Toen ik ter afronding van de studie stage liep bij <a href="https://media.monks.com/" class="link">Media.Monks</a>, realiseerde ik mij steeds meer dat mijn professionele interesse meer bij programmeren ligt dan bij muziek, al werk ik nog steeds graag multimediale projecten, waar code, kunst, muziek en wetenschap bij elkaar komen.</p>
                   </div>
 
                   <div ref="text5">
