@@ -121,7 +121,7 @@
       --extra-filters: brightness(0.92) saturate(1.25);
     }
   }
-  &[data-project-id="groenlinks-maak"] {
+  &[data-project-id="groenlinks-pvda-maak"] {
     @include declare-color(--project-color, #db0030);
     --project-teaser-hover-box-shadow-color: #{rgba(mix($black-3, #db0030, 55%), 0.65)};
   }

@@ -6,7 +6,7 @@ import { home } from './routes/home.js';
 
 import haringvliet from './routes/projects/haringvliet.js';
 import kozijnverbindingen from './routes/projects/kozijnverbindingen.js';
-import groenlinksMaak from './routes/projects/groenlinks-maak.js';
+import groenlinksMaak from './routes/projects/groenlinks-pvda-maak.js';
 import kozijnisolatie from './routes/projects/kozijnisolatie.js';
 import spotifyAudioFeatures from './routes/projects/spotify-audio-features.js';
 
@@ -40,8 +40,8 @@ export const router = new Router({
     	},
     },
     {
-    	path: '/project/groenlinks-maak',
-    	name: 'project--groenlinks-maak',
+    	path: '/project/groenlinks-pvda-maak',
+    	name: 'project--groenlinks-pvda-maak',
       component: groenlinksMaak,
     	meta: {
     		pageID: 'project',

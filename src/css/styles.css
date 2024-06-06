@@ -386,7 +386,7 @@ hr:after {
 .project--teaser[data-project-id=haringvliet] .project__media-wrapper {
   --extra-filters: brightness(0.92) saturate(1.25);
 }
-.project--teaser[data-project-id=groenlinks-maak] {
+.project--teaser[data-project-id=groenlinks-pvda-maak] {
   --project-color: #db0030;
   --project-color-h: 346.8493150685deg;
   --project-color-s: 100%;

@@ -40,8 +40,8 @@ export default {
   data () {
     return {
       clients: [
-        'GroenLinks',
         'GroenLinks-PvdA',
+        'GroenLinks',
       ],
     };
   },

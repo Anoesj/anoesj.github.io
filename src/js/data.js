@@ -12,9 +12,9 @@ export const featuredProjects = [
     title: 'Haringvliet',
   },
   {
-    routeName: 'groenlinks-maak',
+    routeName: 'groenlinks-pvda-maak',
     image: '/img/projects/groenlinks-maak-1.png',
-    title: 'GroenLinks Maak',
+    title: 'GroenLinks-PvdA Maak',
   },
   {
     routeName: 'kozijnisolatie',
