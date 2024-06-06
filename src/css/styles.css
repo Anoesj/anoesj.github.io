@@ -33,10 +33,9 @@
 }
 @supports (hyphenate-limit-chars: 10 6 4) {
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     -webkit-hyphens: auto;
-        -ms-hyphens: auto;
             hyphens: auto;
     hyphenate-limit-chars: 10 6 4;
   }
@@ -362,8 +361,7 @@ hr:after {
   width: 100%;
   height: 100%;
   background-color: var(--project-color, var(--secondary-dark));
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, calc(100% - 0.3em) 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, calc(100% - 0.3em) 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, calc(100% - 0.3em) 100%, 0% 100%);
 }
 .project--teaser a p strong {
   position: relative;
@@ -487,10 +485,8 @@ hr:after {
   margin-block: 7em;
   margin-block: min(7em, 20vmin);
   --inset: max(0.05 * var(--vw), 20px);
-  -webkit-margin-start: var(--inset);
-          margin-inline-start: var(--inset);
-  -webkit-padding-end: var(--inset);
-          padding-inline-end: var(--inset);
+  margin-inline-start: var(--inset);
+  padding-inline-end: var(--inset);
 }
 .home .text > div + div {
   margin-top: var(--spacing);
