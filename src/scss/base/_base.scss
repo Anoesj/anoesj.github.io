@@ -4,6 +4,18 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  overflow-wrap: anywhere;
+
+  /// If browsers support configuring `hyphenate-limit-chars`, we enable hyphenation.
+  /// This is because by default, hyphens are added way too often, even in the middle
+  /// 6-letter words. In browsers where `hyphenate-limit-chars` is not supported, we
+  /// just disable hyphenation so words are not broken up in the middle, unless they
+  /// are broken up by `overflow-wrap: anywhere`, which is a little more conservative
+  /// than `hyphens: auto`.
+  @supports (hyphenate-limit-chars: 10 6 4) {
+    hyphens: auto;
+    hyphenate-limit-chars: 10 6 4;
+  }
 }
 
 html, body {

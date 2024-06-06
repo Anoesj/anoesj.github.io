@@ -8,8 +8,8 @@
     "not dead"
   ],
   "scripts": {
-    "serve": "pnpx gulp serve",
-    "deploy": "pnpx gulp deploy"
+    "serve": "gulp serve",
+    "deploy": "gulp deploy"
   },
   "devDependencies": {
     "browser-sync": "^2.27.7",

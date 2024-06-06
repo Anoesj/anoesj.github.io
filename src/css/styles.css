@@ -29,6 +29,17 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+@supports (hyphenate-limit-chars: 10 6 4) {
+  *,
+*::before,
+*::after {
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    hyphenate-limit-chars: 10 6 4;
+  }
 }
 
 html, body {
@@ -591,6 +602,7 @@ hr:after {
 .project__content,
 .project .contact-block {
   text-align: left;
+  text-wrap: pretty;
   margin: 0 auto;
   max-width: 55ch;
   font-size: 0.9em;
